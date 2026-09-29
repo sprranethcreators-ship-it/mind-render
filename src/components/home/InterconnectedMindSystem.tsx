@@ -74,23 +74,22 @@ export const InterconnectedMindSystem: React.FC<InterconnectedMindSystemProps> =
             maxWidth: '1040px',
             margin: '0 auto',
             backgroundColor: '#0B0D15',
-            borderRadius: '24px',
+            borderRadius: '20px',
             border: '1px solid rgba(255, 255, 255, 0.08)',
-            padding: '48px 36px',
-            boxShadow: '0 25px 60px rgba(0, 0, 0, 0.8)'
+            padding: 'clamp(20px, 3.5vw, 44px) clamp(14px, 3vw, 36px)',
+            boxShadow: '0 25px 60px rgba(0, 0, 0, 0.8)',
+            boxSizing: 'border-box',
+            width: '100%',
+            overflow: 'hidden'
           }}
         >
           {/* The 7 Steps Interactive Rail */}
           <div
+            className="mobile-step-rail"
             style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexWrap: 'wrap',
-              gap: '10px',
-              paddingBottom: '2.5rem',
+              paddingBottom: '1.5rem',
               borderBottom: '1px solid rgba(255, 255, 255, 0.07)',
-              marginBottom: '3rem'
+              marginBottom: '2rem'
             }}
           >
             {data.steps.map((node, idx) => {
@@ -103,25 +102,27 @@ export const InterconnectedMindSystem: React.FC<InterconnectedMindSystemProps> =
                       display: 'flex',
                       alignItems: 'center',
                       gap: '8px',
-                      padding: '12px 18px',
-                      borderRadius: '12px',
+                      padding: '10px 14px',
+                      borderRadius: '10px',
                       backgroundColor: isSelected ? `${node.accent}18` : 'rgba(255, 255, 255, 0.02)',
                       border: isSelected ? `1.5px solid ${node.accent}` : '1px solid rgba(255, 255, 255, 0.06)',
                       color: isSelected ? '#FFFFFF' : '#94A3B8',
                       cursor: 'pointer',
+                      flexShrink: 0,
+                      whiteSpace: 'nowrap',
                       transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
                       boxShadow: isSelected ? `0 0 25px ${node.accent}30` : 'none',
-                      transform: isSelected ? 'scale(1.04)' : 'scale(1)'
+                      transform: isSelected ? 'scale(1.03)' : 'scale(1)'
                     }}
                   >
                     <span
                       style={{
                         fontFamily: 'monospace',
-                        fontSize: '0.75rem',
+                        fontSize: '0.72rem',
                         fontWeight: 700,
                         color: isSelected ? node.accent : '#64748B',
                         backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                        padding: '2px 6px',
+                        padding: '2px 5px',
                         borderRadius: '4px'
                       }}
                     >
@@ -130,7 +131,7 @@ export const InterconnectedMindSystem: React.FC<InterconnectedMindSystemProps> =
                     <span
                       style={{
                         fontFamily: 'var(--font-display)',
-                        fontSize: '0.92rem',
+                        fontSize: '0.86rem',
                         fontWeight: 600,
                         letterSpacing: '0.04em'
                       }}
@@ -151,8 +152,8 @@ export const InterconnectedMindSystem: React.FC<InterconnectedMindSystemProps> =
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '40px',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+              gap: 'clamp(24px, 4vw, 40px)',
               alignItems: 'center'
             }}
           >

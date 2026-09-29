@@ -45,14 +45,15 @@ export const UserProfilePage: React.FC = () => {
 
       <section style={{ padding: '60px 0 120px' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '24px' }}>
             {/* Account Metrics Card */}
             <div
               style={{
                 backgroundColor: '#0E1119',
                 border: '1px solid rgba(255, 255, 255, 0.08)',
                 borderRadius: '16px',
-                padding: '32px'
+                padding: 'clamp(20px, 3.5vw, 32px)',
+                boxSizing: 'border-box'
               }}
             >
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', color: '#F8FAFC', marginBottom: '1.25rem' }}>

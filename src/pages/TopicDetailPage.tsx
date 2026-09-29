@@ -92,15 +92,16 @@ export const TopicDetailPage: React.FC = () => {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '24px' }}>
             {/* Scientific Perspective */}
             <div
               style={{
                 backgroundColor: '#0E1119',
                 border: '1px solid rgba(99, 102, 241, 0.3)',
                 borderRadius: '16px',
-                padding: '36px',
-                boxShadow: '0 15px 35px rgba(0,0,0,0.5)'
+                padding: 'clamp(20px, 3.5vw, 36px)',
+                boxShadow: '0 15px 35px rgba(0,0,0,0.5)',
+                boxSizing: 'border-box'
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#818CF8', marginBottom: '1.25rem' }}>
@@ -154,7 +155,7 @@ export const TopicDetailPage: React.FC = () => {
               </Link>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '24px' }}>
               {relatedBooks.map(rb => (
                 <div
                   key={rb.id}
@@ -201,7 +202,7 @@ export const TopicDetailPage: React.FC = () => {
               Inquiries & Articles
             </h3>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '20px' }}>
               {relatedArticles.map(art => (
                 <Link
                   key={art.id}

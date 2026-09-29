@@ -45,8 +45,9 @@ export const UserOrdersPage: React.FC = () => {
                     backgroundColor: '#0E1119',
                     border: '1px solid rgba(255, 255, 255, 0.08)',
                     borderRadius: '16px',
-                    padding: '28px',
-                    boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
+                    padding: 'clamp(18px, 3.5vw, 28px)',
+                    boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+                    boxSizing: 'border-box'
                   }}
                 >
                   <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '12px', borderBottom: '1px solid rgba(255, 255, 255, 0.06)', paddingBottom: '16px', marginBottom: '16px' }}>

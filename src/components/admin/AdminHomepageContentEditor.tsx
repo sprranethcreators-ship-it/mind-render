@@ -535,7 +535,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
                 Individual Topic Cards (All 6 Pillars)
               </h4>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '18px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '18px' }}>
                 {content.topicsSection.topics.map((t, idx) => (
                   <div
                     key={t.id}

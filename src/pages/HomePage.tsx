@@ -70,8 +70,8 @@ export const HomePage: React.FC = () => {
             top: '44%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            width: '640px',
-            height: '380px',
+            width: 'min(90vw, 640px)',
+            height: 'min(50vh, 380px)',
             background: 'radial-gradient(ellipse at center, rgba(99, 102, 241, 0.22) 0%, rgba(139, 92, 246, 0.12) 40%, rgba(212, 175, 55, 0.04) 65%, transparent 75%)',
             filter: 'blur(35px)',
             pointerEvents: 'none',
@@ -88,7 +88,7 @@ export const HomePage: React.FC = () => {
             textAlign: 'center',
             maxWidth: '920px',
             margin: '0 auto',
-            padding: '2rem 1.5rem'
+            padding: '1.5rem 1rem'
           }}
         >
           {/* Subtle Brand Motif Kicker */}
@@ -96,41 +96,48 @@ export const HomePage: React.FC = () => {
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '12px',
-              padding: '6px 18px',
+              justifyContent: 'center',
+              gap: '10px',
+              padding: '6px 16px',
               borderRadius: '24px',
               backgroundColor: 'rgba(212, 175, 55, 0.06)',
               border: '1px solid rgba(212, 175, 55, 0.22)',
-              marginBottom: '2.25rem',
-              boxShadow: '0 0 25px rgba(212, 175, 55, 0.1)'
+              marginBottom: '1.75rem',
+              boxShadow: '0 0 25px rgba(212, 175, 55, 0.1)',
+              maxWidth: '100%',
+              boxSizing: 'border-box'
             }}
           >
-            <span style={{ width: '16px', height: '1px', backgroundColor: '#D4AF37', opacity: 0.6 }} />
+            <span style={{ width: '12px', height: '1px', backgroundColor: '#D4AF37', opacity: 0.6, flexShrink: 0 }} />
             <span
               style={{
                 fontFamily: 'var(--font-sans)',
-                fontSize: '0.74rem',
-                letterSpacing: '0.24em',
+                fontSize: '0.72rem',
+                letterSpacing: '0.18em',
                 textTransform: 'uppercase',
                 color: '#F3E5AB',
-                fontWeight: 600
+                fontWeight: 600,
+                whiteSpace: 'normal',
+                textAlign: 'center'
               }}
             >
               {content.hero.kicker}
             </span>
-            <span style={{ width: '16px', height: '1px', backgroundColor: '#D4AF37', opacity: 0.6 }} />
+            <span style={{ width: '12px', height: '1px', backgroundColor: '#D4AF37', opacity: 0.6, flexShrink: 0 }} />
           </div>
 
           {/* Editorial Masthead Headline */}
           <h1
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(2.8rem, 6.8vw, 5.5rem)',
+              fontSize: 'clamp(1.9rem, 6.2vw, 4.8rem)',
               fontWeight: 800,
-              letterSpacing: '0.14em',
+              letterSpacing: 'clamp(0.04em, 1.2vw, 0.12em)',
               color: '#F8FAFC',
-              lineHeight: 1.1,
-              marginBottom: '1.5rem',
+              lineHeight: 1.15,
+              marginBottom: '1.25rem',
+              overflowWrap: 'break-word',
+              wordBreak: 'break-word',
               textShadow: '0 4px 30px rgba(0, 0, 0, 0.9), 0 0 45px rgba(99, 102, 241, 0.3)'
             }}
           >
@@ -141,12 +148,14 @@ export const HomePage: React.FC = () => {
           <p
             style={{
               fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(1.25rem, 2.3vw, 1.75rem)',
+              fontSize: 'clamp(1.15rem, 2.4vw, 1.65rem)',
               fontStyle: 'italic',
               color: '#CBD5E1',
               maxWidth: '780px',
-              margin: '0 auto 1.5rem',
+              margin: '0 auto 1.25rem',
               lineHeight: 1.55,
+              overflowWrap: 'break-word',
+              wordBreak: 'break-word',
               textShadow: '0 2px 10px rgba(0, 0, 0, 0.8)'
             }}
           >
@@ -157,26 +166,20 @@ export const HomePage: React.FC = () => {
           <p
             style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: '1.05rem',
+              fontSize: 'clamp(0.92rem, 1.8vw, 1.05rem)',
               color: '#94A3B8',
               maxWidth: '620px',
-              margin: '0 auto 3rem',
-              lineHeight: 1.8
+              margin: '0 auto 2.25rem',
+              lineHeight: 1.75,
+              overflowWrap: 'break-word',
+              wordBreak: 'break-word'
             }}
           >
             {content.hero.supportingParagraph}
           </p>
 
           {/* Refined Hero CTA Buttons */}
-          <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: '20px'
-            }}
-          >
+          <div className="responsive-btn-group">
             {/* Primary CTA */}
             <button
               onClick={scrollToExplore}
@@ -186,13 +189,14 @@ export const HomePage: React.FC = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '10px',
-                padding: '1.05rem 2.5rem',
+                padding: '0.95rem 1.8rem',
+                minHeight: '48px',
                 borderRadius: '8px',
                 background: 'linear-gradient(135deg, #4F46E5 0%, #3730A3 100%)',
                 color: '#FFFFFF',
                 fontWeight: 600,
-                fontSize: '0.88rem',
-                letterSpacing: '0.12em',
+                fontSize: '0.86rem',
+                letterSpacing: '0.1em',
                 textTransform: 'uppercase',
                 border: '1px solid rgba(255, 255, 255, 0.18)',
                 boxShadow: '0 6px 25px rgba(79, 70, 229, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3)',
@@ -215,13 +219,14 @@ export const HomePage: React.FC = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '10px',
-                padding: '1.05rem 2.4rem',
+                padding: '0.95rem 1.8rem',
+                minHeight: '48px',
                 borderRadius: '8px',
                 background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(197, 160, 40, 0.05) 100%)',
                 color: '#F3E5AB',
                 fontWeight: 600,
-                fontSize: '0.88rem',
-                letterSpacing: '0.1em',
+                fontSize: '0.86rem',
+                letterSpacing: '0.08em',
                 textTransform: 'uppercase',
                 border: '1px solid rgba(212, 175, 55, 0.4)',
                 boxShadow: '0 4px 20px rgba(212, 175, 55, 0.12)',

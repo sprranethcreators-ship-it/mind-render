@@ -30,23 +30,24 @@ export const Footer: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '48px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+            gap: 'clamp(28px, 4vw, 48px)',
             alignItems: 'center',
-            paddingBottom: '60px',
+            paddingBottom: '40px',
             borderBottom: '1px solid rgba(255, 255, 255, 0.07)',
-            marginBottom: '60px'
+            marginBottom: '40px'
           }}
         >
           <div>
             <div
               style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: '1.75rem',
+                fontSize: 'clamp(1.4rem, 2.5vw, 1.75rem)',
                 fontWeight: 700,
                 letterSpacing: '0.12em',
                 color: '#F8FAFC',
-                marginBottom: '0.5rem'
+                marginBottom: '0.5rem',
+                overflowWrap: 'break-word'
               }}
             >
               MIND RENDER
@@ -56,15 +57,16 @@ export const Footer: React.FC = () => {
               style={{
                 fontFamily: 'var(--font-serif)',
                 fontStyle: 'italic',
-                fontSize: '1.25rem',
+                fontSize: 'clamp(1.05rem, 1.8vw, 1.25rem)',
                 color: '#D4AF37',
-                marginBottom: '0.75rem'
+                marginBottom: '0.75rem',
+                overflowWrap: 'break-word'
               }}
             >
               "Explore your mind. Create a more conscious life."
             </p>
 
-            <p style={{ color: '#94A3B8', fontSize: '0.94rem', lineHeight: 1.7, maxWidth: '480px' }}>
+            <p style={{ color: '#94A3B8', fontSize: '0.92rem', lineHeight: 1.65, maxWidth: '480px', overflowWrap: 'break-word' }}>
               An independent intellectual publishing house and digital platform dedicated to the architecture of consciousness.
             </p>
           </div>
@@ -75,8 +77,9 @@ export const Footer: React.FC = () => {
               backgroundColor: '#0B0D14',
               border: '1px solid rgba(255, 255, 255, 0.08)',
               borderRadius: '16px',
-              padding: '28px',
-              boxShadow: '0 12px 35px rgba(0, 0, 0, 0.6)'
+              padding: 'clamp(18px, 3vw, 28px)',
+              boxShadow: '0 12px 35px rgba(0, 0, 0, 0.6)',
+              boxSizing: 'border-box'
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#D4AF37', marginBottom: '8px' }}>
@@ -85,19 +88,19 @@ export const Footer: React.FC = () => {
                 Sunday Contemplation
               </span>
             </div>
-            <p style={{ color: '#CBD5E1', fontSize: '0.88rem', marginBottom: '16px', lineHeight: 1.6 }}>
+            <p style={{ color: '#CBD5E1', fontSize: '0.86rem', marginBottom: '14px', lineHeight: 1.55 }}>
               Receive an unhurried, weekly letter on quiet focus, thought patterns, and personal sovereignty.
             </p>
-            <form onSubmit={handleSubscribe} style={{ display: 'flex', gap: '8px' }}>
+            <form onSubmit={handleSubscribe} style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               <input
                 type="email"
                 required
                 value={newsletterEmail}
                 onChange={e => setNewsletterEmail(e.target.value)}
                 placeholder="Enter your email"
-                style={{ flex: 1, fontSize: '0.88rem', padding: '10px 14px' }}
+                style={{ flex: '1 1 180px', minWidth: '160px', fontSize: '0.88rem', padding: '10px 14px' }}
               />
-              <button type="submit" className="btn-gold" style={{ padding: '0 18px', fontSize: '0.84rem', flexShrink: 0 }}>
+              <button type="submit" className="btn-gold" style={{ padding: '0 18px', fontSize: '0.84rem', flexShrink: 0, minHeight: '42px', flex: '1 1 auto' }}>
                 Join <ArrowRight size={14} />
               </button>
             </form>
@@ -108,9 +111,9 @@ export const Footer: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-            gap: '36px',
-            marginBottom: '60px'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))',
+            gap: '28px',
+            marginBottom: '40px'
           }}
         >
           {/* Main Links */}

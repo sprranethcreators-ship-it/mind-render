@@ -43,22 +43,28 @@ export const Book3DCover: React.FC<Book3DCoverProps> = ({
 
   return (
     <div
+      className="book-3d-wrapper"
       style={{
         perspective: '1200px',
         display: 'inline-block',
-        padding: '16px'
+        padding: 'clamp(8px, 2vw, 16px)',
+        maxWidth: '100%',
+        boxSizing: 'border-box',
+        overflow: 'hidden'
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
       <div
+        className="book-3d-stage"
         style={{
           width: `${dimensions.width}px`,
           height: `${dimensions.height}px`,
           position: 'relative',
           transformStyle: 'preserve-3d',
           transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
-          transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease'
+          transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease',
+          maxWidth: '100%'
         }}
       >
         {/* Book Spine (3D depth on left) */}
@@ -301,6 +307,22 @@ export const Book3DCover: React.FC<Book3DCoverProps> = ({
           </div>
         </div>
       </div>
+      <style>{`
+        @media (max-width: 480px) {
+          .book-3d-stage {
+            transform: scale(0.85) !important;
+            transform-origin: center center !important;
+            margin: -20px 0 !important;
+          }
+        }
+        @media (max-width: 360px) {
+          .book-3d-stage {
+            transform: scale(0.72) !important;
+            transform-origin: center center !important;
+            margin: -35px 0 !important;
+          }
+        }
+      `}</style>
     </div>
   );
 };

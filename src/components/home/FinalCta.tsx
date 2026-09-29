@@ -28,8 +28,8 @@ export const FinalCta: React.FC<FinalCtaProps> = ({ content }) => {
           bottom: '-15%',
           left: '50%',
           transform: 'translateX(-50%)',
-          width: '1200px',
-          height: '420px',
+          width: 'min(95vw, 1200px)',
+          height: 'min(50vh, 420px)',
           borderRadius: '50%',
           background: 'radial-gradient(ellipse at 50% 100%, rgba(99, 102, 241, 0.22) 0%, rgba(212, 175, 55, 0.08) 35%, transparent 70%)',
           filter: 'blur(30px)',
@@ -44,8 +44,8 @@ export const FinalCta: React.FC<FinalCtaProps> = ({ content }) => {
           bottom: '8%',
           left: '50%',
           transform: 'translateX(-50%)',
-          width: '900px',
-          height: '240px',
+          width: 'min(90vw, 900px)',
+          height: 'min(35vh, 240px)',
           borderRadius: '50%',
           borderTop: '1px solid rgba(212, 175, 55, 0.3)',
           boxShadow: '0 -15px 35px rgba(99, 102, 241, 0.25)',
@@ -58,15 +58,15 @@ export const FinalCta: React.FC<FinalCtaProps> = ({ content }) => {
           <span
             style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: '0.78rem',
-              letterSpacing: '0.26em',
+              fontSize: '0.76rem',
+              letterSpacing: '0.22em',
               textTransform: 'uppercase',
               color: '#D4AF37',
               fontWeight: 600,
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
-              marginBottom: '1.75rem'
+              marginBottom: '1.5rem'
             }}
           >
             <Sparkles size={14} /> {data.sectionTag}
@@ -75,11 +75,13 @@ export const FinalCta: React.FC<FinalCtaProps> = ({ content }) => {
           <h2
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(2.4rem, 4.6vw, 4rem)',
+              fontSize: 'clamp(1.75rem, 5vw, 3.5rem)',
               color: '#F8FAFC',
-              lineHeight: 1.18,
-              letterSpacing: '0.04em',
-              marginBottom: '1.75rem'
+              lineHeight: 1.2,
+              letterSpacing: '0.03em',
+              marginBottom: '1.5rem',
+              overflowWrap: 'break-word',
+              wordBreak: 'break-word'
             }}
           >
             {data.headlineLine1}
@@ -92,30 +94,24 @@ export const FinalCta: React.FC<FinalCtaProps> = ({ content }) => {
           <p
             style={{
               fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(1.2rem, 2vw, 1.45rem)',
+              fontSize: 'clamp(1.1rem, 2vw, 1.45rem)',
               fontStyle: 'italic',
               color: '#CBD5E1',
-              lineHeight: 1.7,
+              lineHeight: 1.65,
               maxWidth: '640px',
-              margin: '0 auto 3.25rem'
+              margin: '0 auto 2.5rem',
+              overflowWrap: 'break-word',
+              wordBreak: 'break-word'
             }}
           >
             {data.italicParagraph}
           </p>
 
-          <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: '18px'
-            }}
-          >
+          <div className="responsive-btn-group">
             <Link
               to="/books"
               className="btn-gold"
-              style={{ padding: '1.1rem 2.8rem', fontSize: '0.95rem' }}
+              style={{ padding: '0.95rem 1.8rem', fontSize: '0.9rem', minHeight: '48px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
             >
               <span>{data.primaryButtonText}</span>
               <BookOpen size={18} />
@@ -124,7 +120,7 @@ export const FinalCta: React.FC<FinalCtaProps> = ({ content }) => {
             <Link
               to="/tools"
               className="btn-secondary"
-              style={{ padding: '1.1rem 2.4rem', fontSize: '0.95rem' }}
+              style={{ padding: '0.95rem 1.8rem', fontSize: '0.9rem', minHeight: '48px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
             >
               <span>{data.secondaryButtonText}</span>
               <Compass size={18} />

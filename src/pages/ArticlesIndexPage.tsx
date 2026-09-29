@@ -39,22 +39,15 @@ export const ArticlesIndexPage: React.FC = () => {
             />
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: '32px' }}>
+          <div className="responsive-grid-essays">
             {filtered.map(art => (
               <Link
                 key={art.id}
                 to={`/articles/${art.slug}`}
+                className="card-panel card-panel-responsive"
                 style={{
-                  backgroundColor: '#0E1119',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
-                  borderRadius: '16px',
-                  padding: '36px 30px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
                   textDecoration: 'none'
                 }}
-                className="card-panel"
               >
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>

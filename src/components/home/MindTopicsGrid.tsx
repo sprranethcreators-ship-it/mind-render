@@ -75,13 +75,7 @@ export const MindTopicsGrid: React.FC<MindTopicsGridProps> = ({ content }) => {
         </div>
 
         {/* 6 Editorial Topic Cards */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-            gap: '32px'
-          }}
-        >
+        <div className="responsive-grid-topics">
           {data.topics.map((topic) => (
             <Link
               key={topic.id}
@@ -89,18 +83,19 @@ export const MindTopicsGrid: React.FC<MindTopicsGridProps> = ({ content }) => {
               className="editorial-topic-card"
               style={{
                 position: 'relative',
-                minHeight: '340px',
-                borderRadius: '20px',
+                minHeight: '290px',
+                borderRadius: '18px',
                 overflow: 'hidden',
                 textDecoration: 'none',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                padding: '40px 32px',
+                padding: 'clamp(24px, 3.5vw, 36px) clamp(18px, 3vw, 28px)',
                 background: topic.gradientBackground,
                 border: '1px solid rgba(255, 255, 255, 0.08)',
                 boxShadow: '0 18px 45px rgba(0, 0, 0, 0.55)',
-                transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease'
+                transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease',
+                boxSizing: 'border-box'
               }}
             >
               {/* Traveling light shimmer layer on hover */}

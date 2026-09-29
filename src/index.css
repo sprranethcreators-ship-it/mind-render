@@ -94,6 +94,9 @@ html {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 body {
@@ -103,7 +106,20 @@ body {
   color: var(--text-primary);
   line-height: 1.65;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
   position: relative;
+  -webkit-text-size-adjust: 100%;
+}
+
+#root {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Subtle Film Grain Texture Overlay */
@@ -120,28 +136,30 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* Typography Hierarchy */
+/* Typography Hierarchy with Word-Break Protection */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 600;
   color: var(--text-primary);
   line-height: 1.25;
   letter-spacing: 0.04em;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  letter-spacing: 0.08em;
+  font-size: clamp(1.85rem, 5.5vw, 4.5rem);
+  letter-spacing: clamp(0.04em, 1.2vw, 0.1em);
 }
 
 h2 {
-  font-size: clamp(1.8rem, 3.2vw, 2.75rem);
-  letter-spacing: 0.06em;
+  font-size: clamp(1.5rem, 3.4vw, 2.75rem);
+  letter-spacing: clamp(0.03em, 1vw, 0.06em);
 }
 
 h3 {
-  font-size: clamp(1.3rem, 2vw, 1.8rem);
-  letter-spacing: 0.04em;
+  font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+  letter-spacing: 0.03em;
 }
 
 p {
@@ -511,34 +529,207 @@ input:focus, textarea:focus, select:focus {
   background: var(--indigo-600);
 }
 
+/* Media and Embed Protections */
+img, svg, video {
+  max-width: 100%;
+  height: auto;
+}
+
+canvas {
+  max-width: 100vw;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN SYSTEM & MOBILE APP FOUNDATIONS
+   ========================================================================== */
+
+/* Universal Responsive Grid System */
+.responsive-grid-books {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.responsive-grid-topics {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.responsive-grid-essays {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.responsive-grid-pillars {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.responsive-grid-triad {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .responsive-grid-topics {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .responsive-grid-pillars {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (min-width: 860px) {
+  .responsive-grid-books {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+  .responsive-grid-essays {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .responsive-grid-triad {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .responsive-grid-topics {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .responsive-grid-pillars {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+  .responsive-grid-books {
+    gap: 40px;
+  }
+}
+
+/* Responsive Cards with App-like Proportions */
+.card-panel-responsive {
+  background-color: #0E111A;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.55);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .card-panel-responsive {
+    border-radius: 24px;
+    padding: 38px 32px;
+  }
+}
+
+/* Mobile Horizontal Scroll Rail for Interconnected Steps */
+.mobile-step-rail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.mobile-step-rail::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 860px) {
+  .mobile-step-rail {
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+}
+
+/* Responsive Button Layouts */
+.responsive-btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.responsive-btn-group > * {
+  width: 100% !important;
+}
+
+@media (min-width: 520px) {
+  .responsive-btn-group {
+    flex-direction: row;
+    max-width: none;
+    width: auto;
+    justify-content: center;
+  }
+  .responsive-btn-group > * {
+    width: auto !important;
+  }
+}
+
+/* Mobile Modal Layout Adjustments */
 @media (max-width: 768px) {
   body {
-    padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px)) !important;
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)) !important;
     -webkit-overflow-scrolling: touch;
   }
 
   .container {
-    padding: 0 1.15rem;
+    padding: 0 1rem !important;
+  }
+
+  .container-narrow {
+    padding: 0 1rem !important;
   }
   
   h1 {
-    font-size: 2.2rem;
-    line-height: 1.15;
+    font-size: clamp(1.85rem, 6.5vw, 2.5rem);
+    line-height: 1.18;
+  }
+
+  h2 {
+    font-size: clamp(1.4rem, 4.5vw, 1.85rem);
+    line-height: 1.25;
   }
   
   .book-3d {
-    width: 200px;
-    height: 290px;
+    width: 175px !important;
+    height: 255px !important;
   }
 
   /* Make buttons and interactive cards tap-responsive like a native app */
-  button, a, .card-panel, .editorial-topic-card {
+  button, a, .card-panel, .editorial-topic-card, .editorial-essay-card {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
   }
 
   .btn-gold:active, .btn-secondary:active, .hero-btn-primary:active {
-    transform: scale(0.96) !important;
+    transform: scale(0.97) !important;
+  }
+
+  /* Safe area handling */
+  .mobile-app-nav {
+    padding-bottom: max(env(safe-area-inset-bottom, 0px), 8px) !important;
   }
 }
 

@@ -61,8 +61,8 @@ export const BookDetailPage: React.FC = () => {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
-              gap: '60px',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+              gap: 'clamp(32px, 5vw, 60px)',
               alignItems: 'center'
             }}
           >
@@ -194,7 +194,7 @@ export const BookDetailPage: React.FC = () => {
       {/* Curriculum & What You Will Master */}
       <section style={{ padding: '80px 0', backgroundColor: '#090B10', borderTop: '1px solid rgba(255, 255, 255, 0.06)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '36px' }}>
             {/* Learning Outcomes */}
             <div>
               <span className="section-tag">COGNITIVE MASTERY</span>
@@ -278,7 +278,7 @@ export const BookDetailPage: React.FC = () => {
             </h3>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '24px' }}>
             {relatedBooks.map(rb => (
               <div
                 key={rb.id}

@@ -71,13 +71,7 @@ export const FeaturedArticles: React.FC<FeaturedArticlesProps> = ({ content }) =
         </div>
 
         {/* 3 Editorial Magazine Cards */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-            gap: '32px'
-          }}
-        >
+        <div className="responsive-grid-essays">
           {articles.slice(0, 3).map((article, idx) => (
             <Link
               key={article.id}
@@ -86,8 +80,8 @@ export const FeaturedArticles: React.FC<FeaturedArticlesProps> = ({ content }) =
               style={{
                 background: cardGradients[idx % cardGradients.length],
                 border: '1px solid rgba(255, 255, 255, 0.08)',
-                borderRadius: '20px',
-                padding: '40px 32px',
+                borderRadius: '18px',
+                padding: 'clamp(24px, 3.5vw, 38px) clamp(18px, 3vw, 30px)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
@@ -95,7 +89,8 @@ export const FeaturedArticles: React.FC<FeaturedArticlesProps> = ({ content }) =
                 position: 'relative',
                 overflow: 'hidden',
                 boxShadow: '0 18px 45px rgba(0, 0, 0, 0.6)',
-                transition: 'transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease'
+                transition: 'transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease',
+                boxSizing: 'border-box'
               }}
             >
               {/* Traveling light shimmer layer on hover */}

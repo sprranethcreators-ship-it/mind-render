@@ -189,7 +189,7 @@ export const Navbar: React.FC = () => {
           {/* Right Action Icons: Sound Synthesizer, Library, User Menu */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
             {/* Ambient Sound Mode Trigger */}
-            <div style={{ position: 'relative' }}>
+            <div className="desktop-sound-trigger" style={{ position: 'relative' }}>
               <button
                 onClick={() => setAudioMenuOpen(!audioMenuOpen)}
                 style={{
@@ -309,6 +309,7 @@ export const Navbar: React.FC = () => {
             {/* My Library Button */}
             <Link
               to="/library"
+              className="desktop-library-link"
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -549,7 +550,7 @@ export const Navbar: React.FC = () => {
 
       <style>{`
         @media (max-width: 860px) {
-          .desktop-nav {
+          .desktop-nav, .desktop-sound-trigger, .desktop-library-link {
             display: none !important;
           }
           .mobile-hamburger {

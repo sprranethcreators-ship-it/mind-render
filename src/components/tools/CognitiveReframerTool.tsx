@@ -92,7 +92,7 @@ export const CognitiveReframerTool: React.FC = () => {
           <label style={{ display: 'block', fontSize: '0.9rem', color: '#CBD5E1', marginBottom: '12px', fontWeight: 600 }}>
             Step 2: Classify the Subconscious Bias
           </label>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '1.75rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '12px', marginBottom: '1.75rem' }}>
             {distortions.map(d => (
               <button
                 key={d.name}

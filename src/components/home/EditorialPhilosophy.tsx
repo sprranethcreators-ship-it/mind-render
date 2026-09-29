@@ -86,11 +86,13 @@ export const EditorialPhilosophy: React.FC<EditorialPhilosophyProps> = ({ conten
           <h2
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(2rem, 4.2vw, 3.4rem)',
+              fontSize: 'clamp(1.6rem, 3.8vw, 3.2rem)',
               color: '#F8FAFC',
-              letterSpacing: '0.06em',
+              letterSpacing: '0.04em',
               lineHeight: 1.2,
-              marginBottom: '1.75rem'
+              marginBottom: '1.5rem',
+              overflowWrap: 'break-word',
+              wordBreak: 'break-word'
             }}
           >
             {data.headline}
@@ -102,13 +104,14 @@ export const EditorialPhilosophy: React.FC<EditorialPhilosophyProps> = ({ conten
               flexWrap: 'wrap',
               justifyContent: 'center',
               alignItems: 'center',
-              gap: '12px',
+              gap: '8px 12px',
               fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(1.2rem, 2.2vw, 1.6rem)',
+              fontSize: 'clamp(1.1rem, 2vw, 1.5rem)',
               fontStyle: 'italic',
               color: '#CBD5E1',
               lineHeight: 1.6,
-              marginBottom: '2rem'
+              marginBottom: '1.75rem',
+              overflowWrap: 'break-word'
             }}
           >
             {data.rhythmWords.map((word, wIdx) => {
@@ -130,11 +133,13 @@ export const EditorialPhilosophy: React.FC<EditorialPhilosophyProps> = ({ conten
           <p
             style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: '1.05rem',
+              fontSize: 'clamp(0.92rem, 1.8vw, 1.05rem)',
               color: '#94A3B8',
-              lineHeight: 1.8,
+              lineHeight: 1.75,
               maxWidth: '660px',
-              margin: '0 auto'
+              margin: '0 auto',
+              overflowWrap: 'break-word',
+              wordBreak: 'break-word'
             }}
           >
             {data.narrativeParagraph}
@@ -143,11 +148,9 @@ export const EditorialPhilosophy: React.FC<EditorialPhilosophyProps> = ({ conten
 
         {/* The 3-Step Chain */}
         <div
+          className="responsive-grid-triad"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '28px',
-            marginBottom: '4rem'
+            marginBottom: '3.5rem'
           }}
         >
           {data.triadCards.map((card, idx) => {
@@ -159,10 +162,11 @@ export const EditorialPhilosophy: React.FC<EditorialPhilosophyProps> = ({ conten
                   backgroundColor: '#0D1018',
                   border: idx === 1 ? '1px solid rgba(212, 175, 55, 0.25)' : '1px solid rgba(255, 255, 255, 0.07)',
                   borderRadius: '16px',
-                  padding: '36px 30px',
+                  padding: 'clamp(24px, 3vw, 36px) clamp(16px, 2.5vw, 28px)',
                   position: 'relative',
                   boxShadow: idx === 1 ? '0 15px 35px rgba(0,0,0,0.4), 0 0 25px rgba(212, 175, 55, 0.06)' : '0 15px 35px rgba(0,0,0,0.4)',
-                  transition: 'transform 0.3s ease, border-color 0.3s ease'
+                  transition: 'transform 0.3s ease, border-color 0.3s ease',
+                  boxSizing: 'border-box'
                 }}
                 className="hover-lift"
               >

@@ -18,22 +18,13 @@ export const TopicsIndexPage: React.FC = () => {
         </div>
       </section>
 
-      <section style={{ padding: '80px 0 120px' }}>
+      <section style={{ padding: '40px 0 100px' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '28px' }}>
+          <div className="responsive-grid-topics">
             {MIND_CATEGORIES.map(cat => (
               <div
                 key={cat.id}
-                style={{
-                  backgroundColor: '#0F121C',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
-                  borderRadius: '16px',
-                  padding: '36px 30px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between'
-                }}
-                className="card-panel"
+                className="card-panel card-panel-responsive"
               >
                 <div>
                   <span style={{ fontSize: '0.74rem', color: cat.accentColor, letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 600 }}>

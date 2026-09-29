@@ -108,7 +108,8 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '20px'
+        padding: 'clamp(12px, 2.5vw, 24px)',
+        boxSizing: 'border-box'
       }}
       onClick={onClose}
     >
@@ -116,34 +117,39 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
         style={{
           width: '100%',
           maxWidth: '560px',
+          maxHeight: 'min(92vh, 720px)',
           backgroundColor: '#0E1119',
           border: '1px solid rgba(212, 175, 55, 0.3)',
           borderRadius: '16px',
           boxShadow: '0 25px 60px rgba(0,0,0,0.9), 0 0 45px rgba(212, 175, 55, 0.15)',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          display: 'flex',
+          flexDirection: 'column',
+          boxSizing: 'border-box'
         }}
         onClick={e => e.stopPropagation()}
       >
         {/* Header */}
         <div
           style={{
-            padding: '20px 24px',
+            padding: '16px 20px',
             backgroundColor: '#121622',
             borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'space-between'
+            justifyContent: 'space-between',
+            flexShrink: 0
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <Lock size={18} color="#D4AF37" />
-            <span style={{ fontFamily: 'var(--font-display)', color: '#F8FAFC', fontWeight: 600 }}>
+            <Lock size={17} color="#D4AF37" />
+            <span style={{ fontFamily: 'var(--font-display)', color: '#F8FAFC', fontWeight: 600, fontSize: '0.94rem' }}>
               {completedOrder ? 'Purchase Confirmed' : 'Encrypted Digital Checkout'}
             </span>
           </div>
           <button
             onClick={onClose}
-            style={{ color: '#94A3B8', cursor: 'pointer', padding: '4px' }}
+            style={{ color: '#94A3B8', cursor: 'pointer', padding: '6px', minWidth: '32px', minHeight: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
             aria-label="Close"
           >
             <X size={18} />
@@ -151,7 +157,7 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
         </div>
 
         {/* Body */}
-        <div style={{ padding: '28px' }}>
+        <div style={{ padding: 'clamp(16px, 3.5vw, 26px)', overflowY: 'auto', flex: 1, WebkitOverflowScrolling: 'touch' }}>
           {completedOrder ? (
             /* Purchase Success State */
             <div style={{ textAlign: 'center' }}>
@@ -292,7 +298,7 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
                 <label style={{ display: 'block', fontSize: '0.82rem', color: '#CBD5E1', marginBottom: '8px' }}>
                   Payment Method
                 </label>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '10px' }}>
                   <button
                     type="button"
                     onClick={() => setPaymentMethod('Direct Checkout')}

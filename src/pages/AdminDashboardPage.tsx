@@ -328,7 +328,7 @@ export const AdminDashboardPage: React.FC = () => {
                 Mind Render features cryptographically verified price integrity checks, rate-limiting anti-brute-force lockout, and continuous security event auditing.
               </p>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '32px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '20px', marginBottom: '32px' }}>
                 <div style={{ padding: '20px', backgroundColor: '#0E1119', borderRadius: '12px', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
                   <div style={{ color: '#10B981', fontWeight: 600, marginBottom: '6px' }}>Price Integrity Engine: ACTIVE</div>
                   <div style={{ color: '#94A3B8', fontSize: '0.85rem' }}>

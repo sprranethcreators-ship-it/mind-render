@@ -113,12 +113,13 @@ export const UserLibraryPage: React.FC = () => {
                       backgroundColor: '#0E1119',
                       border: '1px solid rgba(255, 255, 255, 0.08)',
                       borderRadius: '20px',
-                      padding: '36px',
+                      padding: 'clamp(20px, 3.5vw, 36px)',
                       display: 'grid',
-                      gridTemplateColumns: 'auto 1fr',
-                      gap: '36px',
+                      gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+                      gap: 'clamp(20px, 4vw, 36px)',
                       alignItems: 'center',
-                      boxShadow: '0 15px 35px rgba(0,0,0,0.6)'
+                      boxShadow: '0 15px 35px rgba(0,0,0,0.6)',
+                      boxSizing: 'border-box'
                     }}
                   >
                     {/* Thumbnail */}

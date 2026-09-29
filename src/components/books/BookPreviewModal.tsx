@@ -46,7 +46,8 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '20px'
+        padding: 'clamp(10px, 2.5vw, 20px)',
+        boxSizing: 'border-box'
       }}
       onClick={onClose}
     >
@@ -54,35 +55,40 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
         style={{
           width: '100%',
           maxWidth: '820px',
-          maxHeight: '90vh',
+          maxHeight: 'min(92vh, 800px)',
           backgroundColor: '#0E1119',
           border: '1px solid rgba(255, 255, 255, 0.12)',
           borderRadius: '16px',
           boxShadow: '0 25px 60px rgba(0,0,0,0.85), 0 0 40px rgba(99, 102, 241, 0.15)',
           display: 'flex',
           flexDirection: 'column',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          boxSizing: 'border-box'
         }}
         onClick={e => e.stopPropagation()}
       >
         {/* Modal Top Navigation */}
         <div
           style={{
-            padding: '18px 24px',
+            padding: '14px clamp(14px, 3vw, 24px)',
             borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            backgroundColor: '#121622'
+            backgroundColor: '#121622',
+            flexWrap: 'wrap',
+            gap: '10px',
+            flexShrink: 0
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
             <span
               style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: '1rem',
+                fontSize: 'clamp(0.88rem, 2vw, 1rem)',
                 color: '#F8FAFC',
-                fontWeight: 600
+                fontWeight: 600,
+                overflowWrap: 'break-word'
               }}
             >
               {book.title}
@@ -91,7 +97,7 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
               style={{
                 padding: '2px 8px',
                 borderRadius: '4px',
-                fontSize: '0.72rem',
+                fontSize: '0.7rem',
                 backgroundColor: 'rgba(212, 175, 55, 0.15)',
                 color: '#D4AF37',
                 border: '1px solid rgba(212, 175, 55, 0.3)'
@@ -101,29 +107,30 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
             </span>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <button
               onClick={() => setActiveTab(activeTab === 'sample' ? 'toc' : 'sample')}
               style={{
                 display: 'flex',
                 alignItems: 'center',
                 gap: '6px',
-                fontSize: '0.82rem',
+                fontSize: '0.8rem',
                 color: '#CBD5E1',
                 padding: '6px 12px',
                 borderRadius: '6px',
-                backgroundColor: 'rgba(255,255,255,0.06)'
+                backgroundColor: 'rgba(255,255,255,0.06)',
+                minHeight: '36px'
               }}
             >
-              {activeTab === 'sample' ? <List size={16} /> : <BookOpen size={16} />}
+              {activeTab === 'sample' ? <List size={15} /> : <BookOpen size={15} />}
               {activeTab === 'sample' ? 'Contents' : 'Sample Pages'}
             </button>
             <button
               onClick={onClose}
-              style={{ color: '#94A3B8', padding: '6px', cursor: 'pointer' }}
+              style={{ color: '#94A3B8', padding: '6px', cursor: 'pointer', minWidth: '32px', minHeight: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               aria-label="Close Preview"
             >
-              <X size={20} />
+              <X size={18} />
             </button>
           </div>
         </div>
@@ -131,10 +138,11 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
         {/* Modal Content Body */}
         <div
           style={{
-            padding: '36px 40px',
+            padding: 'clamp(20px, 3.5vw, 36px) clamp(16px, 3vw, 36px)',
             flex: 1,
             overflowY: 'auto',
-            background: 'radial-gradient(circle at 50% 10%, #151A26 0%, #0D1017 80%)'
+            background: 'radial-gradient(circle at 50% 10%, #151A26 0%, #0D1017 80%)',
+            WebkitOverflowScrolling: 'touch'
           }}
         >
           {activeTab === 'toc' ? (
@@ -288,7 +296,7 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
             </div>
           )}
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
             <div style={{ textAlign: 'right' }}>
               <span style={{ fontSize: '0.8rem', color: '#94A3B8', textDecoration: 'line-through', marginRight: '6px' }}>
                 ${book.originalPrice}
@@ -303,7 +311,7 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
                 onBuyNow(book);
               }}
               className="btn-gold"
-              style={{ padding: '0.65rem 1.6rem', fontSize: '0.85rem' }}
+              style={{ padding: '0.65rem 1.4rem', fontSize: '0.85rem', minHeight: '40px' }}
             >
               Get Full Book
             </button>

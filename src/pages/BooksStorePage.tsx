@@ -102,7 +102,7 @@ export const BooksStorePage: React.FC = () => {
           </div>
 
           {/* Search Box */}
-          <div style={{ position: 'relative', width: '280px' }}>
+          <div style={{ position: 'relative', width: '100%', maxWidth: '280px' }}>
             <Search size={16} color="#64748B" style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)' }} />
             <input
               type="text"
@@ -122,35 +122,18 @@ export const BooksStorePage: React.FC = () => {
       </div>
 
       {/* Main Books Grid */}
-      <section style={{ padding: '60px 0 120px' }}>
+      <section style={{ padding: '40px 0 100px' }}>
         <div className="container">
           {filteredBooks.length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '80px 20px', backgroundColor: '#0E1119', borderRadius: '16px' }}>
+            <div style={{ textAlign: 'center', padding: '60px 20px', backgroundColor: '#0E1119', borderRadius: '16px' }}>
               <p style={{ color: '#94A3B8', fontSize: '1.1rem' }}>No digital treatises match your criteria.</p>
             </div>
           ) : (
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
-                gap: '36px'
-              }}
-            >
+            <div className="responsive-grid-books">
               {filteredBooks.map(book => (
                 <div
                   key={book.id}
-                  style={{
-                    backgroundColor: '#0E111A',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
-                    borderRadius: '20px',
-                    padding: '32px 24px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    boxShadow: '0 15px 40px rgba(0,0,0,0.5)',
-                    position: 'relative'
-                  }}
-                  className="card-panel"
+                  className="card-panel card-panel-responsive"
                 >
                   {/* Top Badges */}
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
@@ -223,7 +206,7 @@ export const BooksStorePage: React.FC = () => {
                       </span>
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))', gap: '8px' }}>
                       <button
                         onClick={() => setPreviewBook(book)}
                         className="btn-secondary"

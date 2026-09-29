@@ -64,37 +64,23 @@ export const WhyMindRender: React.FC<WhyMindRenderProps> = ({ content }) => {
         </div>
 
         {/* 4 Pillars Grid */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '28px'
-          }}
-        >
+        <div className="responsive-grid-pillars">
           {data.pillars.map((pillar, idx) => (
             <div
               key={idx}
-              style={{
-                backgroundColor: '#10131B',
-                border: '1px solid rgba(255, 255, 255, 0.07)',
-                borderRadius: '20px',
-                padding: '38px 30px',
-                position: 'relative',
-                boxShadow: '0 15px 35px rgba(0, 0, 0, 0.5)'
-              }}
-              className="card-panel"
+              className="card-panel card-panel-responsive"
             >
               <div
                 style={{
-                  width: '52px',
-                  height: '52px',
+                  width: '48px',
+                  height: '48px',
                   borderRadius: '12px',
                   backgroundColor: 'rgba(255, 255, 255, 0.04)',
                   border: '1px solid rgba(255, 255, 255, 0.08)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  marginBottom: '1.5rem'
+                  marginBottom: '1.25rem'
                 }}
               >
                 {getPillarIcon(idx)}
@@ -107,10 +93,12 @@ export const WhyMindRender: React.FC<WhyMindRenderProps> = ({ content }) => {
               <h3
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: '1.65rem',
+                  fontSize: 'clamp(1.25rem, 2.2vw, 1.65rem)',
                   color: '#F8FAFC',
                   marginTop: '0.4rem',
-                  marginBottom: '0.85rem'
+                  marginBottom: '0.85rem',
+                  overflowWrap: 'break-word',
+                  wordBreak: 'break-word'
                 }}
               >
                 {pillar.title}
