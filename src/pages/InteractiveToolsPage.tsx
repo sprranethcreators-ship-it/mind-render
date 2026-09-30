@@ -20,13 +20,60 @@ export const InteractiveToolsPage: React.FC = () => {
   return (
     <div style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: 'var(--bg-cosmos)' }}>
       {/* Header */}
-      <section style={{ padding: '60px 0 30px', backgroundColor: 'var(--bg-deep)', borderBottom: '1px solid rgba(25, 25, 29, 0.08)' }}>
-        <div className="container" style={{ textAlign: 'center' }}>
-          <span className="section-tag" style={{ justifyContent: 'center' }}>NEURAL CONDITIONING SUITE</span>
-          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.4rem, 4vw, 3.5rem)', color: 'var(--text-primary)', marginBottom: '1rem', letterSpacing: '-0.02em' }}>
-            Interactive Mind Tools
+      <section
+        style={{
+          padding: '80px 0 50px',
+          background: 'linear-gradient(180deg, #FAF8F5 0%, #F5F3FF 40%, #FFFBEB 85%, #FAF8F5 100%)',
+          borderBottom: '1px solid rgba(217, 119, 6, 0.15)',
+          position: 'relative',
+          overflow: 'hidden'
+        }}
+      >
+        <div className="container" style={{ textAlign: 'center', position: 'relative', zIndex: 2 }}>
+          <div style={{ display: 'inline-flex', marginBottom: '1.25rem' }}>
+            <span
+              style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: '0.78rem',
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
+                color: '#92400E',
+                fontWeight: 700,
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '6px 18px',
+                borderRadius: '9999px',
+                background: 'linear-gradient(135deg, rgba(254, 243, 199, 0.9) 0%, rgba(253, 230, 138, 0.6) 100%)',
+                border: '1px solid rgba(217, 119, 6, 0.35)',
+                boxShadow: '0 4px 14px rgba(245, 158, 11, 0.15)'
+              }}
+            >
+              <Target size={14} color="#D97706" /> NEURAL CONDITIONING SUITE
+            </span>
+          </div>
+
+          <h1
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)',
+              color: '#0F172A',
+              marginBottom: '1.25rem',
+              letterSpacing: '-0.01em',
+              fontWeight: 800
+            }}
+          >
+            Interactive Mind{' '}
+            <span style={{
+              background: 'linear-gradient(135deg, #1E1B4B 0%, #4F46E5 50%, #D97706 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              display: 'inline-block'
+            }}>
+              Instruments
+            </span>
           </h1>
-          <p style={{ maxWidth: '680px', margin: '0 auto', color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7 }}>
+          <p style={{ maxWidth: '680px', margin: '0 auto', color: '#475569', fontSize: '1.12rem', lineHeight: 1.7 }}>
             Deliberate practices to train voluntary attention, rewrite subconscious cognitive distortions, and embody constructive states of consciousness.
           </p>
         </div>
@@ -37,14 +84,15 @@ export const InteractiveToolsPage: React.FC = () => {
         style={{
           position: 'sticky',
           top: '76px',
-          backgroundColor: 'rgba(250, 248, 243, 0.94)',
-          backdropFilter: 'blur(16px)',
-          borderBottom: '1px solid rgba(25, 25, 29, 0.08)',
+          backgroundColor: 'rgba(255, 255, 255, 0.92)',
+          backdropFilter: 'blur(20px)',
+          borderBottom: '1px solid rgba(217, 119, 6, 0.15)',
+          boxShadow: '0 4px 20px rgba(15, 23, 42, 0.04)',
           zIndex: 7000,
-          padding: '14px 0'
+          padding: '16px 0'
         }}
       >
-        <div className="container" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '8px' }}>
+        <div className="container" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '10px' }}>
           {tools.map(tool => {
             const isActive = activeTool === tool.id;
             return (
@@ -55,16 +103,16 @@ export const InteractiveToolsPage: React.FC = () => {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '8px',
-                  padding: '9px 18px',
-                  borderRadius: '20px',
-                  fontSize: '0.84rem',
-                  fontWeight: isActive ? 600 : 500,
-                  backgroundColor: isActive ? 'var(--indigo-600)' : '#FFFFFF',
-                  color: isActive ? '#FFFFFF' : 'var(--text-secondary)',
-                  border: isActive ? '1px solid var(--indigo-600)' : '1px solid rgba(25, 25, 29, 0.1)',
-                  boxShadow: isActive ? '0 2px 8px rgba(81, 70, 184, 0.25)' : 'none',
+                  padding: '9px 20px',
+                  borderRadius: '9999px',
+                  fontSize: '0.86rem',
+                  fontWeight: isActive ? 700 : 500,
+                  backgroundColor: isActive ? '#1E1B4B' : '#FFFFFF',
+                  color: isActive ? '#FFFFFF' : '#475569',
+                  border: isActive ? '1px solid #1E1B4B' : '1px solid rgba(15, 23, 42, 0.12)',
+                  boxShadow: isActive ? '0 4px 14px rgba(30, 27, 75, 0.3)' : 'none',
                   cursor: 'pointer',
-                  transition: 'all 0.2s ease'
+                  transition: 'all 0.25s ease'
                 }}
               >
                 {tool.icon}

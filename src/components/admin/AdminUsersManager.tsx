@@ -41,7 +41,7 @@ export const AdminUsersManager: React.FC = () => {
                 </td>
                 <td style={{ padding: '16px 18px', color: 'var(--text-secondary)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <BookOpen size={14} color="#8C6D23" />
+                    <BookOpen size={14} color="#D97706" />
                     <span>{u.purchasedBookIds.length} Publications</span>
                   </div>
                 </td>

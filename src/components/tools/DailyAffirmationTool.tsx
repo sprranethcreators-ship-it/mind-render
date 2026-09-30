@@ -136,7 +136,7 @@ export const DailyAffirmationTool: React.FC = () => {
               justifyContent: 'center'
             }}
           >
-            <Heart size={24} color="#8C6D23" />
+            <Heart size={26} color="#F43F5E" fill="rgba(244, 63, 94, 0.2)" />
           </div>
         </div>
       </div>

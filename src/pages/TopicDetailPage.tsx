@@ -68,7 +68,8 @@ export const TopicDetailPage: React.FC = () => {
                 fontFamily: 'var(--font-serif)',
                 fontStyle: 'italic',
                 fontSize: '1.4rem',
-                color: '#8C6D23',
+                color: '#92400E',
+                fontWeight: 600,
                 marginBottom: '1.5rem'
               }}
             >
@@ -121,14 +122,14 @@ export const TopicDetailPage: React.FC = () => {
             <div
               style={{
                 backgroundColor: '#FFFFFF',
-                border: '1px solid rgba(140, 109, 35, 0.25)',
+                border: '1.5px solid rgba(217, 119, 6, 0.25)',
                 borderRadius: '16px',
                 padding: '36px',
-                boxShadow: '0 8px 24px rgba(25, 25, 29, 0.04)'
+                boxShadow: '0 8px 24px rgba(217, 119, 6, 0.06)'
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#8C6D23', marginBottom: '1.25rem' }}>
-                <Sparkles size={24} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#B45309', marginBottom: '1.25rem' }}>
+                <Sparkles size={24} color="#D97706" />
                 <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', color: 'var(--text-primary)' }}>
                   The Contemplative Perspective
                 </h3>
@@ -182,7 +183,7 @@ export const TopicDetailPage: React.FC = () => {
                     <p style={{ color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '12px' }}>
                       {rb.subtitle}
                     </p>
-                    <div style={{ color: '#8C6D23', fontWeight: 700, fontSize: '1.1rem', marginBottom: '14px' }}>
+                    <div style={{ color: '#B45309', fontWeight: 800, fontSize: '1.15rem', marginBottom: '14px' }}>
                       ${rb.price} USD
                     </div>
                     <Link to={`/books/${rb.slug}`} className="btn-secondary" style={{ padding: '6px 14px', fontSize: '0.8rem' }}>

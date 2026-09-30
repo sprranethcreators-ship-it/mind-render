@@ -63,17 +63,43 @@ export const HomePage: React.FC = () => {
         {/* Layer 1: Central Consciousness Mind Field Animation (Canvas) */}
         <NeuralConsciousnessCanvas />
 
-        {/* Layer 2: Ethereal Atmospheric Depth Glow Behind Masthead (Soft Lavender & Warm Ivory) */}
+        {/* Layer 2: Ethereal Multi-Prismatic Atmospheric Blooms (Rose, Violet & Honey Gold) */}
         <div
           style={{
             position: 'absolute',
-            top: '44%',
+            top: '20%',
+            left: '10%',
+            width: 'min(50vw, 480px)',
+            height: 'min(50vw, 480px)',
+            background: 'radial-gradient(circle, rgba(251, 146, 60, 0.15) 0%, rgba(244, 63, 94, 0.08) 40%, transparent 70%)',
+            filter: 'blur(60px)',
+            pointerEvents: 'none',
+            zIndex: 1
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            top: '18%',
+            right: '8%',
+            width: 'min(52vw, 500px)',
+            height: 'min(52vw, 500px)',
+            background: 'radial-gradient(circle, rgba(139, 92, 246, 0.16) 0%, rgba(99, 102, 241, 0.09) 45%, transparent 70%)',
+            filter: 'blur(65px)',
+            pointerEvents: 'none',
+            zIndex: 1
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            top: '46%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            width: 'min(92vw, 720px)',
-            height: 'min(55vh, 440px)',
-            background: 'radial-gradient(ellipse at center, rgba(232, 226, 248, 0.55) 0%, rgba(246, 242, 232, 0.35) 45%, transparent 75%)',
-            filter: 'blur(40px)',
+            width: 'min(92vw, 760px)',
+            height: 'min(55vh, 460px)',
+            background: 'radial-gradient(ellipse at center, rgba(254, 243, 199, 0.35) 0%, rgba(238, 242, 255, 0.3) 40%, transparent 75%)',
+            filter: 'blur(45px)',
             pointerEvents: 'none',
             zIndex: 1
           }}
@@ -91,49 +117,52 @@ export const HomePage: React.FC = () => {
             padding: '1.5rem 1rem'
           }}
         >
-          {/* Subtle Brand Motif Kicker */}
+          {/* Subtle Brand Motif Kicker - Crystalline Jewel Pill */}
           <div
             style={{
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
               gap: '10px',
-              padding: '6px 18px',
-              borderRadius: '24px',
-              backgroundColor: 'rgba(200, 168, 78, 0.08)',
-              border: '1px solid rgba(184, 148, 55, 0.3)',
+              padding: '8px 22px',
+              borderRadius: '30px',
+              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(254, 243, 199, 0.4) 100%)',
+              border: '1.5px solid rgba(217, 119, 6, 0.35)',
               marginBottom: '1.75rem',
-              boxShadow: '0 2px 12px rgba(200, 168, 78, 0.1)',
+              boxShadow: '0 4px 16px rgba(245, 158, 11, 0.15), 0 2px 6px rgba(99, 102, 241, 0.08)',
               maxWidth: '100%',
-              boxSizing: 'border-box'
+              boxSizing: 'border-box',
+              backdropFilter: 'blur(12px)'
             }}
           >
-            <span style={{ width: '14px', height: '1.5px', backgroundColor: '#99751F', opacity: 0.6, flexShrink: 0 }} />
+            <span style={{ width: '16px', height: '2px', background: 'linear-gradient(90deg, #D97706, #F59E0B)', borderRadius: '2px', flexShrink: 0 }} />
             <span
               style={{
                 fontFamily: 'var(--font-sans)',
-                fontSize: '0.74rem',
+                fontSize: '0.78rem',
                 letterSpacing: '0.2em',
                 textTransform: 'uppercase',
-                color: '#6E5316',
-                fontWeight: 700,
+                color: '#B45309',
+                fontWeight: 800,
                 whiteSpace: 'normal',
                 textAlign: 'center'
               }}
             >
               {content.hero.kicker}
             </span>
-            <span style={{ width: '14px', height: '1.5px', backgroundColor: '#99751F', opacity: 0.6, flexShrink: 0 }} />
+            <span style={{ width: '16px', height: '2px', background: 'linear-gradient(90deg, #F59E0B, #D97706)', borderRadius: '2px', flexShrink: 0 }} />
           </div>
 
-          {/* Editorial Masthead Headline */}
+          {/* Editorial Masthead Headline with Liquid Iridescent Gradient */}
           <h1
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(2.1rem, 6.8vw, 5.2rem)',
               fontWeight: 800,
               letterSpacing: 'clamp(0.04em, 1.2vw, 0.12em)',
-              color: 'var(--text-primary)',
+              background: 'linear-gradient(135deg, #090B0E 0%, #1E1B4B 35%, #4338CA 65%, #B45309 95%, #D97706 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
               lineHeight: 1.12,
               marginBottom: '1.35rem',
               overflowWrap: 'break-word',
@@ -149,12 +178,13 @@ export const HomePage: React.FC = () => {
               fontFamily: 'var(--font-serif)',
               fontSize: 'clamp(1.2rem, 2.5vw, 1.75rem)',
               fontStyle: 'italic',
-              color: '#383844',
+              color: '#2A2C3A',
               maxWidth: '800px',
               margin: '0 auto 1.35rem',
               lineHeight: 1.55,
               overflowWrap: 'break-word',
-              wordBreak: 'break-word'
+              wordBreak: 'break-word',
+              fontWeight: 500
             }}
           >
             "{content.hero.philosophyQuote}"
@@ -178,7 +208,7 @@ export const HomePage: React.FC = () => {
 
           {/* Refined Hero CTA Buttons */}
           <div className="responsive-btn-group">
-            {/* Primary CTA: Sophisticated Indigo */}
+            {/* Primary CTA: Royal Indigo / Amethyst Gradient */}
             <button
               onClick={scrollToExplore}
               className="hero-btn-primary"
@@ -187,28 +217,28 @@ export const HomePage: React.FC = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '10px',
-                padding: '0.95rem 2rem',
-                minHeight: '48px',
-                borderRadius: '8px',
-                background: 'linear-gradient(135deg, #5146B8 0%, #4338CA 100%)',
+                padding: '1rem 2.2rem',
+                minHeight: '50px',
+                borderRadius: '12px',
+                background: 'linear-gradient(135deg, #4338CA 0%, #6366F1 50%, #7C3AED 100%)',
                 color: '#FFFFFF',
-                fontWeight: 600,
-                fontSize: '0.88rem',
+                fontWeight: 700,
+                fontSize: '0.9rem',
                 letterSpacing: '0.08em',
                 textTransform: 'uppercase',
-                border: '1px solid rgba(255, 255, 255, 0.25)',
-                boxShadow: '0 6px 20px rgba(81, 70, 184, 0.28)',
+                border: '1px solid rgba(255, 255, 255, 0.35)',
+                boxShadow: '0 8px 25px -3px rgba(79, 70, 229, 0.45), 0 3px 10px rgba(79, 70, 229, 0.25)',
                 cursor: 'pointer',
                 transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
               }}
             >
               <span>{content.hero.primaryCtaLabel}</span>
               <div className="btn-icon" style={{ transition: 'transform 0.3s ease' }}>
-                <Compass size={17} />
+                <Compass size={18} />
               </div>
             </button>
 
-            {/* Secondary CTA: Warm Champagne Gold Outline/Accent */}
+            {/* Secondary CTA: Liquid Imperial Gold */}
             <Link
               to={content.hero.secondaryCtaLink || '/books'}
               className="hero-btn-gold"
@@ -217,22 +247,22 @@ export const HomePage: React.FC = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '10px',
-                padding: '0.95rem 2rem',
-                minHeight: '48px',
-                borderRadius: '8px',
-                background: 'rgba(200, 168, 78, 0.08)',
-                color: '#6E5316',
+                padding: '1rem 2.2rem',
+                minHeight: '50px',
+                borderRadius: '12px',
+                background: 'linear-gradient(135deg, #B45309 0%, #D97706 40%, #F59E0B 100%)',
+                color: '#FFFFFF',
                 fontWeight: 700,
-                fontSize: '0.88rem',
+                fontSize: '0.9rem',
                 letterSpacing: '0.08em',
                 textTransform: 'uppercase',
-                border: '1.5px solid #C8A84E',
-                boxShadow: '0 4px 14px rgba(200, 168, 78, 0.15)',
+                border: '1px solid rgba(255, 255, 255, 0.4)',
+                boxShadow: '0 8px 25px -3px rgba(217, 119, 6, 0.45), 0 3px 10px rgba(217, 119, 6, 0.25)',
                 transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
               }}
             >
               <span>{content.hero.secondaryCtaLabel}</span>
-              <BookOpen size={17} color="#99751F" />
+              <BookOpen size={18} color="#FFFFFF" />
             </Link>
           </div>
         </div>
@@ -262,11 +292,12 @@ export const HomePage: React.FC = () => {
           <span>{content.hero.scrollIndicatorText}</span>
           <div
             style={{
-              width: '1.5px',
-              height: '32px',
-              backgroundColor: 'rgba(81, 70, 184, 0.2)',
+              width: '2px',
+              height: '36px',
+              backgroundColor: 'rgba(99, 102, 241, 0.25)',
               position: 'relative',
-              overflow: 'hidden'
+              overflow: 'hidden',
+              borderRadius: '2px'
             }}
           >
             <div
@@ -274,10 +305,11 @@ export const HomePage: React.FC = () => {
               style={{
                 width: '100%',
                 height: '14px',
-                backgroundColor: '#5146B8',
+                background: 'linear-gradient(180deg, #D97706 0%, #6366F1 100%)',
                 position: 'absolute',
                 top: '-14px',
-                boxShadow: '0 0 8px rgba(81, 70, 184, 0.6)'
+                boxShadow: '0 0 8px rgba(99, 102, 241, 0.8)',
+                borderRadius: '2px'
               }}
             />
           </div>
@@ -285,30 +317,29 @@ export const HomePage: React.FC = () => {
 
         <style>{`
           .hero-btn-primary:hover {
-            background: linear-gradient(135deg, #6357C7 0%, #5146B8 100%) !important;
-            box-shadow: 0 8px 28px rgba(81, 70, 184, 0.4) !important;
+            background: linear-gradient(135deg, #3730A3 0%, #4F46E5 50%, #6D28D9 100%) !important;
+            box-shadow: 0 12px 32px -4px rgba(79, 70, 229, 0.55), 0 4px 12px -2px rgba(79, 70, 229, 0.35) !important;
             transform: translateY(-2px);
           }
           .hero-btn-primary:hover .btn-icon {
             transform: rotate(45deg);
           }
           .hero-btn-gold:hover {
-            background: rgba(200, 168, 78, 0.16) !important;
-            border-color: #99751F !important;
-            box-shadow: 0 6px 20px rgba(200, 168, 78, 0.25) !important;
+            background: linear-gradient(135deg, #92400E 0%, #B45309 40%, #D97706 100%) !important;
+            box-shadow: 0 12px 32px -4px rgba(217, 119, 6, 0.55), 0 4px 12px -2px rgba(217, 119, 6, 0.35) !important;
             transform: translateY(-2px);
-            color: #503C0D !important;
+            color: #FFFFFF !important;
           }
           .scroll-indicator:hover {
-            color: var(--text-primary) !important;
+            color: #4F46E5 !important;
           }
           @keyframes scrollTravel {
             0% { top: -14px; opacity: 0; }
             30% { opacity: 1; }
-            100% { top: 32px; opacity: 0; }
+            100% { top: 36px; opacity: 0; }
           }
           .scroll-light-travel {
-            animation: scrollTravel 2.4s ease-in-out infinite;
+            animation: scrollTravel 2.2s ease-in-out infinite;
           }
         `}</style>
       </section>

@@ -36,8 +36,8 @@ export const InAppReaderModal: React.FC<InAppReaderModalProps> = ({
   };
 
   const themeStyles = {
-    editorial: { bg: '#FAF8F3', card: '#FFFFFF', text: '#282832', heading: '#19191D', accent: '#8C6D23', border: 'rgba(25, 25, 29, 0.08)', subtitle: '#8C6D23' },
-    sepia: { bg: '#F4ECE1', card: '#FAF5EE', text: '#3E342B', heading: '#261F18', accent: '#9C6F19', border: 'rgba(62, 52, 43, 0.1)', subtitle: '#9C6F19' },
+    editorial: { bg: '#FAF8F5', card: '#FFFFFF', text: '#1E293B', heading: '#0F172A', accent: '#D97706', border: 'rgba(217, 119, 6, 0.2)', subtitle: '#92400E' },
+    sepia: { bg: '#FDF6E2', card: '#FFFDF5', text: '#3E342B', heading: '#261F18', accent: '#B45309', border: 'rgba(180, 83, 9, 0.2)', subtitle: '#92400E' },
     midnight: { bg: '#0F121C', card: '#161A26', text: '#E2E8F0', heading: '#FAF8F3', accent: '#D4AF37', border: 'rgba(255, 255, 255, 0.08)', subtitle: '#D4AF37' }
   }[theme];
 
@@ -144,8 +144,8 @@ export const InAppReaderModal: React.FC<InAppReaderModalProps> = ({
                 width: '20px',
                 height: '20px',
                 borderRadius: '4px',
-                backgroundColor: '#FAF8F3',
-                border: theme === 'editorial' ? '1.5px solid #8C6D23' : '1px solid rgba(25,25,29,0.1)',
+                backgroundColor: '#FAF8F5',
+                border: theme === 'editorial' ? '1.5px solid #D97706' : '1px solid rgba(25,25,29,0.1)',
                 cursor: 'pointer'
               }}
               title="Editorial Light Theme"

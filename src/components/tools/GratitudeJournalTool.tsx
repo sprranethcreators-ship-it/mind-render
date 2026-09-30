@@ -118,7 +118,7 @@ export const GratitudeJournalTool: React.FC = () => {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                   <span style={{ fontWeight: 600, color: 'var(--text-primary)', fontSize: '0.98rem' }}>{entry.title}</span>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.78rem', color: '#8A8C9E' }}>
-                    <span style={{ color: '#8C6D23', fontWeight: 600 }}>{entry.category}</span>
+                    <span style={{ color: '#B45309', fontWeight: 700 }}>{entry.category}</span>
                     <span>•</span>
                     <span>{entry.date}</span>
                   </div>

@@ -26,7 +26,7 @@ export const FeaturedBooksSection: React.FC<FeaturedBooksSectionProps> = ({ cont
       id="books"
       style={{
         padding: '130px 0 140px',
-        backgroundColor: '#FAF8F3',
+        backgroundColor: '#FAF8F5',
         position: 'relative',
         borderTop: '1px solid var(--border-subtle)',
         borderBottom: '1px solid var(--border-subtle)'
@@ -38,9 +38,9 @@ export const FeaturedBooksSection: React.FC<FeaturedBooksSectionProps> = ({ cont
           position: 'absolute',
           top: '20%',
           left: '5%',
-          width: '600px',
-          height: '600px',
-          background: 'radial-gradient(circle, rgba(200, 168, 78, 0.04) 0%, transparent 70%)',
+          width: '650px',
+          height: '650px',
+          background: 'radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, rgba(244, 63, 94, 0.04) 40%, transparent 70%)',
           pointerEvents: 'none'
         }}
       />
@@ -49,7 +49,7 @@ export const FeaturedBooksSection: React.FC<FeaturedBooksSectionProps> = ({ cont
         {/* Section Header */}
         <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
           <span className="section-tag" style={{ justifyContent: 'center' }}>
-            <Sparkles size={14} /> {data.sectionTag}
+            <Sparkles size={15} color="#D97706" /> {data.sectionTag}
           </span>
           <h2
             style={{
@@ -67,11 +67,11 @@ export const FeaturedBooksSection: React.FC<FeaturedBooksSectionProps> = ({ cont
               fontFamily: 'var(--font-serif)',
               fontSize: 'clamp(1.2rem, 2.2vw, 1.55rem)',
               fontStyle: 'italic',
-              color: '#8C6D23',
+              color: '#B45309',
               maxWidth: '680px',
               margin: '0 auto 1.25rem',
               lineHeight: 1.5,
-              fontWeight: 500
+              fontWeight: 600
             }}
           >
             "{data.italicQuote}"
@@ -96,16 +96,16 @@ export const FeaturedBooksSection: React.FC<FeaturedBooksSectionProps> = ({ cont
               key={book.id}
               className="card-panel card-panel-responsive"
               style={{
-                backgroundColor: '#FFFFFF',
-                border: '1px solid var(--border-subtle)',
-                boxShadow: '0 10px 30px rgba(25, 25, 29, 0.05)'
+                backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                border: '1.5px solid rgba(217, 119, 6, 0.2)',
+                boxShadow: '0 12px 35px -5px rgba(18, 20, 29, 0.06), 0 4px 14px rgba(245, 158, 11, 0.08)'
               }}
             >
               <div>
                 {/* Top Badge & Details */}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '6px' }}>
                   <span className="badge-gold">{book.category}</span>
-                  <span style={{ fontSize: '0.82rem', color: '#747484', fontWeight: 500 }}>
+                  <span style={{ fontSize: '0.82rem', color: '#6B7085', fontWeight: 600 }}>
                     {book.pagesCount} Pages • {book.format}
                   </span>
                 </div>
@@ -124,7 +124,8 @@ export const FeaturedBooksSection: React.FC<FeaturedBooksSectionProps> = ({ cont
                     lineHeight: 1.3,
                     marginBottom: '0.5rem',
                     overflowWrap: 'break-word',
-                    wordBreak: 'break-word'
+                    wordBreak: 'break-word',
+                    fontWeight: 700
                   }}
                 >
                   <Link to={`/books/${book.slug}`} style={{ color: 'inherit' }}>
@@ -136,13 +137,13 @@ export const FeaturedBooksSection: React.FC<FeaturedBooksSectionProps> = ({ cont
                   style={{
                     fontFamily: 'var(--font-serif)',
                     fontStyle: 'italic',
-                    color: '#8C6D23',
+                    color: '#B45309',
                     fontSize: 'clamp(0.98rem, 1.8vw, 1.08rem)',
                     marginBottom: '0.85rem',
                     lineHeight: 1.45,
                     overflowWrap: 'break-word',
                     wordBreak: 'break-word',
-                    fontWeight: 500
+                    fontWeight: 600
                   }}
                 >
                   {book.subtitle}
@@ -154,13 +155,13 @@ export const FeaturedBooksSection: React.FC<FeaturedBooksSectionProps> = ({ cont
 
                 {/* What you will learn */}
                 <div style={{ marginBottom: '1.75rem' }}>
-                  <div style={{ fontSize: '0.74rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#575765', marginBottom: '8px', fontWeight: 700 }}>
+                  <div style={{ fontSize: '0.74rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#454859', marginBottom: '8px', fontWeight: 800 }}>
                     Inside This Book:
                   </div>
                   <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     {book.learningOutcomes.slice(0, 2).map((outcome, oidx) => (
                       <li key={oidx} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', color: 'var(--text-primary)', fontSize: '0.88rem', lineHeight: 1.5, overflowWrap: 'break-word', wordBreak: 'break-word' }}>
-                        <span style={{ color: '#99751F', marginTop: '2px', flexShrink: 0, fontWeight: 700 }}>•</span>
+                        <span style={{ color: '#D97706', marginTop: '2px', flexShrink: 0, fontWeight: 800 }}>•</span>
                         <span>{outcome}</span>
                       </li>
                     ))}
@@ -183,15 +184,15 @@ export const FeaturedBooksSection: React.FC<FeaturedBooksSectionProps> = ({ cont
                   }}
                 >
                   <div>
-                    <span style={{ fontSize: '1.75rem', fontFamily: 'var(--font-display)', fontWeight: 700, color: '#99751F' }}>
+                    <span style={{ fontSize: '1.75rem', fontFamily: 'var(--font-display)', fontWeight: 800, color: '#B45309' }}>
                       ${book.price}
                     </span>
-                    <span style={{ fontSize: '0.92rem', color: '#8E9BAE', textDecoration: 'line-through', marginLeft: '8px' }}>
+                    <span style={{ fontSize: '0.92rem', color: '#8E9BAE', textDecoration: 'line-through', marginLeft: '8px', fontWeight: 500 }}>
                       ${book.originalPrice} USD
                     </span>
                   </div>
 
-                  <span style={{ fontSize: '0.78rem', color: '#059669', display: 'flex', alignItems: 'center', gap: '4px', fontWeight: 600 }}>
+                  <span style={{ fontSize: '0.78rem', color: '#059669', display: 'flex', alignItems: 'center', gap: '4px', fontWeight: 700 }}>
                     <ShieldCheck size={14} /> Instant Digital Delivery
                   </span>
                 </div>

@@ -181,9 +181,9 @@ export const AdminArticlesManager: React.FC = () => {
                       borderRadius: '4px',
                       fontSize: '0.75rem',
                       fontWeight: 600,
-                      backgroundColor: art.isFeatured ? 'rgba(140, 109, 35, 0.1)' : 'var(--bg-deep)',
-                      color: art.isFeatured ? '#8C6D23' : 'var(--text-muted)',
-                      border: art.isFeatured ? '1px solid rgba(140, 109, 35, 0.25)' : '1px solid var(--border-soft)',
+                      backgroundColor: art.isFeatured ? 'rgba(254, 243, 199, 0.8)' : 'var(--bg-deep)',
+                      color: art.isFeatured ? '#92400E' : 'var(--text-muted)',
+                      border: art.isFeatured ? '1px solid rgba(217, 119, 6, 0.35)' : '1px solid var(--border-soft)',
                       cursor: 'pointer'
                     }}
                   >

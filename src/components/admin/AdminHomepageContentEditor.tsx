@@ -239,8 +239,8 @@ export const AdminHomepageContentEditor: React.FC = () => {
                 padding: '10px 16px',
                 borderRadius: '8px',
                 backgroundColor: isActive ? '#FFFFFF' : 'transparent',
-                border: isActive ? '1px solid rgba(140, 109, 35, 0.35)' : '1px solid transparent',
-                color: isActive ? '#8C6D23' : 'var(--text-secondary)',
+                border: isActive ? '1.5px solid rgba(217, 119, 6, 0.4)' : '1px solid transparent',
+                color: isActive ? '#B45309' : 'var(--text-secondary)',
                 boxShadow: isActive ? 'var(--shadow-sm)' : 'none',
                 fontSize: '0.82rem',
                 fontWeight: isActive ? 600 : 500,
@@ -423,7 +423,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div style={{ marginTop: '1rem' }}>
-              <h4 style={{ color: '#8C6D23', fontSize: '1rem', marginBottom: '14px' }}>
+              <h4 style={{ color: '#92400E', fontSize: '1rem', fontWeight: 700, marginBottom: '14px' }}>
                 The 3 Progression Cards (Step 1, Step 2, Step 3)
               </h4>
 
@@ -532,7 +532,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div style={{ marginTop: '1rem' }}>
-              <h4 style={{ color: '#8C6D23', fontSize: '1rem', marginBottom: '14px' }}>
+              <h4 style={{ color: '#92400E', fontSize: '1rem', fontWeight: 700, marginBottom: '14px' }}>
                 Individual Topic Cards (All 6 Pillars)
               </h4>
 
@@ -670,7 +670,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div style={{ marginTop: '1rem' }}>
-              <h4 style={{ color: '#8C6D23', fontSize: '1rem', marginBottom: '14px' }}>
+              <h4 style={{ color: '#92400E', fontSize: '1rem', fontWeight: 700, marginBottom: '14px' }}>
                 The 7 Phases (Step 1 to 7)
               </h4>
 
@@ -909,7 +909,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div style={{ marginTop: '1rem' }}>
-              <h4 style={{ color: '#8C6D23', fontSize: '1rem', marginBottom: '14px' }}>
+              <h4 style={{ color: '#92400E', fontSize: '1rem', fontWeight: 700, marginBottom: '14px' }}>
                 The 4 Pillars (Understand, Reflect, Practice, Transform)
               </h4>
 
@@ -924,7 +924,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
                       padding: '18px'
                     }}
                   >
-                    <div style={{ fontWeight: 600, color: '#8C6D23', fontSize: '0.82rem', marginBottom: '10px' }}>
+                    <div style={{ fontWeight: 700, color: '#B45309', fontSize: '0.82rem', marginBottom: '10px' }}>
                       Pillar 0{idx + 1}
                     </div>
 

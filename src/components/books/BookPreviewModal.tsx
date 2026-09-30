@@ -95,13 +95,13 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
             </span>
             <span
               style={{
-                padding: '2px 8px',
-                borderRadius: '4px',
-                fontSize: '0.7rem',
-                backgroundColor: 'rgba(140, 109, 35, 0.1)',
-                color: '#8C6D23',
-                border: '1px solid rgba(140, 109, 35, 0.25)',
-                fontWeight: 600
+                padding: '3px 10px',
+                borderRadius: '9999px',
+                fontSize: '0.72rem',
+                backgroundColor: 'rgba(254, 243, 199, 0.85)',
+                color: '#92400E',
+                border: '1px solid rgba(217, 119, 6, 0.35)',
+                fontWeight: 700
               }}
             >
               Free Manuscript Sample
@@ -153,7 +153,8 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
               <h4
                 style={{
                   fontFamily: 'var(--font-display)',
-                  color: '#8C6D23',
+                  color: '#92400E',
+                  fontWeight: 700,
                   fontSize: '1.25rem',
                   marginBottom: '1rem'
                 }}
@@ -218,7 +219,7 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
                     {currentPage.title}
                   </h3>
                   {currentPage.subtitle && (
-                    <p style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: '#8C6D23', fontSize: '1.1rem' }}>
+                    <p style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: '#92400E', fontWeight: 600, fontSize: '1.1rem' }}>
                       {currentPage.subtitle}
                     </p>
                   )}
@@ -309,7 +310,7 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
               <span style={{ fontSize: '0.8rem', color: '#8A8C9E', textDecoration: 'line-through', marginRight: '6px' }}>
                 ${book.originalPrice}
               </span>
-              <span style={{ fontSize: '1.25rem', fontWeight: 700, color: '#8C6D23' }}>
+              <span style={{ fontSize: '1.35rem', fontWeight: 800, color: '#B45309' }}>
                 ${book.price}
               </span>
             </div>

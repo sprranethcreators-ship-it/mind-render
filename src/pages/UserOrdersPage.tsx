@@ -64,7 +64,7 @@ export const UserOrdersPage: React.FC = () => {
                       <span style={{ fontSize: '0.72rem', letterSpacing: '0.12em', color: '#8A8C9E', textTransform: 'uppercase' }}>
                         Total Paid
                       </span>
-                      <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#8C6D23' }}>
+                      <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#B45309' }}>
                         ${order.totalAmount} {order.currency}
                       </div>
                     </div>

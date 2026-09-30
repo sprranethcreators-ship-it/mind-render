@@ -141,7 +141,7 @@ export const UserLibraryPage: React.FC = () => {
                         {book.title}
                       </h3>
 
-                      <p style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: '#8C6D23', fontSize: '1.05rem', marginBottom: '1rem' }}>
+                      <p style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: '#92400E', fontWeight: 600, fontSize: '1.05rem', marginBottom: '1rem' }}>
                         {book.subtitle}
                       </p>
 
@@ -157,10 +157,10 @@ export const UserLibraryPage: React.FC = () => {
                       <div style={{ marginBottom: '1.75rem', maxWidth: '420px' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: 'var(--text-secondary)', marginBottom: '6px' }}>
                           <span>Reading Progress</span>
-                          <span style={{ color: '#8C6D23', fontWeight: 600 }}>{item.readingProgressPercent}%</span>
+                          <span style={{ color: '#B45309', fontWeight: 700 }}>{item.readingProgressPercent}%</span>
                         </div>
                         <div style={{ height: '6px', backgroundColor: 'rgba(25, 25, 29, 0.08)', borderRadius: '3px', overflow: 'hidden' }}>
-                          <div style={{ width: `${item.readingProgressPercent}%`, height: '100%', backgroundColor: '#8C6D23', borderRadius: '3px' }} />
+                          <div style={{ width: `${item.readingProgressPercent}%`, height: '100%', background: 'linear-gradient(90deg, #F59E0B 0%, #D97706 100%)', borderRadius: '3px' }} />
                         </div>
                       </div>
 

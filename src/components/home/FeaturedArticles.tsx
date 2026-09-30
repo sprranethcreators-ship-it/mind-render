@@ -16,7 +16,7 @@ export const FeaturedArticles: React.FC<FeaturedArticlesProps> = ({ content }) =
     <section
       style={{
         padding: '130px 0 140px',
-        backgroundColor: '#FAF8F3',
+        backgroundColor: '#FAF8F5',
         position: 'relative',
         borderTop: '1px solid var(--border-subtle)',
         borderBottom: '1px solid var(--border-subtle)'
@@ -36,14 +36,15 @@ export const FeaturedArticles: React.FC<FeaturedArticlesProps> = ({ content }) =
         >
           <div>
             <span className="section-tag">
-              <Sparkles size={14} /> {data.sectionTag}
+              <Sparkles size={15} color="#D97706" /> {data.sectionTag}
             </span>
             <h2
               style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(2.2rem, 3.8vw, 3.2rem)',
                 color: 'var(--text-primary)',
-                letterSpacing: '0.04em'
+                letterSpacing: '0.04em',
+                fontWeight: 700
               }}
             >
               {data.headline}
@@ -64,50 +65,62 @@ export const FeaturedArticles: React.FC<FeaturedArticlesProps> = ({ content }) =
 
         {/* 3 Editorial Magazine Cards */}
         <div className="responsive-grid-essays">
-          {articles.slice(0, 3).map((article) => (
-            <Link
-              key={article.id}
-              to={`/articles/${article.slug}`}
-              className="editorial-essay-card"
-              style={{
-                background: '#FFFFFF',
-                border: '1px solid var(--border-subtle)',
-                borderRadius: '18px',
-                padding: 'clamp(24px, 3.5vw, 38px) clamp(18px, 3vw, 30px)',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                textDecoration: 'none',
-                position: 'relative',
-                overflow: 'hidden',
-                boxShadow: '0 8px 24px rgba(25, 25, 29, 0.04)',
-                transition: 'transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease',
-                boxSizing: 'border-box'
-              }}
-            >
-              {/* Traveling light shimmer layer on hover */}
-              <div
-                className="card-shimmer"
-                style={{
-                  position: 'absolute',
-                  inset: 0,
-                  background: 'linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.4) 45%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.4) 55%, transparent 100%)',
-                  transform: 'translateX(-100%)',
-                  transition: 'transform 0.8s ease',
-                  pointerEvents: 'none'
-                }}
-              />
+          {articles.slice(0, 3).map((article, aIdx) => {
+            const badgeClasses = ['badge-indigo', 'badge-gold', 'badge-rose'];
+            const badgeClass = badgeClasses[aIdx % badgeClasses.length];
+            const borderColors = ['rgba(99, 102, 241, 0.25)', 'rgba(245, 158, 11, 0.3)', 'rgba(244, 63, 94, 0.25)'];
+            const glowColors = [
+              '0 16px 40px -8px rgba(99, 102, 241, 0.16)',
+              '0 16px 40px -8px rgba(245, 158, 11, 0.18)',
+              '0 16px 40px -8px rgba(244, 63, 94, 0.16)'
+            ];
 
-              <div style={{ position: 'relative', zIndex: 2 }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
-                  <span className="badge-indigo" style={{ fontSize: '0.74rem' }}>
-                    {article.category}
-                  </span>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#747484', fontSize: '0.82rem', fontWeight: 500 }}>
-                    <Clock size={13} />
-                    <span>{article.readTimeMinutes} min read</span>
+            return (
+              <Link
+                key={article.id}
+                to={`/articles/${article.slug}`}
+                className="editorial-essay-card"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.95)',
+                  border: `1.5px solid ${borderColors[aIdx % borderColors.length]}`,
+                  borderRadius: '22px',
+                  padding: 'clamp(26px, 3.5vw, 38px) clamp(20px, 3vw, 30px)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  textDecoration: 'none',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  boxShadow: glowColors[aIdx % glowColors.length],
+                  transition: 'all 0.35s ease',
+                  boxSizing: 'border-box',
+                  backdropFilter: 'blur(16px)',
+                  WebkitBackdropFilter: 'blur(16px)'
+                }}
+              >
+                {/* Traveling light shimmer layer on hover */}
+                <div
+                  className="card-shimmer"
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.4) 45%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.4) 55%, transparent 100%)',
+                    transform: 'translateX(-100%)',
+                    transition: 'transform 0.8s ease',
+                    pointerEvents: 'none'
+                  }}
+                />
+
+                <div style={{ position: 'relative', zIndex: 2 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
+                    <span className={badgeClass} style={{ fontSize: '0.74rem' }}>
+                      {article.category}
+                    </span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#6B7085', fontSize: '0.82rem', fontWeight: 600 }}>
+                      <Clock size={14} color="#6366F1" />
+                      <span>{article.readTimeMinutes} min read</span>
+                    </div>
                   </div>
-                </div>
 
                 <h3
                   style={{
@@ -158,8 +171,9 @@ export const FeaturedArticles: React.FC<FeaturedArticlesProps> = ({ content }) =
                 </span>
               </div>
             </Link>
-          ))}
-        </div>
+          );
+        })}
+      </div>
 
         {/* View All Essays Link */}
         <div style={{ textAlign: 'center', marginTop: '4.5rem' }}>

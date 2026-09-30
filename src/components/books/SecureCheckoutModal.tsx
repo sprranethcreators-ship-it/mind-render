@@ -142,7 +142,7 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <Lock size={17} color="#8C6D23" />
+            <Lock size={17} color="#D97706" />
             <span style={{ fontFamily: 'var(--font-display)', color: 'var(--text-primary)', fontWeight: 600, fontSize: '0.94rem' }}>
               {completedOrder ? 'Purchase Confirmed' : 'Encrypted Digital Checkout'}
             </span>
@@ -258,7 +258,7 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
                 <div style={{ flex: 1 }}>
                   <div style={{ fontWeight: 600, color: 'var(--text-primary)', fontSize: '1rem' }}>{book.title}</div>
                   <div style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>{book.author} • {book.format}</div>
-                  <div style={{ color: '#8C6D23', fontWeight: 700, fontSize: '1.1rem', marginTop: '4px' }}>
+                  <div style={{ color: '#B45309', fontWeight: 800, fontSize: '1.15rem', marginTop: '4px' }}>
                     ${book.price} <span style={{ fontSize: '0.75rem', color: '#8A8C9E', textDecoration: 'line-through' }}>${book.originalPrice}</span>
                   </div>
                 </div>
@@ -309,8 +309,8 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
                     style={{
                       padding: '12px',
                       borderRadius: '8px',
-                      border: paymentMethod === 'Direct Checkout' ? '1.5px solid #8C6D23' : '1px solid rgba(25, 25, 29, 0.1)',
-                      backgroundColor: paymentMethod === 'Direct Checkout' ? 'rgba(140, 109, 35, 0.08)' : '#FAF8F3',
+                      border: paymentMethod === 'Direct Checkout' ? '1.5px solid #D97706' : '1px solid rgba(25, 25, 29, 0.1)',
+                      backgroundColor: paymentMethod === 'Direct Checkout' ? 'rgba(254, 243, 199, 0.5)' : '#FAF8F3',
                       color: paymentMethod === 'Direct Checkout' ? 'var(--text-primary)' : 'var(--text-secondary)',
                       fontSize: '0.84rem',
                       fontWeight: 500,
@@ -319,7 +319,7 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
                       transition: 'all 0.2s ease'
                     }}
                   >
-                    <div style={{ fontWeight: 600, color: paymentMethod === 'Direct Checkout' ? '#8C6D23' : 'var(--text-primary)' }}>
+                    <div style={{ fontWeight: 600, color: paymentMethod === 'Direct Checkout' ? '#92400E' : 'var(--text-primary)' }}>
                       Direct Instant Pay
                     </div>
                     <div style={{ fontSize: '0.72rem', marginTop: '2px', color: 'var(--text-secondary)' }}>Instant encrypted manuscript</div>

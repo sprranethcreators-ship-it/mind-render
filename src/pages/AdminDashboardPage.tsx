@@ -124,10 +124,10 @@ export const AdminDashboardPage: React.FC = () => {
       <section style={{ padding: '28px 0 20px' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '18px' }}>
-            <div style={{ backgroundColor: '#FFFFFF', border: '1px solid rgba(140, 109, 35, 0.25)', borderRadius: '12px', padding: '18px', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', color: '#8C6D23', marginBottom: '8px' }}>
+            <div style={{ backgroundColor: '#FFFFFF', border: '1.5px solid rgba(217, 119, 6, 0.25)', borderRadius: '12px', padding: '18px', boxShadow: 'var(--shadow-sm)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', color: '#B45309', marginBottom: '8px' }}>
                 <span style={{ fontSize: '0.74rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600 }}>Gross Sales</span>
-                <DollarSign size={18} />
+                <DollarSign size={18} color="#D97706" />
               </div>
               <div style={{ fontSize: '1.6rem', fontWeight: 700, color: 'var(--text-primary)' }}>
                 ${totalRevenue.toLocaleString()}
@@ -201,8 +201,8 @@ export const AdminDashboardPage: React.FC = () => {
                 padding: '10px 18px',
                 borderRadius: '8px',
                 backgroundColor: activeTab === 'homepage' ? '#FFFFFF' : 'transparent',
-                border: activeTab === 'homepage' ? '1px solid rgba(140, 109, 35, 0.35)' : '1px solid transparent',
-                color: activeTab === 'homepage' ? '#8C6D23' : 'var(--text-secondary)',
+                border: activeTab === 'homepage' ? '1.5px solid rgba(217, 119, 6, 0.4)' : '1px solid transparent',
+                color: activeTab === 'homepage' ? '#B45309' : 'var(--text-secondary)',
                 boxShadow: activeTab === 'homepage' ? 'var(--shadow-sm)' : 'none',
                 fontWeight: 600,
                 fontSize: '0.88rem',
@@ -211,7 +211,7 @@ export const AdminDashboardPage: React.FC = () => {
                 transition: 'all 0.2s ease'
               }}
             >
-              <Sparkles size={16} /> Homepage Content Studio
+              <Sparkles size={16} color={activeTab === 'homepage' ? '#D97706' : 'currentColor'} /> Homepage Content Studio
             </button>
 
             <button
@@ -223,8 +223,8 @@ export const AdminDashboardPage: React.FC = () => {
                 padding: '10px 18px',
                 borderRadius: '8px',
                 backgroundColor: activeTab === 'books' ? '#FFFFFF' : 'transparent',
-                border: activeTab === 'books' ? '1px solid rgba(140, 109, 35, 0.35)' : '1px solid transparent',
-                color: activeTab === 'books' ? '#8C6D23' : 'var(--text-secondary)',
+                border: activeTab === 'books' ? '1.5px solid rgba(217, 119, 6, 0.4)' : '1px solid transparent',
+                color: activeTab === 'books' ? '#B45309' : 'var(--text-secondary)',
                 boxShadow: activeTab === 'books' ? 'var(--shadow-sm)' : 'none',
                 fontWeight: 600,
                 fontSize: '0.88rem',
@@ -233,7 +233,7 @@ export const AdminDashboardPage: React.FC = () => {
                 transition: 'all 0.2s ease'
               }}
             >
-              <BookOpen size={16} /> Books & Treatises ({books.length})
+              <BookOpen size={16} color={activeTab === 'books' ? '#D97706' : 'currentColor'} /> Books & Treatises ({books.length})
             </button>
 
             <button
@@ -245,8 +245,8 @@ export const AdminDashboardPage: React.FC = () => {
                 padding: '10px 18px',
                 borderRadius: '8px',
                 backgroundColor: activeTab === 'articles' ? '#FFFFFF' : 'transparent',
-                border: activeTab === 'articles' ? '1px solid rgba(140, 109, 35, 0.35)' : '1px solid transparent',
-                color: activeTab === 'articles' ? '#8C6D23' : 'var(--text-secondary)',
+                border: activeTab === 'articles' ? '1.5px solid rgba(217, 119, 6, 0.4)' : '1px solid transparent',
+                color: activeTab === 'articles' ? '#B45309' : 'var(--text-secondary)',
                 boxShadow: activeTab === 'articles' ? 'var(--shadow-sm)' : 'none',
                 fontWeight: 600,
                 fontSize: '0.88rem',
@@ -255,7 +255,7 @@ export const AdminDashboardPage: React.FC = () => {
                 transition: 'all 0.2s ease'
               }}
             >
-              <FileText size={16} /> Articles & Essays ({articles.length})
+              <FileText size={16} color={activeTab === 'articles' ? '#D97706' : 'currentColor'} /> Articles & Essays ({articles.length})
             </button>
 
             <button
@@ -267,8 +267,8 @@ export const AdminDashboardPage: React.FC = () => {
                 padding: '10px 18px',
                 borderRadius: '8px',
                 backgroundColor: activeTab === 'orders' ? '#FFFFFF' : 'transparent',
-                border: activeTab === 'orders' ? '1px solid rgba(140, 109, 35, 0.35)' : '1px solid transparent',
-                color: activeTab === 'orders' ? '#8C6D23' : 'var(--text-secondary)',
+                border: activeTab === 'orders' ? '1.5px solid rgba(217, 119, 6, 0.4)' : '1px solid transparent',
+                color: activeTab === 'orders' ? '#B45309' : 'var(--text-secondary)',
                 boxShadow: activeTab === 'orders' ? 'var(--shadow-sm)' : 'none',
                 fontWeight: 600,
                 fontSize: '0.88rem',
@@ -277,7 +277,7 @@ export const AdminDashboardPage: React.FC = () => {
                 transition: 'all 0.2s ease'
               }}
             >
-              <ShoppingCart size={16} /> Orders & Revenue ({orders.length})
+              <ShoppingCart size={16} color={activeTab === 'orders' ? '#D97706' : 'currentColor'} /> Orders & Revenue ({orders.length})
             </button>
 
             <button
@@ -289,8 +289,8 @@ export const AdminDashboardPage: React.FC = () => {
                 padding: '10px 18px',
                 borderRadius: '8px',
                 backgroundColor: activeTab === 'users' ? '#FFFFFF' : 'transparent',
-                border: activeTab === 'users' ? '1px solid rgba(140, 109, 35, 0.35)' : '1px solid transparent',
-                color: activeTab === 'users' ? '#8C6D23' : 'var(--text-secondary)',
+                border: activeTab === 'users' ? '1.5px solid rgba(217, 119, 6, 0.4)' : '1px solid transparent',
+                color: activeTab === 'users' ? '#B45309' : 'var(--text-secondary)',
                 boxShadow: activeTab === 'users' ? 'var(--shadow-sm)' : 'none',
                 fontWeight: 600,
                 fontSize: '0.88rem',
@@ -299,7 +299,7 @@ export const AdminDashboardPage: React.FC = () => {
                 transition: 'all 0.2s ease'
               }}
             >
-              <Users size={16} /> Reader Accounts ({users.length})
+              <Users size={16} color={activeTab === 'users' ? '#D97706' : 'currentColor'} /> Reader Accounts ({users.length})
             </button>
 
             <button
@@ -311,8 +311,8 @@ export const AdminDashboardPage: React.FC = () => {
                 padding: '10px 18px',
                 borderRadius: '8px',
                 backgroundColor: activeTab === 'security' ? '#FFFFFF' : 'transparent',
-                border: activeTab === 'security' ? '1px solid rgba(140, 109, 35, 0.35)' : '1px solid transparent',
-                color: activeTab === 'security' ? '#8C6D23' : 'var(--text-secondary)',
+                border: activeTab === 'security' ? '1.5px solid rgba(217, 119, 6, 0.4)' : '1px solid transparent',
+                color: activeTab === 'security' ? '#B45309' : 'var(--text-secondary)',
                 boxShadow: activeTab === 'security' ? 'var(--shadow-sm)' : 'none',
                 fontWeight: 600,
                 fontSize: '0.88rem',
@@ -321,7 +321,7 @@ export const AdminDashboardPage: React.FC = () => {
                 transition: 'all 0.2s ease'
               }}
             >
-              <ShieldAlert size={16} /> Security & Anti-Tamper ({auditLogs.length})
+              <ShieldAlert size={16} color={activeTab === 'security' ? '#D97706' : 'currentColor'} /> Security & Anti-Tamper ({auditLogs.length})
             </button>
           </div>
 
@@ -348,8 +348,8 @@ export const AdminDashboardPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div style={{ padding: '20px', backgroundColor: 'var(--bg-deep)', borderRadius: '12px', border: '1px solid rgba(140, 109, 35, 0.25)' }}>
-                  <div style={{ color: '#8C6D23', fontWeight: 600, marginBottom: '6px' }}>Brute-Force Shield: ACTIVE</div>
+                <div style={{ padding: '20px', backgroundColor: 'var(--bg-deep)', borderRadius: '12px', border: '1.5px solid rgba(217, 119, 6, 0.25)' }}>
+                  <div style={{ color: '#B45309', fontWeight: 600, marginBottom: '6px' }}>Brute-Force Shield: ACTIVE</div>
                   <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
                     Max 5 attempts allowed before a 15-minute lockout activates automatically.
                   </div>
@@ -426,7 +426,7 @@ export const AdminDashboardPage: React.FC = () => {
             onClick={e => e.stopPropagation()}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '1.25rem' }}>
-              <Lock size={20} color="#8C6D23" />
+              <Lock size={20} color="#D97706" />
               <h3 style={{ color: 'var(--text-primary)', fontSize: '1.2rem', fontFamily: 'var(--font-display)' }}>Change Master Admin Key</h3>
             </div>
 

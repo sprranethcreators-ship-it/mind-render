@@ -15,13 +15,60 @@ export const ArticlesIndexPage: React.FC = () => {
 
   return (
     <div style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: 'var(--bg-cosmos)' }}>
-      <section style={{ padding: '60px 0 40px', borderBottom: '1px solid rgba(25, 25, 29, 0.08)', backgroundColor: 'var(--bg-deep)' }}>
-        <div className="container" style={{ textAlign: 'center' }}>
-          <span className="section-tag" style={{ justifyContent: 'center' }}>EDITORIAL ARCHIVES</span>
-          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.4rem, 4vw, 3.5rem)', color: 'var(--text-primary)', marginBottom: '1rem', letterSpacing: '-0.02em' }}>
-            Inquiries Into Consciousness
+      <section
+        style={{
+          padding: '80px 0 50px',
+          borderBottom: '1px solid rgba(217, 119, 6, 0.15)',
+          background: 'linear-gradient(180deg, #FAF8F5 0%, #F5F3FF 40%, #FFFBEB 85%, #FAF8F5 100%)',
+          position: 'relative',
+          overflow: 'hidden'
+        }}
+      >
+        <div className="container" style={{ textAlign: 'center', position: 'relative', zIndex: 2 }}>
+          <div style={{ display: 'inline-flex', marginBottom: '1.25rem' }}>
+            <span
+              style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: '0.78rem',
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
+                color: '#92400E',
+                fontWeight: 700,
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '6px 18px',
+                borderRadius: '9999px',
+                background: 'linear-gradient(135deg, rgba(254, 243, 199, 0.9) 0%, rgba(253, 230, 138, 0.6) 100%)',
+                border: '1px solid rgba(217, 119, 6, 0.35)',
+                boxShadow: '0 4px 14px rgba(245, 158, 11, 0.15)'
+              }}
+            >
+              EDITORIAL ARCHIVES
+            </span>
+          </div>
+
+          <h1
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)',
+              color: '#0F172A',
+              marginBottom: '1.25rem',
+              letterSpacing: '-0.01em',
+              fontWeight: 800
+            }}
+          >
+            Inquiries Into{' '}
+            <span style={{
+              background: 'linear-gradient(135deg, #1E1B4B 0%, #4F46E5 50%, #D97706 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              display: 'inline-block'
+            }}>
+              Consciousness
+            </span>
           </h1>
-          <p style={{ maxWidth: '680px', margin: '0 auto', color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7 }}>
+          <p style={{ maxWidth: '680px', margin: '0 auto', color: '#475569', fontSize: '1.12rem', lineHeight: 1.7 }}>
             Intellectual treatises exploring attentional biology, subconscious habit loops, and the mechanics of belief.
           </p>
         </div>
@@ -29,7 +76,8 @@ export const ArticlesIndexPage: React.FC = () => {
 
       <section style={{ padding: '60px 0 120px' }}>
         <div className="container">
-          <div style={{ maxWidth: '400px', margin: '0 auto 3rem' }}>
+          <div style={{ maxWidth: '440px', margin: '0 auto 3.5rem', position: 'relative' }}>
+            <Search size={18} color="#94A3B8" style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)' }} />
             <input
               type="text"
               value={searchTerm}
@@ -37,10 +85,16 @@ export const ArticlesIndexPage: React.FC = () => {
               placeholder="Search essays by keyword..."
               style={{
                 width: '100%',
+                paddingLeft: '44px',
+                paddingTop: '12px',
+                paddingBottom: '12px',
                 backgroundColor: '#FFFFFF',
-                border: '1px solid rgba(25, 25, 29, 0.12)',
-                color: 'var(--text-primary)',
-                borderRadius: '8px'
+                border: '1.5px solid rgba(217, 119, 6, 0.25)',
+                color: '#0F172A',
+                borderRadius: '12px',
+                fontSize: '0.92rem',
+                outline: 'none',
+                boxShadow: '0 4px 14px rgba(15, 23, 42, 0.04)'
               }}
             />
           </div>

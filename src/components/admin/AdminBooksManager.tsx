@@ -292,7 +292,7 @@ export const AdminBooksManager: React.FC = () => {
                   <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>{b.author} • {b.pagesCount}p</div>
                 </td>
                 <td style={{ padding: '16px 18px', color: 'var(--text-secondary)' }}>{b.category}</td>
-                <td style={{ padding: '16px 18px', fontWeight: 600, color: '#8C6D23' }}>
+                <td style={{ padding: '16px 18px', fontWeight: 700, color: '#B45309' }}>
                   ${b.price} <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textDecoration: 'line-through' }}>${b.originalPrice}</span>
                 </td>
                 <td style={{ padding: '16px 18px' }}>
@@ -303,9 +303,9 @@ export const AdminBooksManager: React.FC = () => {
                       borderRadius: '4px',
                       fontSize: '0.75rem',
                       fontWeight: 600,
-                      backgroundColor: b.isFeatured ? 'rgba(140, 109, 35, 0.1)' : 'var(--bg-deep)',
-                      color: b.isFeatured ? '#8C6D23' : 'var(--text-muted)',
-                      border: b.isFeatured ? '1px solid rgba(140, 109, 35, 0.25)' : '1px solid var(--border-soft)',
+                      backgroundColor: b.isFeatured ? 'rgba(254, 243, 199, 0.8)' : 'var(--bg-deep)',
+                      color: b.isFeatured ? '#92400E' : 'var(--text-muted)',
+                      border: b.isFeatured ? '1px solid rgba(217, 119, 6, 0.35)' : '1px solid var(--border-soft)',
                       cursor: 'pointer'
                     }}
                   >

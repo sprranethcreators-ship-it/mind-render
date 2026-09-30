@@ -43,49 +43,51 @@ export const NeuralConsciousnessCanvas: React.FC = () => {
     const isMobile = width < 768;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Editorial Palette on Warm Light: Sophisticated Indigo, Soft Violet & Muted Champagne Gold
+    // Vibrant Luxury Jewel-Tone Palette: Honey Gold, Royal Indigo, Violet Amethyst, Rose Quartz, Emerald, & Sky Azure
     const nodeColors = [
-      'rgba(81, 70, 184, ',   // Sophisticated Indigo #5146B8
-      'rgba(124, 58, 237, ',  // Soft Violet
-      'rgba(184, 148, 55, ',  // Muted Champagne Gold
-      'rgba(140, 109, 35, ',  // Rich Antique Gold
+      'rgba(245, 158, 11, ',  // Honey Gold #F59E0B
+      'rgba(79, 70, 229, ',   // Royal Indigo #4F46E5
+      'rgba(139, 92, 246, ',  // Violet Amethyst #8B5CF6
+      'rgba(244, 63, 94, ',   // Rose Quartz #F43F5E
+      'rgba(16, 185, 129, ',  // Emerald Mind #10B981
+      'rgba(2, 132, 199, ',   // Sky Azure #0284C7
     ];
 
     // Build layered particles with scientific illustration density
-    const particleCount = isMobile ? 32 : Math.min(68, Math.floor((width * height) / 16000));
+    const particleCount = isMobile ? 36 : Math.min(76, Math.floor((width * height) / 14000));
     const particles: Particle[] = [];
 
     for (let i = 0; i < particleCount; i++) {
-      const layer = Math.random() < 0.4 ? 0 : Math.random() < 0.75 ? 1 : 2;
+      const layer = Math.random() < 0.35 ? 0 : Math.random() < 0.7 ? 1 : 2;
       const x = Math.random() * width;
       const y = Math.random() * height;
-      const baseAlpha = layer === 0 ? 0.18 : layer === 1 ? 0.35 : 0.6;
-      const baseRadius = layer === 0 ? 1.0 : layer === 1 ? 1.6 : 2.2;
+      const baseAlpha = layer === 0 ? 0.25 : layer === 1 ? 0.45 : 0.75;
+      const baseRadius = layer === 0 ? 1.2 : layer === 1 ? 1.8 : 2.5;
 
       particles.push({
         x,
         y,
         originX: x,
         originY: y,
-        vx: (Math.random() - 0.5) * (layer === 0 ? 0.15 : 0.25),
-        vy: (Math.random() - 0.5) * (layer === 0 ? 0.15 : 0.25),
+        vx: (Math.random() - 0.5) * (layer === 0 ? 0.18 : 0.28),
+        vy: (Math.random() - 0.5) * (layer === 0 ? 0.18 : 0.28),
         radius: baseRadius,
         baseRadius,
         color: nodeColors[Math.floor(Math.random() * nodeColors.length)],
         alpha: baseAlpha,
         baseAlpha,
-        pulseSpeed: 0.012 + Math.random() * 0.018,
+        pulseSpeed: 0.014 + Math.random() * 0.02,
         pulsePhase: Math.random() * Math.PI * 2,
         layer
       });
     }
 
-    // Large translucent circular orbital structures (Architecture of Thought)
-    const orbitalRings: OrbitalRing[] = [
-      { radiusX: Math.min(width * 0.34, 320), radiusY: Math.min(width * 0.18, 160), rotation: -0.22, speed: 0.0006, color: 'rgba(81, 70, 184, ', alpha: 0.16, dash: [4, 14] },
-      { radiusX: Math.min(width * 0.46, 430), radiusY: Math.min(width * 0.24, 220), rotation: 0.3, speed: -0.0005, color: 'rgba(184, 148, 55, ', alpha: 0.15, dash: [3, 16] },
-      { radiusX: Math.min(width * 0.22, 210), radiusY: Math.min(width * 0.12, 110), rotation: 0.12, speed: 0.0009, color: 'rgba(124, 58, 237, ', alpha: 0.14, dash: [2, 10] },
-      { radiusX: Math.min(width * 0.56, 520), radiusY: Math.min(width * 0.28, 260), rotation: -0.45, speed: 0.0004, color: 'rgba(81, 70, 184, ', alpha: 0.09, dash: [6, 20] },
+    // Large translucent circular orbital structures with jewel satellite nodes
+    const orbitalRings: (OrbitalRing & { satelliteColor: string })[] = [
+      { radiusX: Math.min(width * 0.34, 320), radiusY: Math.min(width * 0.18, 160), rotation: -0.22, speed: 0.0006, color: 'rgba(79, 70, 229, ', alpha: 0.24, dash: [4, 14], satelliteColor: '#6366F1' },
+      { radiusX: Math.min(width * 0.46, 430), radiusY: Math.min(width * 0.24, 220), rotation: 0.3, speed: -0.0005, color: 'rgba(245, 158, 11, ', alpha: 0.28, dash: [3, 16], satelliteColor: '#F59E0B' },
+      { radiusX: Math.min(width * 0.22, 210), radiusY: Math.min(width * 0.12, 110), rotation: 0.12, speed: 0.0009, color: 'rgba(244, 63, 94, ', alpha: 0.22, dash: [2, 10], satelliteColor: '#F43F5E' },
+      { radiusX: Math.min(width * 0.56, 520), radiusY: Math.min(width * 0.28, 260), rotation: -0.45, speed: 0.0004, color: 'rgba(2, 132, 199, ', alpha: 0.2, dash: [6, 20], satelliteColor: '#0EA5E9' },
     ];
 
     // Smooth subtle mouse parallax
@@ -141,24 +143,24 @@ export const NeuralConsciousnessCanvas: React.FC = () => {
       const centerX = width * 0.5 + (mouse.x !== -1000 ? (mouse.x - width * 0.5) * 0.03 : 0);
       const centerY = height * 0.44 + (mouse.y !== -1000 ? (mouse.y - height * 0.44) * 0.03 : 0);
 
-      // 1. LAYER: Soft Warm Lavender & Subtle Champagne Radial Glow (Light Mode)
+      // 1. LAYER: Multi-Prismatic Radiant Aurora Glow (Light Mode)
       const corePulse = 0.96 + 0.04 * Math.sin(tick * 0.015);
       const radialGlow = ctx.createRadialGradient(
         centerX,
         centerY,
-        30,
+        20,
         centerX,
         centerY,
-        Math.min(width * 0.65, 560) * corePulse
+        Math.min(width * 0.68, 580) * corePulse
       );
-      radialGlow.addColorStop(0, 'rgba(235, 230, 248, 0.45)'); // Delicate lavender core
-      radialGlow.addColorStop(0.35, 'rgba(244, 240, 252, 0.25)'); // Ethereal lilac mist
-      radialGlow.addColorStop(0.7, 'rgba(248, 243, 232, 0.18)'); // Soft warm ivory shimmer
-      radialGlow.addColorStop(1, 'rgba(250, 248, 243, 0)');
+      radialGlow.addColorStop(0, 'rgba(254, 243, 199, 0.45)'); // Warm Honey Gold Core
+      radialGlow.addColorStop(0.3, 'rgba(238, 242, 255, 0.35)'); // Celestial Indigo Mist
+      radialGlow.addColorStop(0.6, 'rgba(255, 241, 242, 0.22)'); // Rose Quartz Shimmer
+      radialGlow.addColorStop(1, 'rgba(250, 248, 245, 0)');
       ctx.fillStyle = radialGlow;
       ctx.fillRect(0, 0, width, height);
 
-      // 2. LAYER: Translucent Circular Orbital Structures (Editorial Scientific Geometry)
+      // 2. LAYER: Translucent Circular Orbital Structures (Jewel Satellites)
       orbitalRings.forEach((ring) => {
         ring.rotation += ring.speed;
         ctx.save();
@@ -168,20 +170,20 @@ export const NeuralConsciousnessCanvas: React.FC = () => {
         ctx.beginPath();
         ctx.ellipse(0, 0, ring.radiusX, ring.radiusY, 0, 0, Math.PI * 2);
         ctx.strokeStyle = `${ring.color}${ring.alpha})`;
-        ctx.lineWidth = 0.75;
+        ctx.lineWidth = 1;
         ctx.setLineDash(ring.dash);
         ctx.stroke();
 
-        // Subtle orbiting point along each orbital ring
+        // Orbiting jewel satellite point along each orbital ring
         const angle = tick * (ring.speed * 6);
         const px = Math.cos(angle) * ring.radiusX;
         const py = Math.sin(angle) * ring.radiusY;
 
         ctx.beginPath();
-        ctx.arc(px, py, 1.8, 0, Math.PI * 2);
-        ctx.fillStyle = '#C8A84E';
-        ctx.shadowBlur = 6;
-        ctx.shadowColor = 'rgba(200, 168, 78, 0.4)';
+        ctx.arc(px, py, 2.4, 0, Math.PI * 2);
+        ctx.fillStyle = ring.satelliteColor;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = ring.satelliteColor;
         ctx.fill();
         ctx.shadowBlur = 0;
 
@@ -201,12 +203,12 @@ export const NeuralConsciousnessCanvas: React.FC = () => {
           const maxDist = isMobile ? 95 : 130;
 
           if (dist < maxDist) {
-            const filamentAlpha = (1 - dist / maxDist) * 0.14 * ((p1.alpha + p2.alpha) / 2);
+            const filamentAlpha = (1 - dist / maxDist) * 0.22 * ((p1.alpha + p2.alpha) / 2);
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(81, 70, 184, ${filamentAlpha})`;
-            ctx.lineWidth = 0.75;
+            ctx.strokeStyle = `rgba(99, 102, 241, ${filamentAlpha})`;
+            ctx.lineWidth = 0.85;
             ctx.stroke();
           }
         }

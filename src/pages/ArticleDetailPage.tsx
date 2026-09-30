@@ -85,7 +85,8 @@ export const ArticleDetailPage: React.FC = () => {
                 fontFamily: 'var(--font-serif)',
                 fontStyle: 'italic',
                 fontSize: '1.35rem',
-                color: '#8C6D23',
+                color: '#92400E',
+                fontWeight: 600,
                 marginBottom: '2rem',
                 lineHeight: 1.45
               }}
@@ -159,11 +160,12 @@ export const ArticleDetailPage: React.FC = () => {
                   <blockquote
                     key={idx}
                     style={{
-                      borderLeft: '3px solid #8C6D23',
-                      padding: '20px 28px',
-                      backgroundColor: 'rgba(140, 109, 35, 0.06)',
-                      borderRadius: '0 12px 12px 0',
-                      margin: '1rem 0'
+                      borderLeft: '4px solid #D97706',
+                      padding: '22px 30px',
+                      backgroundColor: 'rgba(254, 243, 199, 0.45)',
+                      borderRadius: '0 14px 14px 0',
+                      margin: '1.5rem 0',
+                      boxShadow: '0 4px 16px rgba(245, 158, 11, 0.1)'
                     }}
                   >
                     <p
@@ -171,7 +173,8 @@ export const ArticleDetailPage: React.FC = () => {
                         fontFamily: 'var(--font-serif)',
                         fontStyle: 'italic',
                         fontSize: '1.45rem',
-                        color: '#6E5316',
+                        color: '#92400E',
+                        fontWeight: 600,
                         lineHeight: 1.6
                       }}
                     >
@@ -233,7 +236,7 @@ export const ArticleDetailPage: React.FC = () => {
                   <ul key={idx} style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '14px', margin: '1rem 0' }}>
                     {block.items.map((item, itemIdx) => (
                       <li key={itemIdx} style={{ display: 'flex', gap: '12px', color: 'var(--text-primary)', fontSize: '1.1rem', lineHeight: 1.7 }}>
-                        <span style={{ color: '#8C6D23', fontWeight: 700 }}>•</span>
+                        <span style={{ color: '#D97706', fontWeight: 800 }}>•</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -251,15 +254,15 @@ export const ArticleDetailPage: React.FC = () => {
               style={{
                 marginTop: '5rem',
                 backgroundColor: '#FFFFFF',
-                border: '1px solid rgba(140, 109, 35, 0.25)',
-                borderRadius: '16px',
+                border: '1.5px solid rgba(217, 119, 6, 0.25)',
+                borderRadius: '18px',
                 padding: '32px',
                 display: 'flex',
                 flexWrap: 'wrap',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 gap: '24px',
-                boxShadow: '0 8px 24px rgba(25, 25, 29, 0.04)'
+                boxShadow: '0 12px 30px rgba(217, 119, 6, 0.08), 0 4px 12px rgba(15, 23, 42, 0.03)'
               }}
             >
               <div>

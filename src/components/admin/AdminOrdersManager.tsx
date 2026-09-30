@@ -40,9 +40,9 @@ export const AdminOrdersManager: React.FC = () => {
             boxShadow: 'var(--shadow-sm)'
           }}
         >
-          <DollarSign size={20} color="#8C6D23" />
+          <DollarSign size={20} color="#D97706" />
           <div>
-            <div style={{ fontSize: '0.72rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#8C6D23', fontWeight: 600 }}>
+            <div style={{ fontSize: '0.72rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#B45309', fontWeight: 700 }}>
               Total Gross Sales
             </div>
             <div style={{ fontSize: '1.35rem', fontWeight: 700, color: 'var(--text-primary)' }}>
@@ -96,7 +96,7 @@ export const AdminOrdersManager: React.FC = () => {
                   </td>
                   <td style={{ padding: '16px 18px' }}>
                     {ord.items.map((it, i) => (
-                      <div key={i} style={{ color: '#8C6D23', fontSize: '0.84rem', fontWeight: 500 }}>
+                      <div key={i} style={{ color: '#B45309', fontSize: '0.84rem', fontWeight: 600 }}>
                         {it.title}
                       </div>
                     ))}

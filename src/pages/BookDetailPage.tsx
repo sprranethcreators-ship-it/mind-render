@@ -99,7 +99,8 @@ export const BookDetailPage: React.FC = () => {
                   fontFamily: 'var(--font-serif)',
                   fontStyle: 'italic',
                   fontSize: '1.35rem',
-                  color: '#8C6D23',
+                  color: '#92400E',
+                  fontWeight: 600,
                   marginBottom: '1.25rem',
                   lineHeight: 1.4
                 }}
@@ -110,8 +111,8 @@ export const BookDetailPage: React.FC = () => {
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '1.75rem', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                 <span>By <strong style={{ color: 'var(--text-primary)' }}>{book.author}</strong></span>
                 <span>•</span>
-                <span style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#8C6D23' }}>
-                  <Star size={15} fill="#8C6D23" /> {book.rating} ({book.reviewsCount} verified readers)
+                <span style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#B45309', fontWeight: 600 }}>
+                  <Star size={15} fill="#D97706" color="#D97706" /> {book.rating} ({book.reviewsCount} verified readers)
                 </span>
               </div>
 
@@ -123,16 +124,16 @@ export const BookDetailPage: React.FC = () => {
               <div
                 style={{
                   backgroundColor: '#FFFFFF',
-                  border: '1px solid rgba(153, 117, 31, 0.25)',
+                  border: '1.5px solid rgba(217, 119, 6, 0.25)',
                   borderRadius: '16px',
                   padding: '24px 28px',
                   marginBottom: '2rem',
-                  boxShadow: '0 8px 24px rgba(25, 25, 29, 0.04)'
+                  boxShadow: '0 12px 30px rgba(217, 119, 6, 0.08), 0 4px 12px rgba(15, 23, 42, 0.03)'
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
                   <div>
-                    <span style={{ fontSize: '2.3rem', fontFamily: 'var(--font-display)', fontWeight: 700, color: '#8C6D23' }}>
+                    <span style={{ fontSize: '2.4rem', fontFamily: 'var(--font-display)', fontWeight: 800, color: '#B45309' }}>
                       ${book.price}
                     </span>
                     <span style={{ fontSize: '1.1rem', color: '#8A8C9E', textDecoration: 'line-through', marginLeft: '8px' }}>
@@ -306,7 +307,7 @@ export const BookDetailPage: React.FC = () => {
                   <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', color: 'var(--text-primary)', marginTop: '6px', marginBottom: '4px' }}>
                     <Link to={`/books/${rb.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>{rb.title}</Link>
                   </h4>
-                  <div style={{ color: '#8C6D23', fontWeight: 700, fontSize: '1.1rem', marginBottom: '12px' }}>
+                  <div style={{ color: '#B45309', fontWeight: 800, fontSize: '1.15rem', marginBottom: '12px' }}>
                     ${rb.price} USD
                   </div>
                   <Link to={`/books/${rb.slug}`} className="btn-secondary" style={{ padding: '6px 14px', fontSize: '0.78rem' }}>

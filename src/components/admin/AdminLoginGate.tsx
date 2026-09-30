@@ -84,7 +84,7 @@ export const AdminLoginGate: React.FC<AdminLoginGateProps> = ({ onAuthenticated 
               boxShadow: '0 0 25px rgba(140, 109, 35, 0.12)'
             }}
           >
-            <Lock size={28} color="#8C6D23" />
+            <Lock size={28} color="#D97706" />
           </div>
 
           <span
@@ -93,14 +93,14 @@ export const AdminLoginGate: React.FC<AdminLoginGateProps> = ({ onAuthenticated 
               fontSize: '0.72rem',
               letterSpacing: '0.22em',
               textTransform: 'uppercase',
-              color: '#8C6D23',
-              fontWeight: 600,
+              color: '#92400E',
+              fontWeight: 700,
               display: 'inline-flex',
               alignItems: 'center',
               gap: '6px'
             }}
           >
-            <Shield size={13} /> RESTRICTED ACCESS
+            <Shield size={13} color="#D97706" /> RESTRICTED ACCESS
           </span>
 
           <h1
@@ -211,11 +211,11 @@ export const AdminLoginGate: React.FC<AdminLoginGateProps> = ({ onAuthenticated 
               color: 'var(--text-secondary)'
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#8C6D23', fontWeight: 600 }}>
-              <KeyRound size={14} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#92400E', fontWeight: 700 }}>
+              <KeyRound size={14} color="#D97706" />
               <span>Default Master Key:</span>
             </div>
-            <div style={{ fontFamily: 'monospace', fontSize: '0.88rem', color: 'var(--text-primary)', backgroundColor: '#FAF8F3', border: '1px solid rgba(140, 109, 35, 0.25)', padding: '4px 8px', borderRadius: '4px', display: 'inline-block', fontWeight: 600 }}>
+            <div style={{ fontFamily: 'monospace', fontSize: '0.88rem', color: '#0F172A', backgroundColor: '#FFFBEB', border: '1px solid rgba(217, 119, 6, 0.3)', padding: '4px 8px', borderRadius: '6px', display: 'inline-block', fontWeight: 700 }}>
               MindRender@2026
             </div>
             <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '2px' }}>

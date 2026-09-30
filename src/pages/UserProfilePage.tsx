@@ -63,7 +63,7 @@ export const UserProfilePage: React.FC = () => {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(25, 25, 29, 0.08)', paddingBottom: '12px' }}>
                   <span style={{ color: 'var(--text-secondary)' }}>Digital Books Owned</span>
-                  <span style={{ fontWeight: 700, color: '#8C6D23' }}>{libraryItems.length} Treatises</span>
+                  <span style={{ fontWeight: 700, color: '#B45309' }}>{libraryItems.length} Treatises</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(25, 25, 29, 0.08)', paddingBottom: '12px' }}>
                   <span style={{ color: 'var(--text-secondary)' }}>Journal Inscriptions</span>
