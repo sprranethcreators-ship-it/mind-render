@@ -57,11 +57,11 @@ export const Navbar: React.FC = () => {
           left: 0,
           right: 0,
           height: isScrolled ? '64px' : '76px',
-          backgroundColor: isScrolled ? 'rgba(6, 7, 9, 0.92)' : 'rgba(6, 7, 9, 0.72)',
-          backdropFilter: 'blur(24px)',
-          WebkitBackdropFilter: 'blur(24px)',
-          borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(255, 255, 255, 0.06)',
-          boxShadow: isScrolled ? '0 10px 30px rgba(0, 0, 0, 0.7)' : 'none',
+          backgroundColor: isScrolled ? 'rgba(250, 248, 243, 0.96)' : 'rgba(250, 248, 243, 0.86)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          borderBottom: isScrolled ? '1px solid rgba(25, 25, 29, 0.08)' : '1px solid rgba(25, 25, 29, 0.05)',
+          boxShadow: isScrolled ? '0 6px 20px rgba(25, 25, 29, 0.04)' : 'none',
           zIndex: 8000,
           display: 'flex',
           alignItems: 'center',
@@ -85,12 +85,13 @@ export const Navbar: React.FC = () => {
                 width: '36px',
                 height: '36px',
                 borderRadius: '50%',
-                border: '1.5px solid #D4AF37',
+                border: '1.5px solid #99751F',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 position: 'relative',
-                boxShadow: '0 0 16px rgba(212, 175, 55, 0.25)'
+                boxShadow: '0 0 14px rgba(200, 168, 78, 0.15)',
+                backgroundColor: '#FFFFFF'
               }}
             >
               <div
@@ -98,7 +99,7 @@ export const Navbar: React.FC = () => {
                   width: '18px',
                   height: '18px',
                   borderRadius: '50%',
-                  border: '1px dashed #6366F1'
+                  border: '1px dashed #5146B8'
                 }}
               />
               <div
@@ -107,7 +108,7 @@ export const Navbar: React.FC = () => {
                   width: '6px',
                   height: '6px',
                   borderRadius: '50%',
-                  backgroundColor: '#D4AF37'
+                  backgroundColor: '#99751F'
                 }}
               />
             </div>
@@ -117,9 +118,9 @@ export const Navbar: React.FC = () => {
                 style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.25rem',
-                  fontWeight: 700,
+                  fontWeight: 800,
                   letterSpacing: '0.14em',
-                  color: '#F8FAFC',
+                  color: 'var(--text-primary)',
                   lineHeight: 1
                 }}
               >
@@ -127,10 +128,11 @@ export const Navbar: React.FC = () => {
               </div>
               <div
                 style={{
-                  fontSize: '0.62rem',
+                  fontSize: '0.64rem',
                   letterSpacing: '0.22em',
                   textTransform: 'uppercase',
-                  color: '#D4AF37',
+                  color: '#99751F',
+                  fontWeight: 700,
                   marginTop: '3px'
                 }}
               >
@@ -158,8 +160,8 @@ export const Navbar: React.FC = () => {
                     fontSize: '0.88rem',
                     letterSpacing: '0.08em',
                     textTransform: 'uppercase',
-                    fontWeight: active ? 600 : 500,
-                    color: active ? '#D4AF37' : '#CBD5E1',
+                    fontWeight: active ? 700 : 600,
+                    color: active ? '#5146B8' : '#2D2E36',
                     position: 'relative',
                     padding: '8px 0',
                     transition: 'color var(--transition-fast)'
@@ -173,11 +175,11 @@ export const Navbar: React.FC = () => {
                         bottom: 0,
                         left: '50%',
                         transform: 'translateX(-50%)',
-                        width: '16px',
+                        width: '18px',
                         height: '2px',
-                        backgroundColor: '#D4AF37',
+                        backgroundColor: '#5146B8',
                         borderRadius: '2px',
-                        boxShadow: '0 0 8px #D4AF37'
+                        boxShadow: '0 0 6px rgba(81, 70, 184, 0.4)'
                       }}
                     />
                   )}
@@ -196,13 +198,15 @@ export const Navbar: React.FC = () => {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '6px',
-                  padding: '7px 12px',
+                  padding: '7px 14px',
                   borderRadius: '20px',
-                  backgroundColor: isPlaying ? 'rgba(99, 102, 241, 0.2)' : 'rgba(255, 255, 255, 0.04)',
-                  border: isPlaying ? '1px solid rgba(99, 102, 241, 0.5)' : '1px solid rgba(255, 255, 255, 0.08)',
-                  color: isPlaying ? '#818CF8' : '#94A3B8',
-                  fontSize: '0.78rem',
-                  fontWeight: 500
+                  backgroundColor: isPlaying ? 'rgba(81, 70, 184, 0.1)' : '#FFFFFF',
+                  border: isPlaying ? '1px solid #5146B8' : '1px solid var(--border-subtle)',
+                  color: isPlaying ? '#5146B8' : 'var(--text-secondary)',
+                  fontSize: '0.8rem',
+                  fontWeight: 600,
+                  boxShadow: 'var(--shadow-sm)',
+                  cursor: 'pointer'
                 }}
                 title="Contemplation Soundscapes"
               >
@@ -219,15 +223,15 @@ export const Navbar: React.FC = () => {
                     top: 'calc(100% + 8px)',
                     right: 0,
                     width: '240px',
-                    backgroundColor: '#10131B',
-                    border: '1px solid rgba(255, 255, 255, 0.12)',
-                    borderRadius: '10px',
-                    boxShadow: '0 15px 35px rgba(0,0,0,0.7)',
+                    backgroundColor: '#FFFFFF',
+                    border: '1px solid var(--border-subtle)',
+                    borderRadius: '12px',
+                    boxShadow: '0 12px 35px rgba(25, 25, 29, 0.1)',
                     padding: '8px',
                     zIndex: 9000
                   }}
                 >
-                  <div style={{ fontSize: '0.7rem', color: '#64748B', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '6px 8px 4px' }}>
+                  <div style={{ fontSize: '0.7rem', color: '#747484', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '6px 8px 4px', fontWeight: 600 }}>
                     Mind Frequencies (Web Audio)
                   </div>
                   <button
@@ -239,13 +243,14 @@ export const Navbar: React.FC = () => {
                       alignItems: 'center',
                       justifyContent: 'space-between',
                       borderRadius: '6px',
-                      color: currentSound === 'solfeggio432' ? '#D4AF37' : '#CBD5E1',
-                      backgroundColor: currentSound === 'solfeggio432' ? 'rgba(212, 175, 55, 0.1)' : 'transparent',
-                      fontSize: '0.84rem'
+                      color: currentSound === 'solfeggio432' ? '#99751F' : 'var(--text-primary)',
+                      backgroundColor: currentSound === 'solfeggio432' ? 'rgba(200, 168, 78, 0.12)' : 'transparent',
+                      fontSize: '0.84rem',
+                      fontWeight: 600
                     }}
                   >
                     <span>432 Hz Healing Harmony</span>
-                    {currentSound === 'solfeggio432' && <Sparkles size={14} />}
+                    {currentSound === 'solfeggio432' && <Sparkles size={14} color="#99751F" />}
                   </button>
 
                   <button
@@ -257,13 +262,14 @@ export const Navbar: React.FC = () => {
                       alignItems: 'center',
                       justifyContent: 'space-between',
                       borderRadius: '6px',
-                      color: currentSound === 'solfeggio528' ? '#818CF8' : '#CBD5E1',
-                      backgroundColor: currentSound === 'solfeggio528' ? 'rgba(99, 102, 241, 0.1)' : 'transparent',
-                      fontSize: '0.84rem'
+                      color: currentSound === 'solfeggio528' ? '#5146B8' : 'var(--text-primary)',
+                      backgroundColor: currentSound === 'solfeggio528' ? 'rgba(81, 70, 184, 0.1)' : 'transparent',
+                      fontSize: '0.84rem',
+                      fontWeight: 600
                     }}
                   >
                     <span>528 Hz Transformation</span>
-                    {currentSound === 'solfeggio528' && <Sparkles size={14} />}
+                    {currentSound === 'solfeggio528' && <Sparkles size={14} color="#5146B8" />}
                   </button>
 
                   <button
@@ -275,13 +281,14 @@ export const Navbar: React.FC = () => {
                       alignItems: 'center',
                       justifyContent: 'space-between',
                       borderRadius: '6px',
-                      color: currentSound === 'brownNoise' ? '#6EE7B7' : '#CBD5E1',
-                      backgroundColor: currentSound === 'brownNoise' ? 'rgba(110, 231, 183, 0.1)' : 'transparent',
-                      fontSize: '0.84rem'
+                      color: currentSound === 'brownNoise' ? '#059669' : 'var(--text-primary)',
+                      backgroundColor: currentSound === 'brownNoise' ? 'rgba(5, 150, 105, 0.1)' : 'transparent',
+                      fontSize: '0.84rem',
+                      fontWeight: 600
                     }}
                   >
                     <span>Deep Focus Rain / Hum</span>
-                    {currentSound === 'brownNoise' && <Sparkles size={14} />}
+                    {currentSound === 'brownNoise' && <Sparkles size={14} color="#059669" />}
                   </button>
 
                   {isPlaying && (
@@ -291,12 +298,13 @@ export const Navbar: React.FC = () => {
                         width: '100%',
                         padding: '6px 10px',
                         marginTop: '4px',
-                        borderTop: '1px solid rgba(255,255,255,0.08)',
-                        color: '#EF4444',
+                        borderTop: '1px solid var(--border-subtle)',
+                        color: '#DC2626',
                         display: 'flex',
                         alignItems: 'center',
                         gap: '6px',
-                        fontSize: '0.78rem'
+                        fontSize: '0.78rem',
+                        fontWeight: 600
                       }}
                     >
                       <VolumeX size={14} /> Mute Sound
@@ -316,25 +324,26 @@ export const Navbar: React.FC = () => {
                 gap: '6px',
                 padding: '7px 14px',
                 borderRadius: '6px',
-                backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                color: '#F8FAFC',
+                backgroundColor: '#FFFFFF',
+                border: '1px solid var(--border-subtle)',
+                color: 'var(--text-primary)',
                 fontSize: '0.84rem',
-                fontWeight: 500,
+                fontWeight: 600,
+                boxShadow: 'var(--shadow-sm)',
                 position: 'relative'
               }}
             >
-              <BookOpen size={15} color="#D4AF37" />
+              <BookOpen size={15} color="#99751F" />
               <span className="library-text">My Library</span>
               {libraryItems.length > 0 && (
                 <span
                   style={{
-                    backgroundColor: '#D4AF37',
-                    color: '#090B10',
+                    backgroundColor: '#99751F',
+                    color: '#FFFFFF',
                     fontSize: '0.68rem',
                     fontWeight: 700,
-                    width: '17px',
-                    height: '17px',
+                    width: '18px',
+                    height: '18px',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
@@ -357,13 +366,16 @@ export const Navbar: React.FC = () => {
                   gap: '6px',
                   padding: '7px 12px',
                   borderRadius: '6px',
-                  backgroundColor: isAdmin ? 'rgba(212, 175, 55, 0.15)' : 'rgba(255, 255, 255, 0.04)',
-                  border: isAdmin ? '1px solid rgba(212, 175, 55, 0.4)' : '1px solid rgba(255, 255, 255, 0.08)',
-                  color: isAdmin ? '#D4AF37' : '#CBD5E1',
-                  fontSize: '0.82rem'
+                  backgroundColor: isAdmin ? 'rgba(200, 168, 78, 0.12)' : '#FFFFFF',
+                  border: isAdmin ? '1px solid rgba(200, 168, 78, 0.4)' : '1px solid var(--border-subtle)',
+                  color: isAdmin ? '#99751F' : 'var(--text-primary)',
+                  fontSize: '0.82rem',
+                  fontWeight: 600,
+                  boxShadow: 'var(--shadow-sm)',
+                  cursor: 'pointer'
                 }}
               >
-                {isAdmin ? <Shield size={15} /> : <UserIcon size={15} />}
+                {isAdmin ? <Shield size={15} color="#99751F" /> : <UserIcon size={15} />}
                 <span className="user-name">{currentUser?.name.split(' ')[0] || 'Account'}</span>
               </button>
 
@@ -374,19 +386,19 @@ export const Navbar: React.FC = () => {
                     top: 'calc(100% + 8px)',
                     right: 0,
                     width: '260px',
-                    backgroundColor: '#10131B',
-                    border: '1px solid rgba(255, 255, 255, 0.12)',
-                    borderRadius: '10px',
-                    boxShadow: '0 15px 35px rgba(0,0,0,0.8)',
+                    backgroundColor: '#FFFFFF',
+                    border: '1px solid var(--border-subtle)',
+                    borderRadius: '12px',
+                    boxShadow: '0 15px 40px rgba(25, 25, 29, 0.12)',
                     padding: '10px',
                     zIndex: 9000
                   }}
                 >
-                  <div style={{ padding: '6px 8px 10px', borderBottom: '1px solid rgba(255,255,255,0.08)', marginBottom: '8px' }}>
-                    <div style={{ fontWeight: 600, color: '#F8FAFC', fontSize: '0.9rem' }}>
+                  <div style={{ padding: '6px 8px 10px', borderBottom: '1px solid var(--border-subtle)', marginBottom: '8px' }}>
+                    <div style={{ fontWeight: 700, color: 'var(--text-primary)', fontSize: '0.9rem' }}>
                       {currentUser?.name || 'Guest Explorer'}
                     </div>
-                    <div style={{ fontSize: '0.78rem', color: '#94A3B8' }}>
+                    <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
                       {currentUser?.email || 'Sign in to access digital books'}
                     </div>
                     <div style={{ marginTop: '6px' }}>
@@ -405,10 +417,10 @@ export const Navbar: React.FC = () => {
                       gap: '8px',
                       padding: '8px 10px',
                       borderRadius: '6px',
-                      color: '#D4AF37',
+                      color: '#99751F',
                       fontSize: '0.84rem',
-                      fontWeight: 600,
-                      backgroundColor: 'rgba(212, 175, 55, 0.08)',
+                      fontWeight: 700,
+                      backgroundColor: 'rgba(200, 168, 78, 0.1)',
                       marginBottom: '6px'
                     }}
                   >
@@ -421,9 +433,10 @@ export const Navbar: React.FC = () => {
                     style={{
                       display: 'block',
                       padding: '7px 10px',
-                      color: '#CBD5E1',
+                      color: 'var(--text-secondary)',
                       fontSize: '0.84rem',
-                      borderRadius: '4px'
+                      borderRadius: '4px',
+                      fontWeight: 500
                     }}
                   >
                     Order History & Receipts
@@ -435,15 +448,16 @@ export const Navbar: React.FC = () => {
                     style={{
                       display: 'block',
                       padding: '7px 10px',
-                      color: '#CBD5E1',
+                      color: 'var(--text-secondary)',
                       fontSize: '0.84rem',
-                      borderRadius: '4px'
+                      borderRadius: '4px',
+                      fontWeight: 500
                     }}
                   >
                     Member Profile & Journal
                   </Link>
 
-                  <div style={{ marginTop: '8px', paddingTop: '8px', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+                  <div style={{ marginTop: '8px', paddingTop: '8px', borderTop: '1px solid var(--border-subtle)' }}>
                     <Link
                       to="/admin"
                       onClick={() => setAccountMenuOpen(false)}
@@ -452,9 +466,10 @@ export const Navbar: React.FC = () => {
                         alignItems: 'center',
                         gap: '6px',
                         fontSize: '0.78rem',
-                        color: '#D4AF37',
+                        color: '#99751F',
                         padding: '4px 8px',
-                        textDecoration: 'none'
+                        textDecoration: 'none',
+                        fontWeight: 600
                       }}
                     >
                       <Shield size={13} />
@@ -470,7 +485,7 @@ export const Navbar: React.FC = () => {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="mobile-hamburger"
               style={{
-                color: '#F8FAFC',
+                color: 'var(--text-primary)',
                 padding: '6px',
                 display: 'none',
                 alignItems: 'center',
@@ -489,16 +504,17 @@ export const Navbar: React.FC = () => {
         <div
           style={{
             position: 'fixed',
-            top: '76px',
+            top: '64px',
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: '#090B10',
+            backgroundColor: '#FAF8F3',
             zIndex: 7999,
             padding: '24px',
             display: 'flex',
             flexDirection: 'column',
-            gap: '18px'
+            gap: '18px',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
           }}
         >
           {navLinks.map(link => (
@@ -509,9 +525,10 @@ export const Navbar: React.FC = () => {
               style={{
                 fontSize: '1.2rem',
                 fontFamily: 'var(--font-display)',
-                color: isActive(link.path) ? '#D4AF37' : '#F8FAFC',
-                padding: '8px 0',
-                borderBottom: '1px solid rgba(255,255,255,0.06)'
+                color: isActive(link.path) ? '#5146B8' : 'var(--text-primary)',
+                fontWeight: 600,
+                padding: '10px 0',
+                borderBottom: '1px solid var(--border-subtle)'
               }}
             >
               {link.label}
@@ -522,8 +539,9 @@ export const Navbar: React.FC = () => {
             onClick={() => setMobileMenuOpen(false)}
             style={{
               fontSize: '1.1rem',
-              color: '#D4AF37',
-              padding: '8px 0',
+              color: '#99751F',
+              fontWeight: 600,
+              padding: '10px 0',
               display: 'flex',
               alignItems: 'center',
               gap: '8px'
@@ -536,8 +554,9 @@ export const Navbar: React.FC = () => {
             onClick={() => setMobileMenuOpen(false)}
             style={{
               fontSize: '1.1rem',
-              color: '#818CF8',
-              padding: '8px 0',
+              color: '#5146B8',
+              fontWeight: 600,
+              padding: '10px 0',
               display: 'flex',
               alignItems: 'center',
               gap: '8px'

@@ -73,16 +73,16 @@ export const AdminDashboardPage: React.FC = () => {
   // If not authenticated via master key gate, show login gate
   if (!isAuthenticated) {
     return (
-      <div style={{ paddingTop: '80px', minHeight: '100vh', backgroundColor: '#07080B' }}>
+      <div style={{ paddingTop: '80px', minHeight: '100vh', backgroundColor: 'var(--bg-cosmos)' }}>
         <AdminLoginGate onAuthenticated={() => setIsAuthenticated(true)} />
       </div>
     );
   }
 
   return (
-    <div style={{ paddingTop: '80px', minHeight: '100vh', backgroundColor: '#07080B' }}>
+    <div style={{ paddingTop: '80px', minHeight: '100vh', backgroundColor: 'var(--bg-cosmos)' }}>
       {/* Top Banner */}
-      <section style={{ padding: '36px 0 20px', backgroundColor: '#090B10', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+      <section style={{ padding: '36px 0 20px', backgroundColor: 'var(--bg-surface)', borderBottom: '1px solid var(--border-soft)' }}>
         <div className="container">
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
             <div>
@@ -90,11 +90,11 @@ export const AdminDashboardPage: React.FC = () => {
                 <span className="badge-gold">
                   <Shield size={13} /> Master Admin Console
                 </span>
-                <span style={{ fontSize: '0.75rem', color: '#10B981', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                <span style={{ fontSize: '0.75rem', color: '#059669', display: 'flex', alignItems: 'center', gap: '4px', fontWeight: 600 }}>
                   <CheckCircle2 size={12} /> Authenticated Session
                 </span>
               </div>
-              <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '2.1rem', color: '#F8FAFC', marginTop: '6px' }}>
+              <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '2.1rem', color: 'var(--text-primary)', marginTop: '6px' }}>
                 MIND RENDER Management Portal
               </h1>
             </div>
@@ -111,7 +111,7 @@ export const AdminDashboardPage: React.FC = () => {
               <button
                 onClick={handleLogout}
                 className="btn-secondary"
-                style={{ padding: '0.65rem 1.2rem', fontSize: '0.82rem', borderColor: 'rgba(239, 68, 68, 0.3)', color: '#F87171' }}
+                style={{ padding: '0.65rem 1.2rem', fontSize: '0.82rem', borderColor: 'rgba(220, 38, 38, 0.3)', color: '#DC2626' }}
               >
                 <LogOut size={14} /> Lock & Exit
               </button>
@@ -124,54 +124,54 @@ export const AdminDashboardPage: React.FC = () => {
       <section style={{ padding: '28px 0 20px' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '18px' }}>
-            <div style={{ backgroundColor: '#0E1119', border: '1px solid rgba(212, 175, 55, 0.2)', borderRadius: '12px', padding: '18px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', color: '#D4AF37', marginBottom: '8px' }}>
-                <span style={{ fontSize: '0.74rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Gross Sales</span>
+            <div style={{ backgroundColor: '#FFFFFF', border: '1px solid rgba(140, 109, 35, 0.25)', borderRadius: '12px', padding: '18px', boxShadow: 'var(--shadow-sm)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', color: '#8C6D23', marginBottom: '8px' }}>
+                <span style={{ fontSize: '0.74rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600 }}>Gross Sales</span>
                 <DollarSign size={18} />
               </div>
-              <div style={{ fontSize: '1.6rem', fontWeight: 700, color: '#F8FAFC' }}>
+              <div style={{ fontSize: '1.6rem', fontWeight: 700, color: 'var(--text-primary)' }}>
                 ${totalRevenue.toLocaleString()}
               </div>
-              <div style={{ fontSize: '0.74rem', color: '#94A3B8', marginTop: '3px' }}>
+              <div style={{ fontSize: '0.74rem', color: 'var(--text-secondary)', marginTop: '3px' }}>
                 Across {orders.length} digital orders
               </div>
             </div>
 
-            <div style={{ backgroundColor: '#0E1119', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '18px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', color: '#818CF8', marginBottom: '8px' }}>
-                <span style={{ fontSize: '0.74rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Treatises Catalog</span>
+            <div style={{ backgroundColor: '#FFFFFF', border: '1px solid var(--border-soft)', borderRadius: '12px', padding: '18px', boxShadow: 'var(--shadow-sm)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--indigo-600)', marginBottom: '8px' }}>
+                <span style={{ fontSize: '0.74rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600 }}>Treatises Catalog</span>
                 <BookOpen size={18} />
               </div>
-              <div style={{ fontSize: '1.6rem', fontWeight: 700, color: '#F8FAFC' }}>
+              <div style={{ fontSize: '1.6rem', fontWeight: 700, color: 'var(--text-primary)' }}>
                 {books.length} Books
               </div>
-              <div style={{ fontSize: '0.74rem', color: '#94A3B8', marginTop: '3px' }}>
+              <div style={{ fontSize: '0.74rem', color: 'var(--text-secondary)', marginTop: '3px' }}>
                 {books.filter(b => b.isPublished).length} Published in bookstore
               </div>
             </div>
 
-            <div style={{ backgroundColor: '#0E1119', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '18px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', color: '#10B981', marginBottom: '8px' }}>
-                <span style={{ fontSize: '0.74rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Editorial Essays</span>
+            <div style={{ backgroundColor: '#FFFFFF', border: '1px solid var(--border-soft)', borderRadius: '12px', padding: '18px', boxShadow: 'var(--shadow-sm)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', color: '#059669', marginBottom: '8px' }}>
+                <span style={{ fontSize: '0.74rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600 }}>Editorial Essays</span>
                 <FileText size={18} />
               </div>
-              <div style={{ fontSize: '1.6rem', fontWeight: 700, color: '#F8FAFC' }}>
+              <div style={{ fontSize: '1.6rem', fontWeight: 700, color: 'var(--text-primary)' }}>
                 {articles.length} Essays
               </div>
-              <div style={{ fontSize: '0.74rem', color: '#94A3B8', marginTop: '3px' }}>
+              <div style={{ fontSize: '0.74rem', color: 'var(--text-secondary)', marginTop: '3px' }}>
                 Published thought pieces
               </div>
             </div>
 
-            <div style={{ backgroundColor: '#0E1119', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '18px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', color: '#F59E0B', marginBottom: '8px' }}>
-                <span style={{ fontSize: '0.74rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Registered Readers</span>
+            <div style={{ backgroundColor: '#FFFFFF', border: '1px solid var(--border-soft)', borderRadius: '12px', padding: '18px', boxShadow: 'var(--shadow-sm)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', color: '#D97706', marginBottom: '8px' }}>
+                <span style={{ fontSize: '0.74rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600 }}>Registered Readers</span>
                 <Users size={18} />
               </div>
-              <div style={{ fontSize: '1.6rem', fontWeight: 700, color: '#F8FAFC' }}>
+              <div style={{ fontSize: '1.6rem', fontWeight: 700, color: 'var(--text-primary)' }}>
                 {users.length} Users
               </div>
-              <div style={{ fontSize: '0.74rem', color: '#94A3B8', marginTop: '3px' }}>
+              <div style={{ fontSize: '0.74rem', color: 'var(--text-secondary)', marginTop: '3px' }}>
                 Active library accounts
               </div>
             </div>
@@ -186,7 +186,7 @@ export const AdminDashboardPage: React.FC = () => {
             style={{
               display: 'flex',
               gap: '8px',
-              borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+              borderBottom: '1px solid var(--border-soft)',
               paddingBottom: '12px',
               marginBottom: '28px',
               overflowX: 'auto'
@@ -200,13 +200,15 @@ export const AdminDashboardPage: React.FC = () => {
                 gap: '8px',
                 padding: '10px 18px',
                 borderRadius: '8px',
-                backgroundColor: activeTab === 'homepage' ? 'rgba(212, 175, 55, 0.15)' : 'transparent',
-                border: activeTab === 'homepage' ? '1px solid #D4AF37' : '1px solid transparent',
-                color: activeTab === 'homepage' ? '#F3E5AB' : '#94A3B8',
+                backgroundColor: activeTab === 'homepage' ? '#FFFFFF' : 'transparent',
+                border: activeTab === 'homepage' ? '1px solid rgba(140, 109, 35, 0.35)' : '1px solid transparent',
+                color: activeTab === 'homepage' ? '#8C6D23' : 'var(--text-secondary)',
+                boxShadow: activeTab === 'homepage' ? 'var(--shadow-sm)' : 'none',
                 fontWeight: 600,
                 fontSize: '0.88rem',
                 cursor: 'pointer',
-                whiteSpace: 'nowrap'
+                whiteSpace: 'nowrap',
+                transition: 'all 0.2s ease'
               }}
             >
               <Sparkles size={16} /> Homepage Content Studio
@@ -220,13 +222,15 @@ export const AdminDashboardPage: React.FC = () => {
                 gap: '8px',
                 padding: '10px 18px',
                 borderRadius: '8px',
-                backgroundColor: activeTab === 'books' ? 'rgba(212, 175, 55, 0.15)' : 'transparent',
-                border: activeTab === 'books' ? '1px solid #D4AF37' : '1px solid transparent',
-                color: activeTab === 'books' ? '#F3E5AB' : '#94A3B8',
+                backgroundColor: activeTab === 'books' ? '#FFFFFF' : 'transparent',
+                border: activeTab === 'books' ? '1px solid rgba(140, 109, 35, 0.35)' : '1px solid transparent',
+                color: activeTab === 'books' ? '#8C6D23' : 'var(--text-secondary)',
+                boxShadow: activeTab === 'books' ? 'var(--shadow-sm)' : 'none',
                 fontWeight: 600,
                 fontSize: '0.88rem',
                 cursor: 'pointer',
-                whiteSpace: 'nowrap'
+                whiteSpace: 'nowrap',
+                transition: 'all 0.2s ease'
               }}
             >
               <BookOpen size={16} /> Books & Treatises ({books.length})
@@ -240,13 +244,15 @@ export const AdminDashboardPage: React.FC = () => {
                 gap: '8px',
                 padding: '10px 18px',
                 borderRadius: '8px',
-                backgroundColor: activeTab === 'articles' ? 'rgba(212, 175, 55, 0.15)' : 'transparent',
-                border: activeTab === 'articles' ? '1px solid #D4AF37' : '1px solid transparent',
-                color: activeTab === 'articles' ? '#F3E5AB' : '#94A3B8',
+                backgroundColor: activeTab === 'articles' ? '#FFFFFF' : 'transparent',
+                border: activeTab === 'articles' ? '1px solid rgba(140, 109, 35, 0.35)' : '1px solid transparent',
+                color: activeTab === 'articles' ? '#8C6D23' : 'var(--text-secondary)',
+                boxShadow: activeTab === 'articles' ? 'var(--shadow-sm)' : 'none',
                 fontWeight: 600,
                 fontSize: '0.88rem',
                 cursor: 'pointer',
-                whiteSpace: 'nowrap'
+                whiteSpace: 'nowrap',
+                transition: 'all 0.2s ease'
               }}
             >
               <FileText size={16} /> Articles & Essays ({articles.length})
@@ -260,13 +266,15 @@ export const AdminDashboardPage: React.FC = () => {
                 gap: '8px',
                 padding: '10px 18px',
                 borderRadius: '8px',
-                backgroundColor: activeTab === 'orders' ? 'rgba(212, 175, 55, 0.15)' : 'transparent',
-                border: activeTab === 'orders' ? '1px solid #D4AF37' : '1px solid transparent',
-                color: activeTab === 'orders' ? '#F3E5AB' : '#94A3B8',
+                backgroundColor: activeTab === 'orders' ? '#FFFFFF' : 'transparent',
+                border: activeTab === 'orders' ? '1px solid rgba(140, 109, 35, 0.35)' : '1px solid transparent',
+                color: activeTab === 'orders' ? '#8C6D23' : 'var(--text-secondary)',
+                boxShadow: activeTab === 'orders' ? 'var(--shadow-sm)' : 'none',
                 fontWeight: 600,
                 fontSize: '0.88rem',
                 cursor: 'pointer',
-                whiteSpace: 'nowrap'
+                whiteSpace: 'nowrap',
+                transition: 'all 0.2s ease'
               }}
             >
               <ShoppingCart size={16} /> Orders & Revenue ({orders.length})
@@ -280,13 +288,15 @@ export const AdminDashboardPage: React.FC = () => {
                 gap: '8px',
                 padding: '10px 18px',
                 borderRadius: '8px',
-                backgroundColor: activeTab === 'users' ? 'rgba(212, 175, 55, 0.15)' : 'transparent',
-                border: activeTab === 'users' ? '1px solid #D4AF37' : '1px solid transparent',
-                color: activeTab === 'users' ? '#F3E5AB' : '#94A3B8',
+                backgroundColor: activeTab === 'users' ? '#FFFFFF' : 'transparent',
+                border: activeTab === 'users' ? '1px solid rgba(140, 109, 35, 0.35)' : '1px solid transparent',
+                color: activeTab === 'users' ? '#8C6D23' : 'var(--text-secondary)',
+                boxShadow: activeTab === 'users' ? 'var(--shadow-sm)' : 'none',
                 fontWeight: 600,
                 fontSize: '0.88rem',
                 cursor: 'pointer',
-                whiteSpace: 'nowrap'
+                whiteSpace: 'nowrap',
+                transition: 'all 0.2s ease'
               }}
             >
               <Users size={16} /> Reader Accounts ({users.length})
@@ -300,13 +310,15 @@ export const AdminDashboardPage: React.FC = () => {
                 gap: '8px',
                 padding: '10px 18px',
                 borderRadius: '8px',
-                backgroundColor: activeTab === 'security' ? 'rgba(212, 175, 55, 0.15)' : 'transparent',
-                border: activeTab === 'security' ? '1px solid #D4AF37' : '1px solid transparent',
-                color: activeTab === 'security' ? '#F3E5AB' : '#94A3B8',
+                backgroundColor: activeTab === 'security' ? '#FFFFFF' : 'transparent',
+                border: activeTab === 'security' ? '1px solid rgba(140, 109, 35, 0.35)' : '1px solid transparent',
+                color: activeTab === 'security' ? '#8C6D23' : 'var(--text-secondary)',
+                boxShadow: activeTab === 'security' ? 'var(--shadow-sm)' : 'none',
                 fontWeight: 600,
                 fontSize: '0.88rem',
                 cursor: 'pointer',
-                whiteSpace: 'nowrap'
+                whiteSpace: 'nowrap',
+                transition: 'all 0.2s ease'
               }}
             >
               <ShieldAlert size={16} /> Security & Anti-Tamper ({auditLogs.length})
@@ -320,35 +332,35 @@ export const AdminDashboardPage: React.FC = () => {
           {activeTab === 'orders' && <AdminOrdersManager />}
           {activeTab === 'users' && <AdminUsersManager />}
           {activeTab === 'security' && (
-            <div style={{ backgroundColor: '#0A0C14', borderRadius: '16px', border: '1px solid rgba(255, 255, 255, 0.08)', padding: '32px' }}>
-              <h3 style={{ color: '#F8FAFC', fontSize: '1.4rem', marginBottom: '8px' }}>
+            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '16px', border: '1px solid var(--border-soft)', padding: '32px', boxShadow: 'var(--shadow-sm)' }}>
+              <h3 style={{ color: 'var(--text-primary)', fontSize: '1.4rem', marginBottom: '8px', fontFamily: 'var(--font-display)' }}>
                 Platform Security & Anti-Hacking Guard
               </h3>
-              <p style={{ color: '#94A3B8', fontSize: '0.92rem', marginBottom: '24px' }}>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginBottom: '24px' }}>
                 Mind Render features cryptographically verified price integrity checks, rate-limiting anti-brute-force lockout, and continuous security event auditing.
               </p>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '20px', marginBottom: '32px' }}>
-                <div style={{ padding: '20px', backgroundColor: '#0E1119', borderRadius: '12px', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
-                  <div style={{ color: '#10B981', fontWeight: 600, marginBottom: '6px' }}>Price Integrity Engine: ACTIVE</div>
-                  <div style={{ color: '#94A3B8', fontSize: '0.85rem' }}>
+                <div style={{ padding: '20px', backgroundColor: 'var(--bg-deep)', borderRadius: '12px', border: '1px solid rgba(16, 185, 129, 0.25)' }}>
+                  <div style={{ color: '#059669', fontWeight: 600, marginBottom: '6px' }}>Price Integrity Engine: ACTIVE</div>
+                  <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
                     All book checkouts validate client-side values against the authoritative server registry. Any modified price is instantly rejected.
                   </div>
                 </div>
 
-                <div style={{ padding: '20px', backgroundColor: '#0E1119', borderRadius: '12px', border: '1px solid rgba(212, 175, 55, 0.2)' }}>
-                  <div style={{ color: '#D4AF37', fontWeight: 600, marginBottom: '6px' }}>Brute-Force Shield: ACTIVE</div>
-                  <div style={{ color: '#94A3B8', fontSize: '0.85rem' }}>
+                <div style={{ padding: '20px', backgroundColor: 'var(--bg-deep)', borderRadius: '12px', border: '1px solid rgba(140, 109, 35, 0.25)' }}>
+                  <div style={{ color: '#8C6D23', fontWeight: 600, marginBottom: '6px' }}>Brute-Force Shield: ACTIVE</div>
+                  <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
                     Max 5 attempts allowed before a 15-minute lockout activates automatically.
                   </div>
                 </div>
               </div>
 
-              <h4 style={{ color: '#CBD5E1', fontSize: '1.1rem', marginBottom: '16px' }}>
+              <h4 style={{ color: 'var(--text-primary)', fontSize: '1.1rem', marginBottom: '16px' }}>
                 Recent Security Audit Logs ({auditLogs.length})
               </h4>
               {auditLogs.length === 0 ? (
-                <div style={{ color: '#64748B', fontStyle: 'italic', padding: '20px', textAlign: 'center' }}>
+                <div style={{ color: 'var(--text-muted)', fontStyle: 'italic', padding: '20px', textAlign: 'center' }}>
                   No security incidents or anomalies recorded. System is 100% secure.
                 </div>
               ) : (
@@ -358,9 +370,9 @@ export const AdminDashboardPage: React.FC = () => {
                       key={log.id}
                       style={{
                         padding: '14px 18px',
-                        backgroundColor: '#0E1119',
+                        backgroundColor: 'var(--bg-deep)',
                         borderRadius: '8px',
-                        border: '1px solid rgba(255, 255, 255, 0.06)',
+                        border: '1px solid var(--border-soft)',
                         display: 'flex',
                         justifyContent: 'space-between',
                         alignItems: 'center',
@@ -368,12 +380,12 @@ export const AdminDashboardPage: React.FC = () => {
                       }}
                     >
                       <div>
-                        <span style={{ fontWeight: 600, color: log.severity === 'critical' ? '#F87171' : log.severity === 'medium' ? '#FBBF24' : '#818CF8', fontSize: '0.8rem', marginRight: '10px' }}>
+                        <span style={{ fontWeight: 600, color: log.severity === 'critical' ? '#DC2626' : log.severity === 'medium' ? '#D97706' : 'var(--indigo-600)', fontSize: '0.8rem', marginRight: '10px' }}>
                           [{log.eventType}]
                         </span>
-                        <span style={{ color: '#E2E8F0', fontSize: '0.88rem' }}>{log.details}</span>
+                        <span style={{ color: 'var(--text-primary)', fontSize: '0.88rem' }}>{log.details}</span>
                       </div>
-                      <span style={{ fontSize: '0.74rem', color: '#64748B', whiteSpace: 'nowrap' }}>
+                      <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)', whiteSpace: 'nowrap' }}>
                         {new Date(log.timestamp).toLocaleTimeString()}
                       </span>
                     </div>
@@ -391,8 +403,8 @@ export const AdminDashboardPage: React.FC = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            backgroundColor: 'rgba(5, 6, 8, 0.85)',
-            backdropFilter: 'blur(12px)',
+            backgroundColor: 'rgba(25, 25, 29, 0.6)',
+            backdropFilter: 'blur(8px)',
             zIndex: 9999,
             display: 'flex',
             alignItems: 'center',
@@ -405,22 +417,22 @@ export const AdminDashboardPage: React.FC = () => {
             style={{
               width: '100%',
               maxWidth: '440px',
-              backgroundColor: '#0E1119',
-              border: '1px solid rgba(212, 175, 55, 0.3)',
+              backgroundColor: '#FFFFFF',
+              border: '1px solid var(--border-medium)',
               borderRadius: '16px',
               padding: '32px 28px',
-              boxShadow: '0 25px 60px rgba(0,0,0,0.9)'
+              boxShadow: 'var(--shadow-xl)'
             }}
             onClick={e => e.stopPropagation()}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '1.25rem' }}>
-              <Lock size={20} color="#D4AF37" />
-              <h3 style={{ color: '#F8FAFC', fontSize: '1.2rem' }}>Change Master Admin Key</h3>
+              <Lock size={20} color="#8C6D23" />
+              <h3 style={{ color: 'var(--text-primary)', fontSize: '1.2rem', fontFamily: 'var(--font-display)' }}>Change Master Admin Key</h3>
             </div>
 
             <form onSubmit={handlePasswordChange}>
               <div style={{ marginBottom: '14px' }}>
-                <label style={{ display: 'block', fontSize: '0.82rem', color: '#CBD5E1', marginBottom: '6px' }}>
+                <label style={{ display: 'block', fontSize: '0.82rem', color: 'var(--text-secondary)', marginBottom: '6px', fontWeight: 500 }}>
                   New Master Password (min 8 chars)
                 </label>
                 <input
@@ -434,7 +446,7 @@ export const AdminDashboardPage: React.FC = () => {
               </div>
 
               <div style={{ marginBottom: '20px' }}>
-                <label style={{ display: 'block', fontSize: '0.82rem', color: '#CBD5E1', marginBottom: '6px' }}>
+                <label style={{ display: 'block', fontSize: '0.82rem', color: 'var(--text-secondary)', marginBottom: '6px', fontWeight: 500 }}>
                   Confirm New Password
                 </label>
                 <input

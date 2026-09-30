@@ -47,14 +47,14 @@ export const FocusTimerTool: React.FC = () => {
   return (
     <div
       style={{
-        backgroundColor: '#0F121B',
-        border: '1px solid rgba(255, 255, 255, 0.08)',
+        backgroundColor: '#FFFFFF',
+        border: '1px solid rgba(25, 25, 29, 0.08)',
         borderRadius: '20px',
         padding: '40px',
         maxWidth: '720px',
         margin: '0 auto',
         textAlign: 'center',
-        boxShadow: '0 20px 50px rgba(0,0,0,0.6)'
+        boxShadow: '0 16px 40px rgba(25, 25, 29, 0.05)'
       }}
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
@@ -65,10 +65,13 @@ export const FocusTimerTool: React.FC = () => {
           onClick={() => toggleSound('brownNoise')}
           style={{
             fontSize: '0.78rem',
-            color: currentSound === 'brownNoise' ? '#6EE7B7' : '#94A3B8',
+            color: currentSound === 'brownNoise' ? 'var(--indigo-600)' : 'var(--text-secondary)',
             display: 'flex',
             alignItems: 'center',
-            gap: '6px'
+            gap: '6px',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer'
           }}
         >
           <Volume2 size={14} /> Rain Hum {currentSound === 'brownNoise' ? '(Active)' : '(Off)'}
@@ -84,11 +87,13 @@ export const FocusTimerTool: React.FC = () => {
             style={{
               padding: '8px 18px',
               borderRadius: '8px',
-              border: selectedMinutes === mins ? '1px solid #6366F1' : '1px solid rgba(255,255,255,0.08)',
-              backgroundColor: selectedMinutes === mins ? 'rgba(99, 102, 241, 0.15)' : 'transparent',
-              color: selectedMinutes === mins ? '#818CF8' : '#CBD5E1',
+              border: selectedMinutes === mins ? '1px solid var(--indigo-600)' : '1px solid rgba(25, 25, 29, 0.1)',
+              backgroundColor: selectedMinutes === mins ? 'rgba(81, 70, 184, 0.1)' : '#FAF8F3',
+              color: selectedMinutes === mins ? 'var(--indigo-600)' : 'var(--text-secondary)',
               fontSize: '0.86rem',
-              fontWeight: 600
+              fontWeight: 600,
+              cursor: 'pointer',
+              transition: 'all 0.2s ease'
             }}
           >
             {mins} Minutes
@@ -102,7 +107,7 @@ export const FocusTimerTool: React.FC = () => {
           fontFamily: 'monospace',
           fontSize: 'clamp(3.5rem, 8vw, 5.5rem)',
           fontWeight: 700,
-          color: '#F8FAFC',
+          color: 'var(--text-primary)',
           marginBottom: '1rem',
           letterSpacing: '0.04em'
         }}
@@ -110,7 +115,7 @@ export const FocusTimerTool: React.FC = () => {
         {formatTime(secondsLeft)}
       </div>
 
-      <p style={{ color: '#94A3B8', fontSize: '0.92rem', maxWidth: '480px', margin: '0 auto 2.5rem' }}>
+      <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', maxWidth: '480px', margin: '0 auto 2.5rem' }}>
         Withdraw your sensory apparatus from all peripheral interruptions. Surrender to one single creative act.
       </p>
 

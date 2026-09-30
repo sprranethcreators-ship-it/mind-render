@@ -13,13 +13,13 @@ export const WhyMindRender: React.FC<WhyMindRenderProps> = ({ content }) => {
   const getPillarIcon = (idx: number) => {
     switch (idx) {
       case 0:
-        return <BookOpen size={24} color="#D4AF37" />;
+        return <BookOpen size={24} color="#99751F" />;
       case 1:
-        return <Sparkles size={24} color="#818CF8" />;
+        return <Sparkles size={24} color="#5146B8" />;
       case 2:
-        return <Target size={24} color="#10B981" />;
+        return <Target size={24} color="#059669" />;
       default:
-        return <RefreshCw size={24} color="#F59E0B" />;
+        return <RefreshCw size={24} color="#B45309" />;
     }
   };
 
@@ -27,10 +27,10 @@ export const WhyMindRender: React.FC<WhyMindRenderProps> = ({ content }) => {
     <section
       style={{
         padding: '120px 0 130px',
-        backgroundColor: '#090B10',
+        backgroundColor: '#F7F4EE',
         position: 'relative',
-        borderTop: '1px solid rgba(255, 255, 255, 0.05)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
+        borderTop: '1px solid var(--border-subtle)',
+        borderBottom: '1px solid var(--border-subtle)'
       }}
     >
       <div className="container">
@@ -43,7 +43,7 @@ export const WhyMindRender: React.FC<WhyMindRenderProps> = ({ content }) => {
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(2.2rem, 3.8vw, 3.2rem)',
-              color: '#F8FAFC',
+              color: 'var(--text-primary)',
               letterSpacing: '0.04em',
               marginBottom: '1rem'
             }}
@@ -54,8 +54,8 @@ export const WhyMindRender: React.FC<WhyMindRenderProps> = ({ content }) => {
             style={{
               maxWidth: '660px',
               margin: '0 auto',
-              color: '#94A3B8',
-              fontSize: '1.05rem',
+              color: 'var(--text-secondary)',
+              fontSize: '1.08rem',
               lineHeight: 1.75
             }}
           >
@@ -69,32 +69,37 @@ export const WhyMindRender: React.FC<WhyMindRenderProps> = ({ content }) => {
             <div
               key={idx}
               className="card-panel card-panel-responsive"
+              style={{
+                backgroundColor: '#FFFFFF',
+                border: '1px solid var(--border-subtle)',
+                boxShadow: '0 8px 24px rgba(25, 25, 29, 0.04)'
+              }}
             >
               <div
                 style={{
-                  width: '48px',
-                  height: '48px',
+                  width: '50px',
+                  height: '50px',
                   borderRadius: '12px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.04)',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  backgroundColor: '#FAF8F3',
+                  border: '1px solid var(--border-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  marginBottom: '1.25rem'
+                  marginBottom: '1.35rem'
                 }}
               >
                 {getPillarIcon(idx)}
               </div>
 
-              <span style={{ fontSize: '0.74rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#D4AF37', fontWeight: 600 }}>
+              <span style={{ fontSize: '0.76rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: idx === 0 ? '#99751F' : idx === 1 ? '#5146B8' : idx === 2 ? '#059669' : '#B45309', fontWeight: 700 }}>
                 {pillar.subtitle}
               </span>
 
               <h3
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(1.25rem, 2.2vw, 1.65rem)',
-                  color: '#F8FAFC',
+                  fontSize: 'clamp(1.3rem, 2.2vw, 1.7rem)',
+                  color: 'var(--text-primary)',
                   marginTop: '0.4rem',
                   marginBottom: '0.85rem',
                   overflowWrap: 'break-word',
@@ -104,7 +109,7 @@ export const WhyMindRender: React.FC<WhyMindRenderProps> = ({ content }) => {
                 {pillar.title}
               </h3>
 
-              <p style={{ color: '#94A3B8', fontSize: '0.94rem', lineHeight: 1.7 }}>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.96rem', lineHeight: 1.7 }}>
                 {pillar.desc}
               </p>
             </div>

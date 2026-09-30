@@ -20,9 +20,9 @@ export const ArticleDetailPage: React.FC = () => {
   };
 
   return (
-    <div style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: '#07080B' }}>
+    <div style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: 'var(--bg-cosmos)' }}>
       {/* Breadcrumb & Actions */}
-      <div style={{ padding: '24px 0', borderBottom: '1px solid rgba(255, 255, 255, 0.06)' }}>
+      <div style={{ padding: '24px 0', borderBottom: '1px solid rgba(25, 25, 29, 0.08)' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Link
             to="/articles"
@@ -30,8 +30,9 @@ export const ArticleDetailPage: React.FC = () => {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '6px',
-              color: '#94A3B8',
-              fontSize: '0.85rem'
+              color: 'var(--text-secondary)',
+              fontSize: '0.85rem',
+              textDecoration: 'none'
             }}
           >
             <ArrowLeft size={16} /> Back to All Essays
@@ -39,7 +40,18 @@ export const ArticleDetailPage: React.FC = () => {
 
           <button
             onClick={handleShare}
-            style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#CBD5E1', fontSize: '0.82rem', padding: '6px 12px', borderRadius: '6px', backgroundColor: 'rgba(255,255,255,0.04)' }}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              color: 'var(--text-secondary)',
+              fontSize: '0.82rem',
+              padding: '6px 14px',
+              borderRadius: '6px',
+              backgroundColor: '#FFFFFF',
+              border: '1px solid rgba(25, 25, 29, 0.1)',
+              cursor: 'pointer'
+            }}
           >
             <Share2 size={14} /> Share
           </button>
@@ -59,9 +71,10 @@ export const ArticleDetailPage: React.FC = () => {
               style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(2.2rem, 3.8vw, 3.2rem)',
-                color: '#F8FAFC',
+                color: 'var(--text-primary)',
                 lineHeight: 1.2,
-                marginBottom: '1rem'
+                marginBottom: '1rem',
+                letterSpacing: '-0.02em'
               }}
             >
               {article.title}
@@ -72,7 +85,7 @@ export const ArticleDetailPage: React.FC = () => {
                 fontFamily: 'var(--font-serif)',
                 fontStyle: 'italic',
                 fontSize: '1.35rem',
-                color: '#D4AF37',
+                color: '#8C6D23',
                 marginBottom: '2rem',
                 lineHeight: 1.45
               }}
@@ -86,14 +99,14 @@ export const ArticleDetailPage: React.FC = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 gap: '16px',
-                color: '#64748B',
+                color: 'var(--text-secondary)',
                 fontSize: '0.84rem',
-                borderTop: '1px solid rgba(255, 255, 255, 0.06)',
-                borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+                borderTop: '1px solid rgba(25, 25, 29, 0.08)',
+                borderBottom: '1px solid rgba(25, 25, 29, 0.08)',
                 padding: '12px 0'
               }}
             >
-              <span>By <strong style={{ color: '#CBD5E1' }}>{article.author}</strong> ({article.authorRole})</span>
+              <span>By <strong style={{ color: 'var(--text-primary)' }}>{article.author}</strong> ({article.authorRole})</span>
               <span>•</span>
               <span>{article.publishDate}</span>
               <span>•</span>
@@ -114,7 +127,7 @@ export const ArticleDetailPage: React.FC = () => {
                       fontFamily: 'var(--font-serif)',
                       fontSize: '1.25rem',
                       lineHeight: 1.9,
-                      color: '#E2E8F0',
+                      color: '#282832',
                       letterSpacing: '0.01em'
                     }}
                   >
@@ -130,9 +143,10 @@ export const ArticleDetailPage: React.FC = () => {
                     style={{
                       fontFamily: 'var(--font-display)',
                       fontSize: '1.75rem',
-                      color: '#F8FAFC',
+                      color: 'var(--text-primary)',
                       marginTop: '1.5rem',
-                      marginBottom: '0.5rem'
+                      marginBottom: '0.5rem',
+                      letterSpacing: '-0.01em'
                     }}
                   >
                     {block.text}
@@ -145,9 +159,9 @@ export const ArticleDetailPage: React.FC = () => {
                   <blockquote
                     key={idx}
                     style={{
-                      borderLeft: '3px solid #D4AF37',
+                      borderLeft: '3px solid #8C6D23',
                       padding: '20px 28px',
-                      backgroundColor: 'rgba(212, 175, 55, 0.05)',
+                      backgroundColor: 'rgba(140, 109, 35, 0.06)',
                       borderRadius: '0 12px 12px 0',
                       margin: '1rem 0'
                     }}
@@ -157,7 +171,7 @@ export const ArticleDetailPage: React.FC = () => {
                         fontFamily: 'var(--font-serif)',
                         fontStyle: 'italic',
                         fontSize: '1.45rem',
-                        color: '#F3E5AB',
+                        color: '#6E5316',
                         lineHeight: 1.6
                       }}
                     >
@@ -172,22 +186,22 @@ export const ArticleDetailPage: React.FC = () => {
                   <div
                     key={idx}
                     style={{
-                      backgroundColor: 'rgba(99, 102, 241, 0.08)',
-                      border: '1px solid rgba(99, 102, 241, 0.3)',
+                      backgroundColor: 'rgba(81, 70, 184, 0.05)',
+                      border: '1px solid rgba(81, 70, 184, 0.2)',
                       borderRadius: '12px',
                       padding: '24px',
                       margin: '1rem 0'
                     }}
                   >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#818CF8', fontSize: '0.78rem', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 700, marginBottom: '6px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--indigo-600)', fontSize: '0.78rem', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 700, marginBottom: '6px' }}>
                       <Brain size={16} /> {block.label || 'Scientific Research Foundation'}
                     </div>
                     {block.citation && (
-                      <div style={{ fontSize: '0.78rem', color: '#94A3B8', fontFamily: 'monospace', marginBottom: '8px' }}>
+                      <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', fontFamily: 'monospace', marginBottom: '8px' }}>
                         Citation: {block.citation}
                       </div>
                     )}
-                    <p style={{ color: '#CBD5E1', fontSize: '0.96rem', lineHeight: 1.7 }}>
+                    <p style={{ color: 'var(--text-primary)', fontSize: '0.96rem', lineHeight: 1.7 }}>
                       {block.text}
                     </p>
                   </div>
@@ -199,13 +213,14 @@ export const ArticleDetailPage: React.FC = () => {
                   <div
                     key={idx}
                     style={{
-                      backgroundColor: '#10131B',
-                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      backgroundColor: '#FFFFFF',
+                      border: '1px solid rgba(25, 25, 29, 0.08)',
                       borderRadius: '12px',
                       padding: '24px',
-                      color: '#E2E8F0',
+                      color: 'var(--text-primary)',
                       fontSize: '1.05rem',
-                      lineHeight: 1.75
+                      lineHeight: 1.75,
+                      boxShadow: '0 4px 16px rgba(25, 25, 29, 0.03)'
                     }}
                   >
                     {block.text}
@@ -217,8 +232,8 @@ export const ArticleDetailPage: React.FC = () => {
                 return (
                   <ul key={idx} style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '14px', margin: '1rem 0' }}>
                     {block.items.map((item, itemIdx) => (
-                      <li key={itemIdx} style={{ display: 'flex', gap: '12px', color: '#E2E8F0', fontSize: '1.1rem', lineHeight: 1.7 }}>
-                        <span style={{ color: '#D4AF37', fontWeight: 700 }}>•</span>
+                      <li key={itemIdx} style={{ display: 'flex', gap: '12px', color: 'var(--text-primary)', fontSize: '1.1rem', lineHeight: 1.7 }}>
+                        <span style={{ color: '#8C6D23', fontWeight: 700 }}>•</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -235,23 +250,24 @@ export const ArticleDetailPage: React.FC = () => {
             <div
               style={{
                 marginTop: '5rem',
-                backgroundColor: '#0F121C',
-                border: '1px solid rgba(212, 175, 55, 0.3)',
+                backgroundColor: '#FFFFFF',
+                border: '1px solid rgba(140, 109, 35, 0.25)',
                 borderRadius: '16px',
                 padding: '32px',
                 display: 'flex',
                 flexWrap: 'wrap',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                gap: '24px'
+                gap: '24px',
+                boxShadow: '0 8px 24px rgba(25, 25, 29, 0.04)'
               }}
             >
               <div>
                 <span className="badge-gold" style={{ marginBottom: '6px' }}>Companion Reading</span>
-                <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1.35rem', color: '#F8FAFC', marginBottom: '6px' }}>
+                <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1.35rem', color: 'var(--text-primary)', marginBottom: '6px' }}>
                   Explore "{relatedBook.title}"
                 </h4>
-                <p style={{ color: '#94A3B8', fontSize: '0.9rem', maxWidth: '480px' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', maxWidth: '480px' }}>
                   A full digital treatise on this subject written by the author's father, complete with sample chapters and exercises.
                 </p>
               </div>

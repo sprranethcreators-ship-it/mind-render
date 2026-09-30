@@ -24,11 +24,11 @@ export const EditorialPhilosophy: React.FC<EditorialPhilosophyProps> = ({ conten
   const getStepAccent = (index: number) => {
     switch (index) {
       case 0:
-        return { color: '#818CF8', border: 'rgba(99, 102, 241, 0.3)', bg: 'rgba(99, 102, 241, 0.12)' };
+        return { color: '#5146B8', border: 'rgba(81, 70, 184, 0.25)', bg: 'rgba(81, 70, 184, 0.08)' };
       case 1:
-        return { color: '#D4AF37', border: 'rgba(212, 175, 55, 0.35)', bg: 'rgba(212, 175, 55, 0.12)' };
+        return { color: '#99751F', border: 'rgba(200, 168, 78, 0.35)', bg: 'rgba(200, 168, 78, 0.1)' };
       default:
-        return { color: '#10B981', border: 'rgba(16, 185, 129, 0.3)', bg: 'rgba(16, 185, 129, 0.12)' };
+        return { color: '#059669', border: 'rgba(5, 150, 105, 0.25)', bg: 'rgba(5, 150, 105, 0.08)' };
     }
   };
 
@@ -36,10 +36,10 @@ export const EditorialPhilosophy: React.FC<EditorialPhilosophyProps> = ({ conten
     <section
       style={{
         position: 'relative',
-        backgroundColor: '#090B10',
+        backgroundColor: '#FAF8F3',
         padding: '120px 0 100px',
-        borderTop: '1px solid rgba(255, 255, 255, 0.05)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+        borderTop: '1px solid var(--border-subtle)',
+        borderBottom: '1px solid var(--border-subtle)',
         overflow: 'hidden'
       }}
     >
@@ -52,7 +52,7 @@ export const EditorialPhilosophy: React.FC<EditorialPhilosophyProps> = ({ conten
           transform: 'translateX(-50%)',
           width: '760px',
           height: '420px',
-          background: 'radial-gradient(circle, rgba(99, 102, 241, 0.09) 0%, rgba(212, 175, 55, 0.04) 40%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(81, 70, 184, 0.05) 0%, rgba(200, 168, 78, 0.04) 40%, transparent 70%)',
           pointerEvents: 'none'
         }}
       />
@@ -69,11 +69,11 @@ export const EditorialPhilosophy: React.FC<EditorialPhilosophyProps> = ({ conten
           <span
             style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: '0.76rem',
-              letterSpacing: '0.24em',
+              fontSize: '0.78rem',
+              letterSpacing: '0.22em',
               textTransform: 'uppercase',
-              color: '#D4AF37',
-              fontWeight: 600,
+              color: '#99751F',
+              fontWeight: 700,
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
@@ -86,8 +86,8 @@ export const EditorialPhilosophy: React.FC<EditorialPhilosophyProps> = ({ conten
           <h2
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(1.6rem, 3.8vw, 3.2rem)',
-              color: '#F8FAFC',
+              fontSize: 'clamp(1.75rem, 4vw, 3.4rem)',
+              color: 'var(--text-primary)',
               letterSpacing: '0.04em',
               lineHeight: 1.2,
               marginBottom: '1.5rem',
@@ -106,9 +106,9 @@ export const EditorialPhilosophy: React.FC<EditorialPhilosophyProps> = ({ conten
               alignItems: 'center',
               gap: '8px 12px',
               fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(1.1rem, 2vw, 1.5rem)',
+              fontSize: 'clamp(1.15rem, 2.2vw, 1.55rem)',
               fontStyle: 'italic',
-              color: '#CBD5E1',
+              color: 'var(--text-primary)',
               lineHeight: 1.6,
               marginBottom: '1.75rem',
               overflowWrap: 'break-word'
@@ -121,7 +121,8 @@ export const EditorialPhilosophy: React.FC<EditorialPhilosophyProps> = ({ conten
                 <span
                   key={wIdx}
                   style={{
-                    color: isGold ? '#D4AF37' : isPurple ? '#818CF8' : '#CBD5E1'
+                    color: isGold ? '#99751F' : isPurple ? '#5146B8' : 'var(--text-primary)',
+                    fontWeight: (isGold || isPurple) ? 600 : 400
                   }}
                 >
                   {word}
@@ -133,10 +134,10 @@ export const EditorialPhilosophy: React.FC<EditorialPhilosophyProps> = ({ conten
           <p
             style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: 'clamp(0.92rem, 1.8vw, 1.05rem)',
-              color: '#94A3B8',
-              lineHeight: 1.75,
-              maxWidth: '660px',
+              fontSize: 'clamp(0.96rem, 1.8vw, 1.08rem)',
+              color: 'var(--text-secondary)',
+              lineHeight: 1.8,
+              maxWidth: '680px',
               margin: '0 auto',
               overflowWrap: 'break-word',
               wordBreak: 'break-word'
@@ -159,13 +160,13 @@ export const EditorialPhilosophy: React.FC<EditorialPhilosophyProps> = ({ conten
               <div
                 key={idx}
                 style={{
-                  backgroundColor: '#0D1018',
-                  border: idx === 1 ? '1px solid rgba(212, 175, 55, 0.25)' : '1px solid rgba(255, 255, 255, 0.07)',
+                  backgroundColor: '#FFFFFF',
+                  border: idx === 1 ? '1px solid rgba(200, 168, 78, 0.4)' : '1px solid var(--border-subtle)',
                   borderRadius: '16px',
                   padding: 'clamp(24px, 3vw, 36px) clamp(16px, 2.5vw, 28px)',
                   position: 'relative',
-                  boxShadow: idx === 1 ? '0 15px 35px rgba(0,0,0,0.4), 0 0 25px rgba(212, 175, 55, 0.06)' : '0 15px 35px rgba(0,0,0,0.4)',
-                  transition: 'transform 0.3s ease, border-color 0.3s ease',
+                  boxShadow: idx === 1 ? '0 12px 32px rgba(200, 168, 78, 0.08), 0 4px 14px rgba(25, 25, 29, 0.04)' : '0 8px 24px rgba(25, 25, 29, 0.04)',
+                  transition: 'transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease',
                   boxSizing: 'border-box'
                 }}
                 className="hover-lift"
@@ -187,7 +188,7 @@ export const EditorialPhilosophy: React.FC<EditorialPhilosophyProps> = ({ conten
                   {getStepIcon(idx)}
                 </div>
 
-                <span style={{ fontSize: '0.72rem', color: acc.color, letterSpacing: '0.16em', textTransform: 'uppercase', fontWeight: 600 }}>
+                <span style={{ fontSize: '0.74rem', color: acc.color, letterSpacing: '0.16em', textTransform: 'uppercase', fontWeight: 700 }}>
                   {card.step}
                 </span>
 
@@ -195,7 +196,7 @@ export const EditorialPhilosophy: React.FC<EditorialPhilosophyProps> = ({ conten
                   style={{
                     fontFamily: 'var(--font-display)',
                     fontSize: '1.25rem',
-                    color: '#F8FAFC',
+                    color: 'var(--text-primary)',
                     marginTop: '0.5rem',
                     marginBottom: '0.9rem',
                     lineHeight: 1.3
@@ -204,7 +205,7 @@ export const EditorialPhilosophy: React.FC<EditorialPhilosophyProps> = ({ conten
                   "{card.quote}"
                 </h3>
 
-                <p style={{ color: '#94A3B8', fontSize: '0.94rem', lineHeight: 1.7 }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.96rem', lineHeight: 1.75 }}>
                   {card.explanation}
                 </p>
               </div>

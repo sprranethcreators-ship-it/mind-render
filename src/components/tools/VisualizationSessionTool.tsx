@@ -70,21 +70,21 @@ export const VisualizationSessionTool: React.FC = () => {
   return (
     <div
       style={{
-        backgroundColor: '#0F121B',
-        border: '1px solid rgba(255, 255, 255, 0.08)',
+        backgroundColor: '#FFFFFF',
+        border: '1px solid rgba(25, 25, 29, 0.08)',
         borderRadius: '20px',
         padding: '40px',
         maxWidth: '760px',
         margin: '0 auto',
         textAlign: 'center',
-        boxShadow: '0 20px 50px rgba(0,0,0,0.6)'
+        boxShadow: '0 16px 40px rgba(25, 25, 29, 0.05)'
       }}
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
         <span className="badge-gold">
           <Eye size={13} /> Mental Cinema Protocol
         </span>
-        <span style={{ fontSize: '0.8rem', color: '#94A3B8' }}>
+        <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
           Step {phaseIndex + 1} of {PHASES.length}
         </span>
       </div>
@@ -96,7 +96,8 @@ export const VisualizationSessionTool: React.FC = () => {
           height: '180px',
           borderRadius: '50%',
           border: `2px solid ${currentPhase.accent}`,
-          boxShadow: `0 0 35px ${currentPhase.accent}25`,
+          boxShadow: `0 0 25px ${currentPhase.accent}20`,
+          backgroundColor: '#FAF8F3',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -104,10 +105,10 @@ export const VisualizationSessionTool: React.FC = () => {
           margin: '2rem auto'
         }}
       >
-        <span style={{ fontFamily: 'monospace', fontSize: '3rem', fontWeight: 700, color: '#F8FAFC' }}>
+        <span style={{ fontFamily: 'monospace', fontSize: '3rem', fontWeight: 700, color: 'var(--text-primary)' }}>
           {formatTime(timeLeft)}
         </span>
-        <span style={{ fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: currentPhase.accent }}>
+        <span style={{ fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: currentPhase.accent, fontWeight: 600 }}>
           {isActive ? 'Active Session' : 'Paused'}
         </span>
       </div>
@@ -117,7 +118,7 @@ export const VisualizationSessionTool: React.FC = () => {
         style={{
           fontFamily: 'var(--font-display)',
           fontSize: '1.4rem',
-          color: '#F8FAFC',
+          color: 'var(--text-primary)',
           marginBottom: '0.75rem'
         }}
       >
@@ -130,7 +131,7 @@ export const VisualizationSessionTool: React.FC = () => {
           fontFamily: 'var(--font-serif)',
           fontSize: '1.15rem',
           fontStyle: 'italic',
-          color: '#E2E8F0',
+          color: 'var(--text-secondary)',
           lineHeight: 1.75,
           maxWidth: '600px',
           margin: '0 auto 2.5rem'

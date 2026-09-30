@@ -14,7 +14,7 @@ interface Particle {
   baseAlpha: number;
   pulseSpeed: number;
   pulsePhase: number;
-  layer: number; // 0 = distant dust, 1 = mid orbital, 2 = foreground neural
+  layer: number; // 0 = subtle background point, 1 = mid editorial line, 2 = foreground node
 }
 
 interface OrbitalRing {
@@ -24,6 +24,7 @@ interface OrbitalRing {
   speed: number;
   color: string;
   alpha: number;
+  dash: number[];
 }
 
 export const NeuralConsciousnessCanvas: React.FC = () => {
@@ -42,52 +43,53 @@ export const NeuralConsciousnessCanvas: React.FC = () => {
     const isMobile = width < 768;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Palette: Atmospheric Violet/Indigo & Warm Gold points
+    // Editorial Palette on Warm Light: Sophisticated Indigo, Soft Violet & Muted Champagne Gold
     const nodeColors = [
-      'rgba(129, 140, 248, ', // Indigo luminous
-      'rgba(167, 139, 250, ', // Violet
-      'rgba(212, 175, 55, ',  // Warm Gold energy
-      'rgba(243, 229, 171, ', // Soft Amber
+      'rgba(81, 70, 184, ',   // Sophisticated Indigo #5146B8
+      'rgba(124, 58, 237, ',  // Soft Violet
+      'rgba(184, 148, 55, ',  // Muted Champagne Gold
+      'rgba(140, 109, 35, ',  // Rich Antique Gold
     ];
 
-    // Build layered particles
-    const particleCount = isMobile ? 38 : Math.min(80, Math.floor((width * height) / 14000));
+    // Build layered particles with scientific illustration density
+    const particleCount = isMobile ? 32 : Math.min(68, Math.floor((width * height) / 16000));
     const particles: Particle[] = [];
 
     for (let i = 0; i < particleCount; i++) {
-      const layer = Math.random() < 0.35 ? 0 : Math.random() < 0.7 ? 1 : 2;
+      const layer = Math.random() < 0.4 ? 0 : Math.random() < 0.75 ? 1 : 2;
       const x = Math.random() * width;
       const y = Math.random() * height;
-      const baseAlpha = layer === 0 ? 0.25 : layer === 1 ? 0.5 : 0.8;
-      const baseRadius = layer === 0 ? 1 : layer === 1 ? 1.8 : 2.6;
+      const baseAlpha = layer === 0 ? 0.18 : layer === 1 ? 0.35 : 0.6;
+      const baseRadius = layer === 0 ? 1.0 : layer === 1 ? 1.6 : 2.2;
 
       particles.push({
         x,
         y,
         originX: x,
         originY: y,
-        vx: (Math.random() - 0.5) * (layer === 0 ? 0.2 : 0.35),
-        vy: (Math.random() - 0.5) * (layer === 0 ? 0.2 : 0.35),
+        vx: (Math.random() - 0.5) * (layer === 0 ? 0.15 : 0.25),
+        vy: (Math.random() - 0.5) * (layer === 0 ? 0.15 : 0.25),
         radius: baseRadius,
         baseRadius,
         color: nodeColors[Math.floor(Math.random() * nodeColors.length)],
         alpha: baseAlpha,
         baseAlpha,
-        pulseSpeed: 0.015 + Math.random() * 0.025,
+        pulseSpeed: 0.012 + Math.random() * 0.018,
         pulsePhase: Math.random() * Math.PI * 2,
         layer
       });
     }
 
-    // Subtle orbital paths around the central mind field
+    // Large translucent circular orbital structures (Architecture of Thought)
     const orbitalRings: OrbitalRing[] = [
-      { radiusX: Math.min(width * 0.32, 280), radiusY: Math.min(width * 0.16, 140), rotation: -0.25, speed: 0.0008, color: 'rgba(99, 102, 241, ', alpha: 0.14 },
-      { radiusX: Math.min(width * 0.42, 390), radiusY: Math.min(width * 0.22, 190), rotation: 0.35, speed: -0.0006, color: 'rgba(212, 175, 55, ', alpha: 0.1 },
-      { radiusX: Math.min(width * 0.22, 190), radiusY: Math.min(width * 0.12, 100), rotation: 0.1, speed: 0.0012, color: 'rgba(167, 139, 250, ', alpha: 0.12 },
+      { radiusX: Math.min(width * 0.34, 320), radiusY: Math.min(width * 0.18, 160), rotation: -0.22, speed: 0.0006, color: 'rgba(81, 70, 184, ', alpha: 0.16, dash: [4, 14] },
+      { radiusX: Math.min(width * 0.46, 430), radiusY: Math.min(width * 0.24, 220), rotation: 0.3, speed: -0.0005, color: 'rgba(184, 148, 55, ', alpha: 0.15, dash: [3, 16] },
+      { radiusX: Math.min(width * 0.22, 210), radiusY: Math.min(width * 0.12, 110), rotation: 0.12, speed: 0.0009, color: 'rgba(124, 58, 237, ', alpha: 0.14, dash: [2, 10] },
+      { radiusX: Math.min(width * 0.56, 520), radiusY: Math.min(width * 0.28, 260), rotation: -0.45, speed: 0.0004, color: 'rgba(81, 70, 184, ', alpha: 0.09, dash: [6, 20] },
     ];
 
-    // Mouse coordinates with smooth lerp physics
-    let mouse = { x: -1000, y: -1000, targetX: -1000, targetY: -1000, radius: 180 };
+    // Smooth subtle mouse parallax
+    let mouse = { x: -1000, y: -1000, targetX: -1000, targetY: -1000, radius: 190 };
 
     const handleMouseMove = (e: MouseEvent) => {
       if (isMobile || prefersReducedMotion) return;
@@ -108,10 +110,14 @@ export const NeuralConsciousnessCanvas: React.FC = () => {
       if (!canvas) return;
       width = canvas.width = canvas.parentElement?.clientWidth || window.innerWidth;
       height = canvas.height = canvas.parentElement?.clientHeight || window.innerHeight;
-      orbitalRings[0].radiusX = Math.min(width * 0.32, 280);
-      orbitalRings[0].radiusY = Math.min(width * 0.16, 140);
-      orbitalRings[1].radiusX = Math.min(width * 0.42, 390);
-      orbitalRings[1].radiusY = Math.min(width * 0.22, 190);
+      orbitalRings[0].radiusX = Math.min(width * 0.34, 320);
+      orbitalRings[0].radiusY = Math.min(width * 0.18, 160);
+      orbitalRings[1].radiusX = Math.min(width * 0.46, 430);
+      orbitalRings[1].radiusY = Math.min(width * 0.24, 220);
+      orbitalRings[2].radiusX = Math.min(width * 0.22, 210);
+      orbitalRings[2].radiusY = Math.min(width * 0.12, 110);
+      orbitalRings[3].radiusX = Math.min(width * 0.56, 520);
+      orbitalRings[3].radiusY = Math.min(width * 0.28, 260);
     };
 
     window.addEventListener('resize', handleResize);
@@ -125,36 +131,34 @@ export const NeuralConsciousnessCanvas: React.FC = () => {
 
       // Smooth mouse interpolation
       if (mouse.targetX !== -1000) {
-        mouse.x += (mouse.targetX - mouse.x) * 0.06;
-        mouse.y += (mouse.targetY - mouse.y) * 0.06;
+        mouse.x += (mouse.targetX - mouse.x) * 0.05;
+        mouse.y += (mouse.targetY - mouse.y) * 0.05;
       } else {
         mouse.x = -1000;
         mouse.y = -1000;
       }
 
-      const centerX = width * 0.5 + (mouse.x !== -1000 ? (mouse.x - width * 0.5) * 0.04 : 0);
-      const centerY = height * 0.44 + (mouse.y !== -1000 ? (mouse.y - height * 0.44) * 0.04 : 0);
+      const centerX = width * 0.5 + (mouse.x !== -1000 ? (mouse.x - width * 0.5) * 0.03 : 0);
+      const centerY = height * 0.44 + (mouse.y !== -1000 ? (mouse.y - height * 0.44) * 0.03 : 0);
 
-      // 1. LAYER: Atmospheric Deep Glow & Soft Radial Vignette
-      const corePulse = 0.95 + 0.05 * Math.sin(tick * 0.02);
-
-      // Deep cosmic center glow
+      // 1. LAYER: Soft Warm Lavender & Subtle Champagne Radial Glow (Light Mode)
+      const corePulse = 0.96 + 0.04 * Math.sin(tick * 0.015);
       const radialGlow = ctx.createRadialGradient(
         centerX,
         centerY,
-        20,
+        30,
         centerX,
         centerY,
-        Math.min(width * 0.55, 480) * corePulse
+        Math.min(width * 0.65, 560) * corePulse
       );
-      radialGlow.addColorStop(0, 'rgba(99, 102, 241, 0.18)'); // Soft indigo core
-      radialGlow.addColorStop(0.35, 'rgba(139, 92, 246, 0.08)'); // Violet aura
-      radialGlow.addColorStop(0.65, 'rgba(212, 175, 55, 0.03)'); // Warm gold shimmer
-      radialGlow.addColorStop(1, 'rgba(6, 7, 9, 0)');
+      radialGlow.addColorStop(0, 'rgba(235, 230, 248, 0.45)'); // Delicate lavender core
+      radialGlow.addColorStop(0.35, 'rgba(244, 240, 252, 0.25)'); // Ethereal lilac mist
+      radialGlow.addColorStop(0.7, 'rgba(248, 243, 232, 0.18)'); // Soft warm ivory shimmer
+      radialGlow.addColorStop(1, 'rgba(250, 248, 243, 0)');
       ctx.fillStyle = radialGlow;
       ctx.fillRect(0, 0, width, height);
 
-      // 2. LAYER: Subtle Orbital Paths (Geometry of Thought)
+      // 2. LAYER: Translucent Circular Orbital Structures (Editorial Scientific Geometry)
       orbitalRings.forEach((ring) => {
         ring.rotation += ring.speed;
         ctx.save();
@@ -164,27 +168,27 @@ export const NeuralConsciousnessCanvas: React.FC = () => {
         ctx.beginPath();
         ctx.ellipse(0, 0, ring.radiusX, ring.radiusY, 0, 0, Math.PI * 2);
         ctx.strokeStyle = `${ring.color}${ring.alpha})`;
-        ctx.lineWidth = 1;
-        ctx.setLineDash([4, 12]);
+        ctx.lineWidth = 0.75;
+        ctx.setLineDash(ring.dash);
         ctx.stroke();
 
-        // Single orbiting energy point along the path
-        const angle = tick * (ring.speed * 8);
+        // Subtle orbiting point along each orbital ring
+        const angle = tick * (ring.speed * 6);
         const px = Math.cos(angle) * ring.radiusX;
         const py = Math.sin(angle) * ring.radiusY;
 
         ctx.beginPath();
-        ctx.arc(px, py, 2.2, 0, Math.PI * 2);
-        ctx.fillStyle = '#D4AF37';
-        ctx.shadowBlur = 12;
-        ctx.shadowColor = 'rgba(212, 175, 55, 0.8)';
+        ctx.arc(px, py, 1.8, 0, Math.PI * 2);
+        ctx.fillStyle = '#C8A84E';
+        ctx.shadowBlur = 6;
+        ctx.shadowColor = 'rgba(200, 168, 78, 0.4)';
         ctx.fill();
         ctx.shadowBlur = 0;
 
         ctx.restore();
       });
 
-      // 3. LAYER: Neural Connections (Synaptic Filaments)
+      // 3. LAYER: Fine Neural Connections (Synaptic Filaments)
       for (let i = 0; i < particles.length; i++) {
         const p1 = particles[i];
 
@@ -194,42 +198,42 @@ export const NeuralConsciousnessCanvas: React.FC = () => {
           const dy = p1.y - p2.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          const maxDist = isMobile ? 95 : 135;
+          const maxDist = isMobile ? 95 : 130;
 
           if (dist < maxDist) {
-            const filamentAlpha = (1 - dist / maxDist) * 0.15 * ((p1.alpha + p2.alpha) / 2);
+            const filamentAlpha = (1 - dist / maxDist) * 0.14 * ((p1.alpha + p2.alpha) / 2);
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(129, 140, 248, ${filamentAlpha})`;
-            ctx.lineWidth = 0.85;
+            ctx.strokeStyle = `rgba(81, 70, 184, ${filamentAlpha})`;
+            ctx.lineWidth = 0.75;
             ctx.stroke();
           }
         }
       }
 
-      // 4. LAYER: Particle Nodes with Halo & Pulse
+      // 4. LAYER: Particle Nodes with Soft Diffuse Halo
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
 
-        // Move
+        // Move gently
         p.x += p.vx;
         p.y += p.vy;
 
-        // Wrap gently
+        // Wrap boundaries
         if (p.x < -30) p.x = width + 30;
         if (p.x > width + 30) p.x = -30;
         if (p.y < -30) p.y = height + 30;
         if (p.y > height + 30) p.y = -30;
 
-        // Mouse proximity reaction: gentle float deflection
+        // Mouse proximity: subtle deflection
         if (mouse.x !== -1000) {
           const mdx = mouse.x - p.x;
           const mdy = mouse.y - p.y;
           const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
 
           if (mdist < mouse.radius) {
-            const force = (1 - mdist / mouse.radius) * 1.8;
+            const force = (1 - mdist / mouse.radius) * 1.2;
             p.x -= (mdx / mdist) * force;
             p.y -= (mdy / mdist) * force;
           }
@@ -237,20 +241,20 @@ export const NeuralConsciousnessCanvas: React.FC = () => {
 
         // Pulse
         p.pulsePhase += p.pulseSpeed;
-        const currentAlpha = p.baseAlpha * (0.7 + 0.3 * Math.sin(p.pulsePhase));
+        const currentAlpha = p.baseAlpha * (0.8 + 0.2 * Math.sin(p.pulsePhase));
 
-        // Draw soft glow aura for foreground particles
+        // Soft halo for foreground nodes
         if (p.layer === 2) {
           const halo = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius * 3.5);
-          halo.addColorStop(0, `${p.color}${currentAlpha * 0.6})`);
-          halo.addColorStop(1, 'rgba(0,0,0,0)');
+          halo.addColorStop(0, `${p.color}${currentAlpha * 0.35})`);
+          halo.addColorStop(1, 'rgba(250, 248, 243, 0)');
           ctx.fillStyle = halo;
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.radius * 3.5, 0, Math.PI * 2);
           ctx.fill();
         }
 
-        // Core dot
+        // Core node dot
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = `${p.color}${currentAlpha})`;

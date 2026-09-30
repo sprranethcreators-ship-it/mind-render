@@ -16,7 +16,7 @@ export const MindTopicsGrid: React.FC<MindTopicsGridProps> = ({ content }) => {
       id="explore-mind"
       style={{
         padding: '120px 0 130px',
-        backgroundColor: '#07090F',
+        backgroundColor: '#FAF8F3',
         position: 'relative',
         overflow: 'hidden'
       }}
@@ -29,7 +29,7 @@ export const MindTopicsGrid: React.FC<MindTopicsGridProps> = ({ content }) => {
           right: '5%',
           width: '500px',
           height: '500px',
-          background: 'radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(81, 70, 184, 0.04) 0%, transparent 70%)',
           pointerEvents: 'none'
         }}
       />
@@ -54,7 +54,7 @@ export const MindTopicsGrid: React.FC<MindTopicsGridProps> = ({ content }) => {
               style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(2.2rem, 3.8vw, 3.2rem)',
-                color: '#F8FAFC',
+                color: 'var(--text-primary)',
                 letterSpacing: '0.04em'
               }}
             >
@@ -65,8 +65,8 @@ export const MindTopicsGrid: React.FC<MindTopicsGridProps> = ({ content }) => {
           <p
             style={{
               maxWidth: '520px',
-              color: '#94A3B8',
-              fontSize: '1.05rem',
+              color: 'var(--text-secondary)',
+              fontSize: '1.08rem',
               lineHeight: 1.75
             }}
           >
@@ -76,122 +76,134 @@ export const MindTopicsGrid: React.FC<MindTopicsGridProps> = ({ content }) => {
 
         {/* 6 Editorial Topic Cards */}
         <div className="responsive-grid-topics">
-          {data.topics.map((topic) => (
-            <Link
-              key={topic.id}
-              to={`/topics/${topic.slug}`}
-              className="editorial-topic-card"
-              style={{
-                position: 'relative',
-                minHeight: '290px',
-                borderRadius: '18px',
-                overflow: 'hidden',
-                textDecoration: 'none',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                padding: 'clamp(24px, 3.5vw, 36px) clamp(18px, 3vw, 28px)',
-                background: topic.gradientBackground,
-                border: '1px solid rgba(255, 255, 255, 0.08)',
-                boxShadow: '0 18px 45px rgba(0, 0, 0, 0.55)',
-                transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease',
-                boxSizing: 'border-box'
-              }}
-            >
-              {/* Traveling light shimmer layer on hover */}
-              <div
-                className="card-shimmer"
+          {data.topics.map((topic, tIdx) => {
+            const lightGradients = [
+              'linear-gradient(155deg, #FFFFFF 0%, #FCFBF7 100%)',
+              'linear-gradient(155deg, #FFFFFF 0%, #F7F5FC 100%)',
+              'linear-gradient(155deg, #FFFFFF 0%, #F5F7FC 100%)',
+              'linear-gradient(155deg, #FFFFFF 0%, #FCF6FA 100%)',
+              'linear-gradient(155deg, #FFFFFF 0%, #F4FAF7 100%)',
+              'linear-gradient(155deg, #FFFFFF 0%, #FCFAF4 100%)'
+            ];
+            const bgGrad = lightGradients[tIdx % lightGradients.length];
+
+            return (
+              <Link
+                key={topic.id}
+                to={`/topics/${topic.slug}`}
+                className="editorial-topic-card"
                 style={{
-                  position: 'absolute',
-                  inset: 0,
-                  background: 'linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.05) 45%, rgba(255, 255, 255, 0.12) 50%, rgba(255, 255, 255, 0.05) 55%, transparent 100%)',
-                  transform: 'translateX(-100%)',
-                  transition: 'transform 0.8s ease',
-                  pointerEvents: 'none',
-                  zIndex: 2
+                  position: 'relative',
+                  minHeight: '290px',
+                  borderRadius: '18px',
+                  overflow: 'hidden',
+                  textDecoration: 'none',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  padding: 'clamp(24px, 3.5vw, 36px) clamp(18px, 3vw, 28px)',
+                  background: bgGrad,
+                  border: '1px solid var(--border-subtle)',
+                  boxShadow: '0 8px 25px rgba(25, 25, 29, 0.04)',
+                  transition: 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease',
+                  boxSizing: 'border-box'
                 }}
-              />
-
-              {/* Top Accent Strip */}
-              <div style={{ position: 'relative', zIndex: 3 }}>
-                <span
-                  style={{
-                    fontFamily: 'var(--font-sans)',
-                    fontSize: '0.72rem',
-                    letterSpacing: '0.2em',
-                    textTransform: 'uppercase',
-                    color: topic.accent,
-                    fontWeight: 700,
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    marginBottom: '1rem'
-                  }}
-                >
-                  <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: topic.accent }} />
-                  {topic.title}
-                </span>
-
-                <h3
-                  style={{
-                    fontFamily: 'var(--font-display)',
-                    fontSize: 'clamp(1.5rem, 2vw, 1.85rem)',
-                    color: '#F8FAFC',
-                    lineHeight: 1.25,
-                    marginBottom: '0.6rem'
-                  }}
-                >
-                  {topic.title}
-                </h3>
-
-                <p
-                  style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontStyle: 'italic',
-                    fontSize: '1.05rem',
-                    color: '#CBD5E1',
-                    marginBottom: '1rem'
-                  }}
-                >
-                  {topic.tagline}
-                </p>
-              </div>
-
-              {/* Bottom Description & Directional Arrow */}
-              <div style={{ position: 'relative', zIndex: 3 }}>
-                <p
-                  style={{
-                    color: '#94A3B8',
-                    fontSize: '0.94rem',
-                    lineHeight: 1.7,
-                    marginBottom: '1.75rem'
-                  }}
-                >
-                  {topic.description}
-                </p>
-
+              >
+                {/* Traveling light shimmer layer on hover */}
                 <div
+                  className="card-shimmer"
                   style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    borderTop: '1px solid rgba(255, 255, 255, 0.07)',
-                    paddingTop: '16px',
-                    color: topic.accent,
-                    fontSize: '0.84rem',
-                    fontWeight: 600,
-                    letterSpacing: '0.08em',
-                    textTransform: 'uppercase'
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.4) 45%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.4) 55%, transparent 100%)',
+                    transform: 'translateX(-100%)',
+                    transition: 'transform 0.8s ease',
+                    pointerEvents: 'none',
+                    zIndex: 2
                   }}
-                >
-                  <span>Explore Topic</span>
-                  <div className="card-arrow" style={{ transition: 'transform 0.3s ease' }}>
-                    <ArrowRight size={16} />
+                />
+
+                {/* Top Accent Strip */}
+                <div style={{ position: 'relative', zIndex: 3 }}>
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: '0.74rem',
+                      letterSpacing: '0.18em',
+                      textTransform: 'uppercase',
+                      color: topic.accent === '#D4AF37' ? '#99751F' : topic.accent,
+                      fontWeight: 700,
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      marginBottom: '1rem'
+                    }}
+                  >
+                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: topic.accent === '#D4AF37' ? '#99751F' : topic.accent }} />
+                    {topic.title}
+                  </span>
+
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: 'clamp(1.5rem, 2vw, 1.85rem)',
+                      color: 'var(--text-primary)',
+                      lineHeight: 1.25,
+                      marginBottom: '0.6rem'
+                    }}
+                  >
+                    {topic.title}
+                  </h3>
+
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontStyle: 'italic',
+                      fontSize: '1.08rem',
+                      color: '#4A4A58',
+                      marginBottom: '1rem'
+                    }}
+                  >
+                    {topic.tagline}
+                  </p>
+                </div>
+
+                {/* Bottom Description & Directional Arrow */}
+                <div style={{ position: 'relative', zIndex: 3 }}>
+                  <p
+                    style={{
+                      color: 'var(--text-secondary)',
+                      fontSize: '0.96rem',
+                      lineHeight: 1.7,
+                      marginBottom: '1.75rem'
+                    }}
+                  >
+                    {topic.description}
+                  </p>
+
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      borderTop: '1px solid var(--border-subtle)',
+                      paddingTop: '16px',
+                      color: topic.accent === '#D4AF37' ? '#99751F' : topic.accent,
+                      fontSize: '0.84rem',
+                      fontWeight: 700,
+                      letterSpacing: '0.08em',
+                      textTransform: 'uppercase'
+                    }}
+                  >
+                    <span>Explore Topic</span>
+                    <div className="card-arrow" style={{ transition: 'transform 0.3s ease' }}>
+                      <ArrowRight size={16} />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
 
         {/* View All Button */}
@@ -209,9 +221,9 @@ export const MindTopicsGrid: React.FC<MindTopicsGridProps> = ({ content }) => {
 
       <style>{`
         .editorial-topic-card:hover {
-          transform: translateY(-6px) scale(1.01);
-          border-color: rgba(255, 255, 255, 0.22) !important;
-          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75) !important;
+          transform: translateY(-5px);
+          border-color: var(--border-medium) !important;
+          box-shadow: 0 16px 40px rgba(25, 25, 29, 0.08) !important;
         }
         .editorial-topic-card:hover .card-shimmer {
           transform: translateX(100%);

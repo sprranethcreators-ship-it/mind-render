@@ -56,10 +56,10 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
           width: '100%',
           maxWidth: '820px',
           maxHeight: 'min(92vh, 800px)',
-          backgroundColor: '#0E1119',
-          border: '1px solid rgba(255, 255, 255, 0.12)',
+          backgroundColor: '#FFFFFF',
+          border: '1px solid rgba(25, 25, 29, 0.12)',
           borderRadius: '16px',
-          boxShadow: '0 25px 60px rgba(0,0,0,0.85), 0 0 40px rgba(99, 102, 241, 0.15)',
+          boxShadow: '0 25px 60px rgba(25, 25, 29, 0.15)',
           display: 'flex',
           flexDirection: 'column',
           overflow: 'hidden',
@@ -71,11 +71,11 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
         <div
           style={{
             padding: '14px clamp(14px, 3vw, 24px)',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+            borderBottom: '1px solid rgba(25, 25, 29, 0.08)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            backgroundColor: '#121622',
+            backgroundColor: '#F7F4EE',
             flexWrap: 'wrap',
             gap: '10px',
             flexShrink: 0
@@ -86,7 +86,7 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
               style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(0.88rem, 2vw, 1rem)',
-                color: '#F8FAFC',
+                color: 'var(--text-primary)',
                 fontWeight: 600,
                 overflowWrap: 'break-word'
               }}
@@ -98,9 +98,10 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
                 padding: '2px 8px',
                 borderRadius: '4px',
                 fontSize: '0.7rem',
-                backgroundColor: 'rgba(212, 175, 55, 0.15)',
-                color: '#D4AF37',
-                border: '1px solid rgba(212, 175, 55, 0.3)'
+                backgroundColor: 'rgba(140, 109, 35, 0.1)',
+                color: '#8C6D23',
+                border: '1px solid rgba(140, 109, 35, 0.25)',
+                fontWeight: 600
               }}
             >
               Free Manuscript Sample
@@ -115,11 +116,13 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
                 alignItems: 'center',
                 gap: '6px',
                 fontSize: '0.8rem',
-                color: '#CBD5E1',
+                color: 'var(--text-secondary)',
                 padding: '6px 12px',
                 borderRadius: '6px',
-                backgroundColor: 'rgba(255,255,255,0.06)',
-                minHeight: '36px'
+                backgroundColor: '#FFFFFF',
+                border: '1px solid rgba(25, 25, 29, 0.1)',
+                minHeight: '36px',
+                cursor: 'pointer'
               }}
             >
               {activeTab === 'sample' ? <List size={15} /> : <BookOpen size={15} />}
@@ -127,7 +130,7 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
             </button>
             <button
               onClick={onClose}
-              style={{ color: '#94A3B8', padding: '6px', cursor: 'pointer', minWidth: '32px', minHeight: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              style={{ color: 'var(--text-secondary)', padding: '6px', cursor: 'pointer', minWidth: '32px', minHeight: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'none', border: 'none' }}
               aria-label="Close Preview"
             >
               <X size={18} />
@@ -141,7 +144,7 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
             padding: 'clamp(20px, 3.5vw, 36px) clamp(16px, 3vw, 36px)',
             flex: 1,
             overflowY: 'auto',
-            background: 'radial-gradient(circle at 50% 10%, #151A26 0%, #0D1017 80%)',
+            background: 'var(--bg-cosmos)',
             WebkitOverflowScrolling: 'touch'
           }}
         >
@@ -150,14 +153,14 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
               <h4
                 style={{
                   fontFamily: 'var(--font-display)',
-                  color: '#D4AF37',
+                  color: '#8C6D23',
                   fontSize: '1.25rem',
                   marginBottom: '1rem'
                 }}
               >
                 Table of Contents
               </h4>
-              <p style={{ color: '#94A3B8', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
                 Full {book.pagesCount} pages digital edition curriculum:
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -166,18 +169,19 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
                     key={idx}
                     style={{
                       padding: '14px 18px',
-                      backgroundColor: 'rgba(255, 255, 255, 0.03)',
-                      border: '1px solid rgba(255, 255, 255, 0.06)',
+                      backgroundColor: '#FFFFFF',
+                      border: '1px solid rgba(25, 25, 29, 0.08)',
                       borderRadius: '8px',
                       display: 'flex',
                       justifyContent: 'space-between',
-                      alignItems: 'center'
+                      alignItems: 'center',
+                      boxShadow: '0 2px 6px rgba(25, 25, 29, 0.02)'
                     }}
                   >
-                    <span style={{ color: '#F1F5F9', fontSize: '0.95rem' }}>
+                    <span style={{ color: 'var(--text-primary)', fontSize: '0.95rem', fontWeight: 500 }}>
                       {chapter}
                     </span>
-                    <span style={{ color: '#64748B', fontSize: '0.8rem', fontFamily: 'monospace' }}>
+                    <span style={{ color: '#8A8C9E', fontSize: '0.8rem', fontFamily: 'monospace' }}>
                       Section {idx + 1}
                     </span>
                   </div>
@@ -195,7 +199,8 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
                       fontSize: '0.75rem',
                       letterSpacing: '0.18em',
                       textTransform: 'uppercase',
-                      color: '#818CF8'
+                      color: 'var(--indigo-600)',
+                      fontWeight: 600
                     }}
                   >
                     Sample Extract • Page {currentPage.pageNumber} of {totalPages}
@@ -203,16 +208,17 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
                   <h3
                     style={{
                       fontFamily: 'var(--font-display)',
-                      color: '#F8FAFC',
+                      color: 'var(--text-primary)',
                       fontSize: '1.6rem',
                       marginTop: '0.6rem',
-                      marginBottom: '0.4rem'
+                      marginBottom: '0.4rem',
+                      letterSpacing: '-0.01em'
                     }}
                   >
                     {currentPage.title}
                   </h3>
                   {currentPage.subtitle && (
-                    <p style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: '#D4AF37', fontSize: '1.1rem' }}>
+                    <p style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: '#8C6D23', fontSize: '1.1rem' }}>
                       {currentPage.subtitle}
                     </p>
                   )}
@@ -226,7 +232,7 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
                         fontFamily: 'var(--font-serif)',
                         fontSize: '1.2rem',
                         lineHeight: 1.85,
-                        color: '#E2E8F0',
+                        color: '#282832',
                         textIndent: pidx === 0 ? '0' : '1.5rem'
                       }}
                     >
@@ -243,11 +249,11 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
         <div
           style={{
             padding: '18px 24px',
-            borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+            borderTop: '1px solid rgba(25, 25, 29, 0.08)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            backgroundColor: '#121622'
+            backgroundColor: '#F7F4EE'
           }}
         >
           {activeTab === 'sample' ? (
@@ -261,15 +267,16 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
                   gap: '4px',
                   padding: '8px 14px',
                   borderRadius: '6px',
-                  backgroundColor: currentPageIndex === 0 ? 'rgba(255,255,255,0.02)' : 'rgba(255,255,255,0.06)',
-                  color: currentPageIndex === 0 ? '#475569' : '#CBD5E1',
+                  backgroundColor: currentPageIndex === 0 ? 'rgba(25,25,29,0.03)' : '#FFFFFF',
+                  border: '1px solid rgba(25, 25, 29, 0.1)',
+                  color: currentPageIndex === 0 ? '#94A3B8' : 'var(--text-primary)',
                   cursor: currentPageIndex === 0 ? 'not-allowed' : 'pointer'
                 }}
               >
                 <ChevronLeft size={16} /> Prev
               </button>
 
-              <span style={{ fontSize: '0.84rem', color: '#94A3B8' }}>
+              <span style={{ fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
                 {currentPageIndex + 1} / {totalPages}
               </span>
 
@@ -282,8 +289,9 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
                   gap: '4px',
                   padding: '8px 14px',
                   borderRadius: '6px',
-                  backgroundColor: currentPageIndex === totalPages - 1 ? 'rgba(255,255,255,0.02)' : 'rgba(255,255,255,0.06)',
-                  color: currentPageIndex === totalPages - 1 ? '#475569' : '#CBD5E1',
+                  backgroundColor: currentPageIndex === totalPages - 1 ? 'rgba(25,25,29,0.03)' : '#FFFFFF',
+                  border: '1px solid rgba(25, 25, 29, 0.1)',
+                  color: currentPageIndex === totalPages - 1 ? '#94A3B8' : 'var(--text-primary)',
                   cursor: currentPageIndex === totalPages - 1 ? 'not-allowed' : 'pointer'
                 }}
               >
@@ -291,17 +299,17 @@ export const BookPreviewModal: React.FC<BookPreviewModalProps> = ({
               </button>
             </div>
           ) : (
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#94A3B8', fontSize: '0.84rem' }}>
-              <ShieldCheck size={16} color="#10B981" /> Full edition contains all {book.tableOfContents.length} chapters
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--text-secondary)', fontSize: '0.84rem' }}>
+              <ShieldCheck size={16} color="#059669" /> Full edition contains all {book.tableOfContents.length} chapters
             </div>
           )}
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
             <div style={{ textAlign: 'right' }}>
-              <span style={{ fontSize: '0.8rem', color: '#94A3B8', textDecoration: 'line-through', marginRight: '6px' }}>
+              <span style={{ fontSize: '0.8rem', color: '#8A8C9E', textDecoration: 'line-through', marginRight: '6px' }}>
                 ${book.originalPrice}
               </span>
-              <span style={{ fontSize: '1.25rem', fontWeight: 700, color: '#D4AF37' }}>
+              <span style={{ fontSize: '1.25rem', fontWeight: 700, color: '#8C6D23' }}>
                 ${book.price}
               </span>
             </div>

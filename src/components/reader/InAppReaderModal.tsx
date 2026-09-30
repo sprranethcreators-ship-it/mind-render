@@ -19,7 +19,7 @@ export const InAppReaderModal: React.FC<InAppReaderModalProps> = ({
   const { currentUser } = useAuth();
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
   const [fontSize, setFontSize] = useState<'normal' | 'large' | 'larger'>('normal');
-  const [theme, setTheme] = useState<'midnight' | 'sepia' | 'obsidian'>('midnight');
+  const [theme, setTheme] = useState<'editorial' | 'sepia' | 'midnight'>('editorial');
   const [showToc, setShowToc] = useState(false);
 
   if (!isOpen || !book) return null;
@@ -36,9 +36,9 @@ export const InAppReaderModal: React.FC<InAppReaderModalProps> = ({
   };
 
   const themeStyles = {
-    midnight: { bg: '#090B10', card: '#10131B', text: '#E2E8F0', heading: '#F8FAFC', accent: '#D4AF37' },
-    sepia: { bg: '#181410', card: '#211C16', text: '#EAD9C8', heading: '#F5E8D8', accent: '#E5A93C' },
-    obsidian: { bg: '#000000', card: '#0A0A0A', text: '#D1D5DB', heading: '#FFFFFF', accent: '#818CF8' }
+    editorial: { bg: '#FAF8F3', card: '#FFFFFF', text: '#282832', heading: '#19191D', accent: '#8C6D23', border: 'rgba(25, 25, 29, 0.08)', subtitle: '#8C6D23' },
+    sepia: { bg: '#F4ECE1', card: '#FAF5EE', text: '#3E342B', heading: '#261F18', accent: '#9C6F19', border: 'rgba(62, 52, 43, 0.1)', subtitle: '#9C6F19' },
+    midnight: { bg: '#0F121C', card: '#161A26', text: '#E2E8F0', heading: '#FAF8F3', accent: '#D4AF37', border: 'rgba(255, 255, 255, 0.08)', subtitle: '#D4AF37' }
   }[theme];
 
   const fontSizeMap = {
@@ -52,8 +52,8 @@ export const InAppReaderModal: React.FC<InAppReaderModalProps> = ({
       style={{
         position: 'fixed',
         inset: 0,
-        backgroundColor: 'rgba(3, 4, 6, 0.95)',
-        backdropFilter: 'blur(20px)',
+        backgroundColor: 'rgba(25, 25, 29, 0.65)',
+        backdropFilter: 'blur(16px)',
         zIndex: 9900,
         display: 'flex',
         flexDirection: 'column'
@@ -64,7 +64,7 @@ export const InAppReaderModal: React.FC<InAppReaderModalProps> = ({
         style={{
           height: '64px',
           padding: '0 24px',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+          borderBottom: `1px solid ${themeStyles.border}`,
           backgroundColor: themeStyles.card,
           display: 'flex',
           alignItems: 'center',
@@ -79,24 +79,27 @@ export const InAppReaderModal: React.FC<InAppReaderModalProps> = ({
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
-              color: '#94A3B8',
-              fontSize: '0.85rem'
+              color: 'var(--text-secondary)',
+              fontSize: '0.85rem',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer'
             }}
           >
             <ChevronLeft size={18} /> Exit Reader
           </button>
-          <div style={{ height: '18px', width: '1px', backgroundColor: 'rgba(255,255,255,0.1)' }} />
+          <div style={{ height: '18px', width: '1px', backgroundColor: themeStyles.border }} />
           <span style={{ fontFamily: 'var(--font-display)', color: themeStyles.heading, fontSize: '0.95rem', fontWeight: 600 }}>
             {book.title}
           </span>
           <span
             style={{
               fontSize: '0.72rem',
-              color: '#10B981',
+              color: '#059669',
               display: 'flex',
               alignItems: 'center',
               gap: '4px',
-              backgroundColor: 'rgba(16, 185, 129, 0.1)',
+              backgroundColor: 'rgba(5, 150, 105, 0.08)',
               padding: '2px 8px',
               borderRadius: '4px'
             }}
@@ -107,10 +110,10 @@ export const InAppReaderModal: React.FC<InAppReaderModalProps> = ({
 
         {/* Center: Progress Bar */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <span style={{ fontSize: '0.78rem', color: '#94A3B8', fontFamily: 'monospace' }}>
+          <span style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', fontFamily: 'monospace' }}>
             {progressPercent}% Complete
           </span>
-          <div style={{ width: '100px', height: '4px', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '2px', overflow: 'hidden' }}>
+          <div style={{ width: '100px', height: '4px', backgroundColor: 'rgba(25, 25, 29, 0.08)', borderRadius: '2px', overflow: 'hidden' }}>
             <div
               style={{
                 width: `${progressPercent}%`,
@@ -127,24 +130,25 @@ export const InAppReaderModal: React.FC<InAppReaderModalProps> = ({
           {/* Font Size Toggle */}
           <button
             onClick={() => setFontSize(fontSize === 'normal' ? 'large' : fontSize === 'large' ? 'larger' : 'normal')}
-            style={{ color: '#CBD5E1', padding: '6px', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.82rem' }}
+            style={{ color: 'var(--text-secondary)', padding: '6px', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.82rem', background: 'none', border: 'none', cursor: 'pointer' }}
             title="Adjust text scale"
           >
             <Type size={16} /> Text
           </button>
 
           {/* Theme switcher */}
-          <div style={{ display: 'flex', gap: '4px', backgroundColor: 'rgba(255,255,255,0.06)', padding: '3px', borderRadius: '6px' }}>
+          <div style={{ display: 'flex', gap: '4px', backgroundColor: 'rgba(25, 25, 29, 0.06)', padding: '3px', borderRadius: '6px' }}>
             <button
-              onClick={() => setTheme('midnight')}
+              onClick={() => setTheme('editorial')}
               style={{
                 width: '20px',
                 height: '20px',
                 borderRadius: '4px',
-                backgroundColor: '#10131B',
-                border: theme === 'midnight' ? '1.5px solid #D4AF37' : '1px solid transparent'
+                backgroundColor: '#FAF8F3',
+                border: theme === 'editorial' ? '1.5px solid #8C6D23' : '1px solid rgba(25,25,29,0.1)',
+                cursor: 'pointer'
               }}
-              title="Midnight Theme"
+              title="Editorial Light Theme"
             />
             <button
               onClick={() => setTheme('sepia')}
@@ -152,34 +156,36 @@ export const InAppReaderModal: React.FC<InAppReaderModalProps> = ({
                 width: '20px',
                 height: '20px',
                 borderRadius: '4px',
-                backgroundColor: '#211C16',
-                border: theme === 'sepia' ? '1.5px solid #D4AF37' : '1px solid transparent'
+                backgroundColor: '#F4ECE1',
+                border: theme === 'sepia' ? '1.5px solid #9C6F19' : '1px solid rgba(62,52,43,0.1)',
+                cursor: 'pointer'
               }}
               title="Warm Sepia Theme"
             />
             <button
-              onClick={() => setTheme('obsidian')}
+              onClick={() => setTheme('midnight')}
               style={{
                 width: '20px',
                 height: '20px',
                 borderRadius: '4px',
-                backgroundColor: '#000000',
-                border: theme === 'obsidian' ? '1.5px solid #818CF8' : '1px solid transparent'
+                backgroundColor: '#0F121C',
+                border: theme === 'midnight' ? '1.5px solid #D4AF37' : '1px solid transparent',
+                cursor: 'pointer'
               }}
-              title="Pure Obsidian Theme"
+              title="Midnight Cosmic Theme"
             />
           </div>
 
           {/* Download button */}
           <button
             onClick={() => PdfSecurityService.triggerSecureDownload(book)}
-            style={{ color: '#D4AF37', padding: '6px', cursor: 'pointer' }}
+            style={{ color: themeStyles.accent, padding: '6px', cursor: 'pointer', background: 'none', border: 'none' }}
             title="Download Watermarked Manuscript"
           >
             <Download size={18} />
           </button>
 
-          <button onClick={onClose} style={{ color: '#94A3B8', padding: '6px' }}>
+          <button onClick={onClose} style={{ color: 'var(--text-secondary)', padding: '6px', background: 'none', border: 'none', cursor: 'pointer' }}>
             <X size={20} />
           </button>
         </div>

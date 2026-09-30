@@ -8,8 +8,8 @@ export const UserProfilePage: React.FC = () => {
   const journalEntries = StorageService.getJournalEntries();
 
   return (
-    <div style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: '#07080B' }}>
-      <section style={{ padding: '60px 0 40px', backgroundColor: '#090B10', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+    <div style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: 'var(--bg-cosmos)' }}>
+      <section style={{ padding: '60px 0 40px', backgroundColor: 'var(--bg-deep)', borderBottom: '1px solid rgba(25, 25, 29, 0.08)' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
             <div
@@ -17,12 +17,12 @@ export const UserProfilePage: React.FC = () => {
                 width: '64px',
                 height: '64px',
                 borderRadius: '50%',
-                backgroundColor: 'rgba(212, 175, 55, 0.15)',
-                border: '1px solid rgba(212, 175, 55, 0.3)',
+                backgroundColor: 'rgba(81, 70, 184, 0.08)',
+                border: '1px solid rgba(81, 70, 184, 0.25)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: '#D4AF37'
+                color: 'var(--indigo-600)'
               }}
             >
               <User size={30} />
@@ -32,10 +32,10 @@ export const UserProfilePage: React.FC = () => {
               <span className={currentUser?.role === 'admin' ? 'badge-gold' : 'badge-indigo'}>
                 {currentUser?.role === 'admin' ? 'Architect Admin' : 'Registered Member'}
               </span>
-              <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '2.2rem', color: '#F8FAFC', marginTop: '4px' }}>
+              <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '2.2rem', color: 'var(--text-primary)', marginTop: '4px', letterSpacing: '-0.02em' }}>
                 {currentUser?.name || 'Member Profile'}
               </h1>
-              <p style={{ color: '#94A3B8', fontSize: '0.9rem' }}>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                 {currentUser?.email} • Member since {currentUser?.createdAt ? new Date(currentUser.createdAt).toLocaleDateString() : 'Active'}
               </p>
             </div>
@@ -49,28 +49,29 @@ export const UserProfilePage: React.FC = () => {
             {/* Account Metrics Card */}
             <div
               style={{
-                backgroundColor: '#0E1119',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
+                backgroundColor: '#FFFFFF',
+                border: '1px solid rgba(25, 25, 29, 0.08)',
                 borderRadius: '16px',
                 padding: 'clamp(20px, 3.5vw, 32px)',
+                boxShadow: '0 8px 24px rgba(25, 25, 29, 0.04)',
                 boxSizing: 'border-box'
               }}
             >
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', color: '#F8FAFC', marginBottom: '1.25rem' }}>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', color: 'var(--text-primary)', marginBottom: '1.25rem' }}>
                 Consciousness Ledger
               </h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '12px' }}>
-                  <span style={{ color: '#94A3B8' }}>Digital Books Owned</span>
-                  <span style={{ fontWeight: 700, color: '#D4AF37' }}>{libraryItems.length} Treatises</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(25, 25, 29, 0.08)', paddingBottom: '12px' }}>
+                  <span style={{ color: 'var(--text-secondary)' }}>Digital Books Owned</span>
+                  <span style={{ fontWeight: 700, color: '#8C6D23' }}>{libraryItems.length} Treatises</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '12px' }}>
-                  <span style={{ color: '#94A3B8' }}>Journal Inscriptions</span>
-                  <span style={{ fontWeight: 700, color: '#818CF8' }}>{journalEntries.length} Reflections</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(25, 25, 29, 0.08)', paddingBottom: '12px' }}>
+                  <span style={{ color: 'var(--text-secondary)' }}>Journal Inscriptions</span>
+                  <span style={{ fontWeight: 700, color: 'var(--indigo-600)' }}>{journalEntries.length} Reflections</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#94A3B8' }}>License Validation</span>
-                  <span style={{ color: '#10B981', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <span style={{ color: 'var(--text-secondary)' }}>License Validation</span>
+                  <span style={{ color: '#059669', display: 'flex', alignItems: 'center', gap: '4px', fontWeight: 600 }}>
                     <CheckCircle2 size={14} /> Active
                   </span>
                 </div>
@@ -80,16 +81,17 @@ export const UserProfilePage: React.FC = () => {
             {/* Persona Switcher / Session Controls */}
             <div
               style={{
-                backgroundColor: '#0E1119',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
+                backgroundColor: '#FFFFFF',
+                border: '1px solid rgba(25, 25, 29, 0.08)',
                 borderRadius: '16px',
-                padding: '32px'
+                padding: '32px',
+                boxShadow: '0 8px 24px rgba(25, 25, 29, 0.04)'
               }}
             >
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', color: '#F8FAFC', marginBottom: '0.5rem' }}>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
                 Test Personas & Role Switcher
               </h3>
-              <p style={{ color: '#94A3B8', fontSize: '0.88rem', marginBottom: '1.5rem' }}>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginBottom: '1.5rem' }}>
                 Switch instantly between Architect Admin (full CMS management) and Registered Member.
               </p>
 
@@ -113,14 +115,17 @@ export const UserProfilePage: React.FC = () => {
                 <button
                   onClick={logout}
                   style={{
-                    color: '#EF4444',
+                    color: '#DC2626',
                     fontSize: '0.84rem',
                     padding: '8px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     gap: '6px',
-                    marginTop: '0.5rem'
+                    marginTop: '0.5rem',
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer'
                   }}
                 >
                   <LogOut size={14} /> Sign Out

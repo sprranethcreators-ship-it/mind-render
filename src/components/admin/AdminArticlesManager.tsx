@@ -61,10 +61,10 @@ export const AdminArticlesManager: React.FC = () => {
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
         <div>
-          <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', color: '#F8FAFC' }}>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', color: 'var(--text-primary)' }}>
             Editorial Essays & Content CMS
           </h3>
-          <p style={{ color: '#94A3B8', fontSize: '0.88rem' }}>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem' }}>
             Publish essays distinguishing psychological neuroscience from metaphysical philosophies.
           </p>
         </div>
@@ -79,8 +79,8 @@ export const AdminArticlesManager: React.FC = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            backgroundColor: 'rgba(5, 6, 8, 0.88)',
-            backdropFilter: 'blur(16px)',
+            backgroundColor: 'rgba(25, 25, 29, 0.6)',
+            backdropFilter: 'blur(8px)',
             zIndex: 9999,
             display: 'flex',
             alignItems: 'center',
@@ -94,24 +94,25 @@ export const AdminArticlesManager: React.FC = () => {
               maxWidth: '700px',
               maxHeight: '90vh',
               overflowY: 'auto',
-              backgroundColor: '#0E1119',
-              border: '1px solid rgba(212, 175, 55, 0.3)',
+              backgroundColor: '#FFFFFF',
+              border: '1px solid var(--border-medium)',
               borderRadius: '16px',
-              padding: '32px'
+              padding: '32px',
+              boxShadow: 'var(--shadow-xl)'
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-              <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', color: '#F8FAFC' }}>
+              <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', color: 'var(--text-primary)' }}>
                 Edit Essay
               </h4>
-              <button onClick={() => setEditingArticle(null)} style={{ color: '#94A3B8' }}>
+              <button onClick={() => setEditingArticle(null)} style={{ color: 'var(--text-secondary)', background: 'none', border: 'none', cursor: 'pointer' }}>
                 <X size={20} />
               </button>
             </div>
 
             <form onSubmit={handleSaveForm} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '0.8rem', color: '#CBD5E1', marginBottom: '4px' }}>Title</label>
+                <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '4px', fontWeight: 500 }}>Title</label>
                 <input
                   type="text"
                   required
@@ -122,7 +123,7 @@ export const AdminArticlesManager: React.FC = () => {
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '0.8rem', color: '#CBD5E1', marginBottom: '4px' }}>Category</label>
+                <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '4px', fontWeight: 500 }}>Category</label>
                 <input
                   type="text"
                   required
@@ -133,7 +134,7 @@ export const AdminArticlesManager: React.FC = () => {
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '0.8rem', color: '#CBD5E1', marginBottom: '4px' }}>Excerpt</label>
+                <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '4px', fontWeight: 500 }}>Excerpt</label>
                 <textarea
                   rows={3}
                   required
@@ -153,25 +154,25 @@ export const AdminArticlesManager: React.FC = () => {
       )}
 
       {/* Articles Table */}
-      <div style={{ overflowX: 'auto', backgroundColor: '#0E1119', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+      <div style={{ overflowX: 'auto', backgroundColor: '#FFFFFF', borderRadius: '12px', border: '1px solid var(--border-soft)', boxShadow: 'var(--shadow-sm)' }}>
         <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.88rem' }}>
           <thead>
-            <tr style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)', backgroundColor: '#121622', color: '#94A3B8' }}>
-              <th style={{ padding: '14px 18px' }}>Title</th>
-              <th style={{ padding: '14px 18px' }}>Category</th>
-              <th style={{ padding: '14px 18px' }}>Read Time</th>
-              <th style={{ padding: '14px 18px' }}>Featured</th>
-              <th style={{ padding: '14px 18px', textAlign: 'right' }}>Actions</th>
+            <tr style={{ borderBottom: '1px solid var(--border-soft)', backgroundColor: 'var(--bg-deep)', color: 'var(--text-secondary)' }}>
+              <th style={{ padding: '14px 18px', fontWeight: 600 }}>Title</th>
+              <th style={{ padding: '14px 18px', fontWeight: 600 }}>Category</th>
+              <th style={{ padding: '14px 18px', fontWeight: 600 }}>Read Time</th>
+              <th style={{ padding: '14px 18px', fontWeight: 600 }}>Featured</th>
+              <th style={{ padding: '14px 18px', textAlign: 'right', fontWeight: 600 }}>Actions</th>
             </tr>
           </thead>
           <tbody>
             {articles.map(art => (
-              <tr key={art.id} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.04)' }}>
-                <td style={{ padding: '16px 18px', fontWeight: 600, color: '#F8FAFC' }}>
+              <tr key={art.id} style={{ borderBottom: '1px solid var(--border-soft)' }}>
+                <td style={{ padding: '16px 18px', fontWeight: 600, color: 'var(--text-primary)' }}>
                   {art.title}
                 </td>
-                <td style={{ padding: '16px 18px', color: '#CBD5E1' }}>{art.category}</td>
-                <td style={{ padding: '16px 18px', color: '#94A3B8' }}>{art.readTimeMinutes} min</td>
+                <td style={{ padding: '16px 18px', color: 'var(--text-secondary)' }}>{art.category}</td>
+                <td style={{ padding: '16px 18px', color: 'var(--text-muted)' }}>{art.readTimeMinutes} min</td>
                 <td style={{ padding: '16px 18px' }}>
                   <button
                     onClick={() => handleToggleFeatured(art)}
@@ -179,8 +180,11 @@ export const AdminArticlesManager: React.FC = () => {
                       padding: '4px 10px',
                       borderRadius: '4px',
                       fontSize: '0.75rem',
-                      backgroundColor: art.isFeatured ? 'rgba(212, 175, 55, 0.2)' : 'rgba(255,255,255,0.04)',
-                      color: art.isFeatured ? '#D4AF37' : '#64748B'
+                      fontWeight: 600,
+                      backgroundColor: art.isFeatured ? 'rgba(140, 109, 35, 0.1)' : 'var(--bg-deep)',
+                      color: art.isFeatured ? '#8C6D23' : 'var(--text-muted)',
+                      border: art.isFeatured ? '1px solid rgba(140, 109, 35, 0.25)' : '1px solid var(--border-soft)',
+                      cursor: 'pointer'
                     }}
                   >
                     {art.isFeatured ? 'Featured' : 'Standard'}
@@ -188,10 +192,10 @@ export const AdminArticlesManager: React.FC = () => {
                 </td>
                 <td style={{ padding: '16px 18px', textAlign: 'right' }}>
                   <div style={{ display: 'inline-flex', gap: '8px' }}>
-                    <button onClick={() => setEditingArticle(art)} style={{ color: '#818CF8', padding: '6px' }}>
+                    <button onClick={() => setEditingArticle(art)} style={{ color: 'var(--indigo-600)', padding: '6px', background: 'none', border: 'none', cursor: 'pointer' }} title="Edit Essay">
                       <Edit2 size={16} />
                     </button>
-                    <button onClick={() => handleDelete(art.id, art.title)} style={{ color: '#EF4444', padding: '6px' }}>
+                    <button onClick={() => handleDelete(art.id, art.title)} style={{ color: '#DC2626', padding: '6px', background: 'none', border: 'none', cursor: 'pointer' }} title="Delete Essay">
                       <Trash2 size={16} />
                     </button>
                   </div>

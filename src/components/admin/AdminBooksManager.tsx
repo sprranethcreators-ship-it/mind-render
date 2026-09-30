@@ -100,10 +100,10 @@ export const AdminBooksManager: React.FC = () => {
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
         <div>
-          <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', color: '#F8FAFC' }}>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', color: 'var(--text-primary)' }}>
             Father's Digital Books Catalog
           </h3>
-          <p style={{ color: '#94A3B8', fontSize: '0.88rem' }}>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem' }}>
             Manage pricing, manuscript details, sample chapters, and published states.
           </p>
         </div>
@@ -119,8 +119,8 @@ export const AdminBooksManager: React.FC = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            backgroundColor: 'rgba(5, 6, 8, 0.88)',
-            backdropFilter: 'blur(16px)',
+            backgroundColor: 'rgba(25, 25, 29, 0.6)',
+            backdropFilter: 'blur(8px)',
             zIndex: 9999,
             display: 'flex',
             alignItems: 'center',
@@ -134,18 +134,18 @@ export const AdminBooksManager: React.FC = () => {
               maxWidth: '750px',
               maxHeight: '90vh',
               overflowY: 'auto',
-              backgroundColor: '#0E1119',
-              border: '1px solid rgba(212, 175, 55, 0.3)',
+              backgroundColor: '#FFFFFF',
+              border: '1px solid var(--border-medium)',
               borderRadius: '16px',
               padding: '32px',
-              boxShadow: '0 25px 60px rgba(0,0,0,0.9)'
+              boxShadow: 'var(--shadow-xl)'
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-              <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', color: '#F8FAFC' }}>
+              <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', color: 'var(--text-primary)' }}>
                 {isCreating ? 'Create New Publication' : `Edit "${editingBook.title}"`}
               </h4>
-              <button onClick={() => setEditingBook(null)} style={{ color: '#94A3B8', cursor: 'pointer' }}>
+              <button onClick={() => setEditingBook(null)} style={{ color: 'var(--text-secondary)', cursor: 'pointer', background: 'none', border: 'none' }}>
                 <X size={20} />
               </button>
             </div>
@@ -153,7 +153,7 @@ export const AdminBooksManager: React.FC = () => {
             <form onSubmit={handleSaveForm} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '12px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#CBD5E1', marginBottom: '4px' }}>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '4px', fontWeight: 500 }}>
                     Title
                   </label>
                   <input
@@ -166,7 +166,7 @@ export const AdminBooksManager: React.FC = () => {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#CBD5E1', marginBottom: '4px' }}>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '4px', fontWeight: 500 }}>
                     Category
                   </label>
                   <input
@@ -180,7 +180,7 @@ export const AdminBooksManager: React.FC = () => {
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '0.8rem', color: '#CBD5E1', marginBottom: '4px' }}>
+                <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '4px', fontWeight: 500 }}>
                   Subtitle
                 </label>
                 <input
@@ -194,7 +194,7 @@ export const AdminBooksManager: React.FC = () => {
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#CBD5E1', marginBottom: '4px' }}>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '4px', fontWeight: 500 }}>
                     Author Name
                   </label>
                   <input
@@ -207,7 +207,7 @@ export const AdminBooksManager: React.FC = () => {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#CBD5E1', marginBottom: '4px' }}>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '4px', fontWeight: 500 }}>
                     Price (USD)
                   </label>
                   <input
@@ -220,7 +220,7 @@ export const AdminBooksManager: React.FC = () => {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#CBD5E1', marginBottom: '4px' }}>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '4px', fontWeight: 500 }}>
                     Original Price
                   </label>
                   <input
@@ -233,7 +233,7 @@ export const AdminBooksManager: React.FC = () => {
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '0.8rem', color: '#CBD5E1', marginBottom: '4px' }}>
+                <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '4px', fontWeight: 500 }}>
                   Short Summary
                 </label>
                 <textarea
@@ -246,7 +246,7 @@ export const AdminBooksManager: React.FC = () => {
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '0.8rem', color: '#CBD5E1', marginBottom: '4px' }}>
+                <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '4px', fontWeight: 500 }}>
                   About the Treatise (Full Description)
                 </label>
                 <textarea
@@ -272,28 +272,28 @@ export const AdminBooksManager: React.FC = () => {
       )}
 
       {/* Books Table */}
-      <div style={{ overflowX: 'auto', backgroundColor: '#0E1119', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+      <div style={{ overflowX: 'auto', backgroundColor: '#FFFFFF', borderRadius: '12px', border: '1px solid var(--border-soft)', boxShadow: 'var(--shadow-sm)' }}>
         <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.88rem' }}>
           <thead>
-            <tr style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)', backgroundColor: '#121622', color: '#94A3B8' }}>
-              <th style={{ padding: '14px 18px' }}>Title & Author</th>
-              <th style={{ padding: '14px 18px' }}>Category</th>
-              <th style={{ padding: '14px 18px' }}>Price</th>
-              <th style={{ padding: '14px 18px' }}>Featured</th>
-              <th style={{ padding: '14px 18px' }}>Status</th>
-              <th style={{ padding: '14px 18px', textAlign: 'right' }}>Actions</th>
+            <tr style={{ borderBottom: '1px solid var(--border-soft)', backgroundColor: 'var(--bg-deep)', color: 'var(--text-secondary)' }}>
+              <th style={{ padding: '14px 18px', fontWeight: 600 }}>Title & Author</th>
+              <th style={{ padding: '14px 18px', fontWeight: 600 }}>Category</th>
+              <th style={{ padding: '14px 18px', fontWeight: 600 }}>Price</th>
+              <th style={{ padding: '14px 18px', fontWeight: 600 }}>Featured</th>
+              <th style={{ padding: '14px 18px', fontWeight: 600 }}>Status</th>
+              <th style={{ padding: '14px 18px', textAlign: 'right', fontWeight: 600 }}>Actions</th>
             </tr>
           </thead>
           <tbody>
             {books.map(b => (
-              <tr key={b.id} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.04)' }}>
+              <tr key={b.id} style={{ borderBottom: '1px solid var(--border-soft)' }}>
                 <td style={{ padding: '16px 18px' }}>
-                  <div style={{ fontWeight: 600, color: '#F8FAFC' }}>{b.title}</div>
-                  <div style={{ fontSize: '0.78rem', color: '#64748B' }}>{b.author} • {b.pagesCount}p</div>
+                  <div style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{b.title}</div>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>{b.author} • {b.pagesCount}p</div>
                 </td>
-                <td style={{ padding: '16px 18px', color: '#CBD5E1' }}>{b.category}</td>
-                <td style={{ padding: '16px 18px', fontWeight: 600, color: '#D4AF37' }}>
-                  ${b.price} <span style={{ fontSize: '0.75rem', color: '#64748B', textDecoration: 'line-through' }}>${b.originalPrice}</span>
+                <td style={{ padding: '16px 18px', color: 'var(--text-secondary)' }}>{b.category}</td>
+                <td style={{ padding: '16px 18px', fontWeight: 600, color: '#8C6D23' }}>
+                  ${b.price} <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textDecoration: 'line-through' }}>${b.originalPrice}</span>
                 </td>
                 <td style={{ padding: '16px 18px' }}>
                   <button
@@ -302,8 +302,11 @@ export const AdminBooksManager: React.FC = () => {
                       padding: '4px 10px',
                       borderRadius: '4px',
                       fontSize: '0.75rem',
-                      backgroundColor: b.isFeatured ? 'rgba(212, 175, 55, 0.2)' : 'rgba(255,255,255,0.04)',
-                      color: b.isFeatured ? '#D4AF37' : '#64748B'
+                      fontWeight: 600,
+                      backgroundColor: b.isFeatured ? 'rgba(140, 109, 35, 0.1)' : 'var(--bg-deep)',
+                      color: b.isFeatured ? '#8C6D23' : 'var(--text-muted)',
+                      border: b.isFeatured ? '1px solid rgba(140, 109, 35, 0.25)' : '1px solid var(--border-soft)',
+                      cursor: 'pointer'
                     }}
                   >
                     {b.isFeatured ? 'Featured' : 'Standard'}
@@ -316,8 +319,11 @@ export const AdminBooksManager: React.FC = () => {
                       padding: '4px 10px',
                       borderRadius: '4px',
                       fontSize: '0.75rem',
-                      backgroundColor: b.isPublished ? 'rgba(16, 185, 129, 0.15)' : 'rgba(239, 68, 68, 0.15)',
-                      color: b.isPublished ? '#10B981' : '#EF4444'
+                      fontWeight: 600,
+                      backgroundColor: b.isPublished ? 'rgba(16, 185, 129, 0.12)' : 'rgba(239, 68, 68, 0.08)',
+                      color: b.isPublished ? '#059669' : '#DC2626',
+                      border: b.isPublished ? '1px solid rgba(16, 185, 129, 0.25)' : '1px solid rgba(239, 68, 68, 0.2)',
+                      cursor: 'pointer'
                     }}
                   >
                     {b.isPublished ? 'Published' : 'Draft'}
@@ -327,14 +333,14 @@ export const AdminBooksManager: React.FC = () => {
                   <div style={{ display: 'inline-flex', gap: '8px' }}>
                     <button
                       onClick={() => { setEditingBook(b); setIsCreating(false); }}
-                      style={{ color: '#818CF8', padding: '6px', cursor: 'pointer' }}
+                      style={{ color: 'var(--indigo-600)', padding: '6px', cursor: 'pointer', background: 'none', border: 'none' }}
                       title="Edit Book"
                     >
                       <Edit2 size={16} />
                     </button>
                     <button
                       onClick={() => handleDelete(b.id, b.title)}
-                      style={{ color: '#EF4444', padding: '6px', cursor: 'pointer' }}
+                      style={{ color: '#DC2626', padding: '6px', cursor: 'pointer', background: 'none', border: 'none' }}
                       title="Delete Book"
                     >
                       <Trash2 size={16} />

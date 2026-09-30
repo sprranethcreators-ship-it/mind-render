@@ -54,26 +54,26 @@ export const HomePage: React.FC = () => {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          paddingTop: '90px',
-          paddingBottom: '40px',
+          paddingTop: '96px',
+          paddingBottom: '50px',
           overflow: 'hidden',
-          backgroundColor: '#060709'
+          backgroundColor: 'var(--bg-cosmos)'
         }}
       >
         {/* Layer 1: Central Consciousness Mind Field Animation (Canvas) */}
         <NeuralConsciousnessCanvas />
 
-        {/* Layer 2: Ethereal Atmospheric Depth Glow Behind Masthead */}
+        {/* Layer 2: Ethereal Atmospheric Depth Glow Behind Masthead (Soft Lavender & Warm Ivory) */}
         <div
           style={{
             position: 'absolute',
             top: '44%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            width: 'min(90vw, 640px)',
-            height: 'min(50vh, 380px)',
-            background: 'radial-gradient(ellipse at center, rgba(99, 102, 241, 0.22) 0%, rgba(139, 92, 246, 0.12) 40%, rgba(212, 175, 55, 0.04) 65%, transparent 75%)',
-            filter: 'blur(35px)',
+            width: 'min(92vw, 720px)',
+            height: 'min(55vh, 440px)',
+            background: 'radial-gradient(ellipse at center, rgba(232, 226, 248, 0.55) 0%, rgba(246, 242, 232, 0.35) 45%, transparent 75%)',
+            filter: 'blur(40px)',
             pointerEvents: 'none',
             zIndex: 1
           }}
@@ -98,65 +98,63 @@ export const HomePage: React.FC = () => {
               alignItems: 'center',
               justifyContent: 'center',
               gap: '10px',
-              padding: '6px 16px',
+              padding: '6px 18px',
               borderRadius: '24px',
-              backgroundColor: 'rgba(212, 175, 55, 0.06)',
-              border: '1px solid rgba(212, 175, 55, 0.22)',
+              backgroundColor: 'rgba(200, 168, 78, 0.08)',
+              border: '1px solid rgba(184, 148, 55, 0.3)',
               marginBottom: '1.75rem',
-              boxShadow: '0 0 25px rgba(212, 175, 55, 0.1)',
+              boxShadow: '0 2px 12px rgba(200, 168, 78, 0.1)',
               maxWidth: '100%',
               boxSizing: 'border-box'
             }}
           >
-            <span style={{ width: '12px', height: '1px', backgroundColor: '#D4AF37', opacity: 0.6, flexShrink: 0 }} />
+            <span style={{ width: '14px', height: '1.5px', backgroundColor: '#99751F', opacity: 0.6, flexShrink: 0 }} />
             <span
               style={{
                 fontFamily: 'var(--font-sans)',
-                fontSize: '0.72rem',
-                letterSpacing: '0.18em',
+                fontSize: '0.74rem',
+                letterSpacing: '0.2em',
                 textTransform: 'uppercase',
-                color: '#F3E5AB',
-                fontWeight: 600,
+                color: '#6E5316',
+                fontWeight: 700,
                 whiteSpace: 'normal',
                 textAlign: 'center'
               }}
             >
               {content.hero.kicker}
             </span>
-            <span style={{ width: '12px', height: '1px', backgroundColor: '#D4AF37', opacity: 0.6, flexShrink: 0 }} />
+            <span style={{ width: '14px', height: '1.5px', backgroundColor: '#99751F', opacity: 0.6, flexShrink: 0 }} />
           </div>
 
           {/* Editorial Masthead Headline */}
           <h1
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(1.9rem, 6.2vw, 4.8rem)',
+              fontSize: 'clamp(2.1rem, 6.8vw, 5.2rem)',
               fontWeight: 800,
               letterSpacing: 'clamp(0.04em, 1.2vw, 0.12em)',
-              color: '#F8FAFC',
-              lineHeight: 1.15,
-              marginBottom: '1.25rem',
+              color: 'var(--text-primary)',
+              lineHeight: 1.12,
+              marginBottom: '1.35rem',
               overflowWrap: 'break-word',
-              wordBreak: 'break-word',
-              textShadow: '0 4px 30px rgba(0, 0, 0, 0.9), 0 0 45px rgba(99, 102, 241, 0.3)'
+              wordBreak: 'break-word'
             }}
           >
             {content.hero.masthead}
           </h1>
 
-          {/* Supporting Philosophy */}
+          {/* Supporting Philosophy Quote */}
           <p
             style={{
               fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(1.15rem, 2.4vw, 1.65rem)',
+              fontSize: 'clamp(1.2rem, 2.5vw, 1.75rem)',
               fontStyle: 'italic',
-              color: '#CBD5E1',
-              maxWidth: '780px',
-              margin: '0 auto 1.25rem',
+              color: '#383844',
+              maxWidth: '800px',
+              margin: '0 auto 1.35rem',
               lineHeight: 1.55,
               overflowWrap: 'break-word',
-              wordBreak: 'break-word',
-              textShadow: '0 2px 10px rgba(0, 0, 0, 0.8)'
+              wordBreak: 'break-word'
             }}
           >
             "{content.hero.philosophyQuote}"
@@ -166,11 +164,11 @@ export const HomePage: React.FC = () => {
           <p
             style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: 'clamp(0.92rem, 1.8vw, 1.05rem)',
-              color: '#94A3B8',
-              maxWidth: '620px',
-              margin: '0 auto 2.25rem',
-              lineHeight: 1.75,
+              fontSize: 'clamp(0.96rem, 1.8vw, 1.08rem)',
+              color: 'var(--text-secondary)',
+              maxWidth: '640px',
+              margin: '0 auto 2.5rem',
+              lineHeight: 1.8,
               overflowWrap: 'break-word',
               wordBreak: 'break-word'
             }}
@@ -180,7 +178,7 @@ export const HomePage: React.FC = () => {
 
           {/* Refined Hero CTA Buttons */}
           <div className="responsive-btn-group">
-            {/* Primary CTA */}
+            {/* Primary CTA: Sophisticated Indigo */}
             <button
               onClick={scrollToExplore}
               className="hero-btn-primary"
@@ -189,17 +187,17 @@ export const HomePage: React.FC = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '10px',
-                padding: '0.95rem 1.8rem',
+                padding: '0.95rem 2rem',
                 minHeight: '48px',
                 borderRadius: '8px',
-                background: 'linear-gradient(135deg, #4F46E5 0%, #3730A3 100%)',
+                background: 'linear-gradient(135deg, #5146B8 0%, #4338CA 100%)',
                 color: '#FFFFFF',
                 fontWeight: 600,
-                fontSize: '0.86rem',
-                letterSpacing: '0.1em',
+                fontSize: '0.88rem',
+                letterSpacing: '0.08em',
                 textTransform: 'uppercase',
-                border: '1px solid rgba(255, 255, 255, 0.18)',
-                boxShadow: '0 6px 25px rgba(79, 70, 229, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3)',
+                border: '1px solid rgba(255, 255, 255, 0.25)',
+                boxShadow: '0 6px 20px rgba(81, 70, 184, 0.28)',
                 cursor: 'pointer',
                 transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
               }}
@@ -210,7 +208,7 @@ export const HomePage: React.FC = () => {
               </div>
             </button>
 
-            {/* Secondary CTA */}
+            {/* Secondary CTA: Warm Champagne Gold Outline/Accent */}
             <Link
               to={content.hero.secondaryCtaLink || '/books'}
               className="hero-btn-gold"
@@ -219,22 +217,22 @@ export const HomePage: React.FC = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '10px',
-                padding: '0.95rem 1.8rem',
+                padding: '0.95rem 2rem',
                 minHeight: '48px',
                 borderRadius: '8px',
-                background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(197, 160, 40, 0.05) 100%)',
-                color: '#F3E5AB',
-                fontWeight: 600,
-                fontSize: '0.86rem',
+                background: 'rgba(200, 168, 78, 0.08)',
+                color: '#6E5316',
+                fontWeight: 700,
+                fontSize: '0.88rem',
                 letterSpacing: '0.08em',
                 textTransform: 'uppercase',
-                border: '1px solid rgba(212, 175, 55, 0.4)',
-                boxShadow: '0 4px 20px rgba(212, 175, 55, 0.12)',
+                border: '1.5px solid #C8A84E',
+                boxShadow: '0 4px 14px rgba(200, 168, 78, 0.15)',
                 transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
               }}
             >
               <span>{content.hero.secondaryCtaLabel}</span>
-              <BookOpen size={17} color="#D4AF37" />
+              <BookOpen size={17} color="#99751F" />
             </Link>
           </div>
         </div>
@@ -251,8 +249,8 @@ export const HomePage: React.FC = () => {
             flexDirection: 'column',
             alignItems: 'center',
             gap: '8px',
-            color: '#64748B',
-            fontSize: '0.72rem',
+            color: 'var(--text-secondary)',
+            fontSize: '0.74rem',
             letterSpacing: '0.2em',
             textTransform: 'uppercase',
             cursor: 'pointer',
@@ -264,9 +262,9 @@ export const HomePage: React.FC = () => {
           <span>{content.hero.scrollIndicatorText}</span>
           <div
             style={{
-              width: '1px',
+              width: '1.5px',
               height: '32px',
-              backgroundColor: 'rgba(212, 175, 55, 0.4)',
+              backgroundColor: 'rgba(81, 70, 184, 0.2)',
               position: 'relative',
               overflow: 'hidden'
             }}
@@ -275,11 +273,11 @@ export const HomePage: React.FC = () => {
               className="scroll-light-travel"
               style={{
                 width: '100%',
-                height: '12px',
-                backgroundColor: '#D4AF37',
+                height: '14px',
+                backgroundColor: '#5146B8',
                 position: 'absolute',
-                top: '-12px',
-                boxShadow: '0 0 8px #D4AF37'
+                top: '-14px',
+                boxShadow: '0 0 8px rgba(81, 70, 184, 0.6)'
               }}
             />
           </div>
@@ -287,25 +285,25 @@ export const HomePage: React.FC = () => {
 
         <style>{`
           .hero-btn-primary:hover {
-            background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%) !important;
-            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.4) !important;
+            background: linear-gradient(135deg, #6357C7 0%, #5146B8 100%) !important;
+            box-shadow: 0 8px 28px rgba(81, 70, 184, 0.4) !important;
             transform: translateY(-2px);
           }
           .hero-btn-primary:hover .btn-icon {
             transform: rotate(45deg);
           }
           .hero-btn-gold:hover {
-            background: rgba(212, 175, 55, 0.18) !important;
-            border-color: #D4AF37 !important;
-            box-shadow: 0 6px 28px rgba(212, 175, 55, 0.3) !important;
+            background: rgba(200, 168, 78, 0.16) !important;
+            border-color: #99751F !important;
+            box-shadow: 0 6px 20px rgba(200, 168, 78, 0.25) !important;
             transform: translateY(-2px);
-            color: #FFFFFF !important;
+            color: #503C0D !important;
           }
           .scroll-indicator:hover {
-            color: #CBD5E1 !important;
+            color: var(--text-primary) !important;
           }
           @keyframes scrollTravel {
-            0% { top: -12px; opacity: 0; }
+            0% { top: -14px; opacity: 0; }
             30% { opacity: 1; }
             100% { top: 32px; opacity: 0; }
           }

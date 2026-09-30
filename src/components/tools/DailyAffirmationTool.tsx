@@ -54,11 +54,11 @@ export const DailyAffirmationTool: React.FC = () => {
   return (
     <div
       style={{
-        backgroundColor: '#0F121B',
-        border: '1px solid rgba(212, 175, 55, 0.3)',
+        backgroundColor: '#FFFFFF',
+        border: '1px solid rgba(25, 25, 29, 0.08)',
         borderRadius: '20px',
         padding: '40px',
-        boxShadow: '0 20px 50px rgba(0,0,0,0.7), 0 0 30px rgba(212, 175, 55, 0.1)',
+        boxShadow: '0 16px 40px rgba(25, 25, 29, 0.05)',
         maxWidth: '720px',
         margin: '0 auto',
         textAlign: 'center'
@@ -75,13 +75,14 @@ export const DailyAffirmationTool: React.FC = () => {
             style={{
               padding: '6px 12px',
               borderRadius: '6px',
-              backgroundColor: currentSound === 'solfeggio432' ? 'rgba(212, 175, 55, 0.2)' : 'rgba(255,255,255,0.05)',
-              border: currentSound === 'solfeggio432' ? '1px solid #D4AF37' : '1px solid rgba(255,255,255,0.08)',
-              color: currentSound === 'solfeggio432' ? '#D4AF37' : '#94A3B8',
+              backgroundColor: currentSound === 'solfeggio432' ? 'rgba(81, 70, 184, 0.1)' : '#FAF8F3',
+              border: currentSound === 'solfeggio432' ? '1px solid var(--indigo-600)' : '1px solid rgba(25, 25, 29, 0.1)',
+              color: currentSound === 'solfeggio432' ? 'var(--indigo-600)' : 'var(--text-secondary)',
               fontSize: '0.78rem',
               display: 'flex',
               alignItems: 'center',
-              gap: '5px'
+              gap: '5px',
+              cursor: 'pointer'
             }}
           >
             <Volume2 size={14} /> 432 Hz Resonance
@@ -92,13 +93,14 @@ export const DailyAffirmationTool: React.FC = () => {
             style={{
               padding: '6px 12px',
               borderRadius: '6px',
-              backgroundColor: 'rgba(255,255,255,0.05)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              color: '#CBD5E1',
+              backgroundColor: '#FAF8F3',
+              border: '1px solid rgba(25, 25, 29, 0.1)',
+              color: 'var(--text-secondary)',
               fontSize: '0.78rem',
               display: 'flex',
               alignItems: 'center',
-              gap: '5px'
+              gap: '5px',
+              cursor: 'pointer'
             }}
           >
             <RefreshCw size={14} /> Next
@@ -114,8 +116,8 @@ export const DailyAffirmationTool: React.FC = () => {
             width: '140px',
             height: '140px',
             borderRadius: '50%',
-            border: '2px solid rgba(212, 175, 55, 0.4)',
-            boxShadow: '0 0 35px rgba(212, 175, 55, 0.2)',
+            border: '2px solid rgba(140, 109, 35, 0.35)',
+            boxShadow: '0 0 25px rgba(140, 109, 35, 0.1)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -127,14 +129,14 @@ export const DailyAffirmationTool: React.FC = () => {
               width: '100px',
               height: '100px',
               borderRadius: '50%',
-              backgroundColor: 'rgba(99, 102, 241, 0.1)',
-              border: '1px dashed rgba(99, 102, 241, 0.5)',
+              backgroundColor: 'rgba(81, 70, 184, 0.08)',
+              border: '1px dashed rgba(81, 70, 184, 0.35)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center'
             }}
           >
-            <Heart size={24} color="#D4AF37" />
+            <Heart size={24} color="#8C6D23" />
           </div>
         </div>
       </div>
@@ -144,7 +146,7 @@ export const DailyAffirmationTool: React.FC = () => {
         style={{
           fontFamily: 'var(--font-serif)',
           fontSize: 'clamp(1.4rem, 2.5vw, 1.85rem)',
-          color: '#F8FAFC',
+          color: 'var(--text-primary)',
           lineHeight: 1.5,
           fontStyle: 'italic',
           marginBottom: '1.5rem',
@@ -158,8 +160,8 @@ export const DailyAffirmationTool: React.FC = () => {
       {/* Contemplation */}
       <div
         style={{
-          backgroundColor: 'rgba(255, 255, 255, 0.03)',
-          border: '1px solid rgba(255, 255, 255, 0.06)',
+          backgroundColor: '#FAF8F3',
+          border: '1px solid rgba(25, 25, 29, 0.08)',
           borderRadius: '12px',
           padding: '18px 24px',
           marginBottom: '2rem',
@@ -167,10 +169,10 @@ export const DailyAffirmationTool: React.FC = () => {
           margin: '0 auto 2rem'
         }}
       >
-        <span style={{ fontSize: '0.72rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#818CF8', fontWeight: 600, display: 'block', marginBottom: '6px' }}>
+        <span style={{ fontSize: '0.72rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--indigo-600)', fontWeight: 600, display: 'block', marginBottom: '6px' }}>
           Deep Inquiry & Somatic Anchor
         </span>
-        <p style={{ color: '#CBD5E1', fontSize: '0.92rem', lineHeight: 1.6 }}>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: 1.6 }}>
           {current.contemplation}
         </p>
       </div>
@@ -181,7 +183,7 @@ export const DailyAffirmationTool: React.FC = () => {
         className="btn-secondary"
         style={{ padding: '0.65rem 1.6rem', fontSize: '0.82rem' }}
       >
-        {isCopied ? <Check size={15} color="#10B981" /> : <Copy size={15} />}
+        {isCopied ? <Check size={15} color="#059669" /> : <Copy size={15} />}
         {isCopied ? 'Copied to Clipboard' : 'Copy Declaration'}
       </button>
     </div>

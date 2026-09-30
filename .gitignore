@@ -25,3 +25,15 @@ dist-ssr
 *.sw?
 
 .vercel
+
+# Agent & local workflow scaffolding
+.agent/
+.agents/
+.gemini/
+.gsd/
+GSD-STYLE.md
+PROJECT_RULES.md
+VERSION
+adapters/
+model_capabilities.yaml
+scripts/

@@ -154,13 +154,13 @@ export const AdminHomepageContentEditor: React.FC = () => {
   ];
 
   return (
-    <div style={{ backgroundColor: '#0A0C14', borderRadius: '16px', border: '1px solid rgba(255, 255, 255, 0.08)', overflow: 'hidden' }}>
+    <div style={{ backgroundColor: '#FFFFFF', borderRadius: '16px', border: '1px solid var(--border-soft)', boxShadow: 'var(--shadow-sm)', overflow: 'hidden' }}>
       {/* Studio Header Bar */}
       <div
         style={{
           padding: '24px 28px',
-          backgroundColor: '#0F121C',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+          backgroundColor: 'var(--bg-deep)',
+          borderBottom: '1px solid var(--border-soft)',
           display: 'flex',
           flexWrap: 'wrap',
           justifyContent: 'space-between',
@@ -173,14 +173,14 @@ export const AdminHomepageContentEditor: React.FC = () => {
             <span className="badge-gold">
               <Sparkles size={13} /> Complete Homepage Editorial Studio
             </span>
-            <span style={{ fontSize: '0.75rem', color: '#64748B' }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
               Last saved: {new Date(content.lastUpdated).toLocaleTimeString()}
             </span>
           </div>
-          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', color: '#F8FAFC', marginTop: '6px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', color: 'var(--text-primary)', marginTop: '6px' }}>
             Live Homepage CMS Editor
           </h2>
-          <p style={{ color: '#94A3B8', fontSize: '0.88rem', marginTop: '2px' }}>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginTop: '2px' }}>
             Edit every sentence, headline, quote, and full stop across the entire homepage with immediate live publication.
           </p>
         </div>
@@ -220,8 +220,8 @@ export const AdminHomepageContentEditor: React.FC = () => {
         style={{
           display: 'flex',
           overflowX: 'auto',
-          backgroundColor: '#090B10',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+          backgroundColor: 'var(--bg-cosmos)',
+          borderBottom: '1px solid var(--border-soft)',
           padding: '8px 16px',
           gap: '6px'
         }}
@@ -238,9 +238,10 @@ export const AdminHomepageContentEditor: React.FC = () => {
                 gap: '8px',
                 padding: '10px 16px',
                 borderRadius: '8px',
-                backgroundColor: isActive ? 'rgba(212, 175, 55, 0.12)' : 'transparent',
-                border: isActive ? '1px solid rgba(212, 175, 55, 0.35)' : '1px solid transparent',
-                color: isActive ? '#F3E5AB' : '#94A3B8',
+                backgroundColor: isActive ? '#FFFFFF' : 'transparent',
+                border: isActive ? '1px solid rgba(140, 109, 35, 0.35)' : '1px solid transparent',
+                color: isActive ? '#8C6D23' : 'var(--text-secondary)',
+                boxShadow: isActive ? 'var(--shadow-sm)' : 'none',
                 fontSize: '0.82rem',
                 fontWeight: isActive ? 600 : 500,
                 cursor: 'pointer',
@@ -262,10 +263,10 @@ export const AdminHomepageContentEditor: React.FC = () => {
             ========================================================================= */}
         {activeSection === 'hero' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <h3 style={{ color: '#F8FAFC', fontSize: '1.25rem', marginBottom: '8px' }}>Hero Section Copy</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontSize: '1.25rem', marginBottom: '8px' }}>Hero Section Copy</h3>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Kicker Tag (Top gold badge)
               </label>
               <input
@@ -277,7 +278,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Masthead Brand Title (Large h1)
               </label>
               <input
@@ -289,7 +290,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Philosophy Quote (Italic serif subtitle)
               </label>
               <input
@@ -301,7 +302,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Supporting Paragraph (Simple, clear explanation)
               </label>
               <textarea
@@ -314,7 +315,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
               <div>
-                <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                   Primary CTA Button Label
                 </label>
                 <input
@@ -326,7 +327,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
               </div>
 
               <div>
-                <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                   Primary CTA Target Link
                 </label>
                 <input
@@ -340,7 +341,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
               <div>
-                <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                   Secondary CTA Button Label
                 </label>
                 <input
@@ -352,7 +353,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
               </div>
 
               <div>
-                <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                   Secondary CTA Target Link
                 </label>
                 <input
@@ -365,7 +366,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Scroll Indicator Text
               </label>
               <input
@@ -383,10 +384,10 @@ export const AdminHomepageContentEditor: React.FC = () => {
             ========================================================================= */}
         {activeSection === 'philosophy' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            <h3 style={{ color: '#F8FAFC', fontSize: '1.25rem', marginBottom: '8px' }}>Editorial Philosophy Copy</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontSize: '1.25rem', marginBottom: '8px' }}>Editorial Philosophy Copy</h3>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Section Tag
               </label>
               <input
@@ -398,7 +399,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Main Headline
               </label>
               <input
@@ -410,7 +411,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Narrative Paragraph
               </label>
               <textarea
@@ -422,7 +423,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div style={{ marginTop: '1rem' }}>
-              <h4 style={{ color: '#D4AF37', fontSize: '1rem', marginBottom: '14px' }}>
+              <h4 style={{ color: '#8C6D23', fontSize: '1rem', marginBottom: '14px' }}>
                 The 3 Progression Cards (Step 1, Step 2, Step 3)
               </h4>
 
@@ -431,19 +432,19 @@ export const AdminHomepageContentEditor: React.FC = () => {
                   <div
                     key={idx}
                     style={{
-                      backgroundColor: 'rgba(255, 255, 255, 0.02)',
-                      border: '1px solid rgba(255, 255, 255, 0.08)',
+                      backgroundColor: 'var(--bg-deep)',
+                      border: '1px solid var(--border-soft)',
                       borderRadius: '12px',
                       padding: '20px'
                     }}
                   >
-                    <div style={{ fontWeight: 600, color: '#818CF8', fontSize: '0.85rem', marginBottom: '12px' }}>
+                    <div style={{ fontWeight: 600, color: 'var(--indigo-600)', fontSize: '0.85rem', marginBottom: '12px' }}>
                       Card 0{idx + 1}
                     </div>
 
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '14px', marginBottom: '10px' }}>
                       <div>
-                        <label style={{ display: 'block', color: '#94A3B8', fontSize: '0.78rem', marginBottom: '4px' }}>
+                        <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.78rem', marginBottom: '4px' }}>
                           Step Label
                         </label>
                         <input
@@ -455,7 +456,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
                       </div>
 
                       <div>
-                        <label style={{ display: 'block', color: '#94A3B8', fontSize: '0.78rem', marginBottom: '4px' }}>
+                        <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.78rem', marginBottom: '4px' }}>
                           Headline Quote
                         </label>
                         <input
@@ -468,7 +469,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
                     </div>
 
                     <div>
-                      <label style={{ display: 'block', color: '#94A3B8', fontSize: '0.78rem', marginBottom: '4px' }}>
+                      <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.78rem', marginBottom: '4px' }}>
                         Explanation
                       </label>
                       <textarea
@@ -490,11 +491,11 @@ export const AdminHomepageContentEditor: React.FC = () => {
             ========================================================================= */}
         {activeSection === 'topics' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            <h3 style={{ color: '#F8FAFC', fontSize: '1.25rem', marginBottom: '8px' }}>Foundations of Thought (6 Editorial Topics)</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontSize: '1.25rem', marginBottom: '8px' }}>Foundations of Thought (6 Editorial Topics)</h3>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '16px' }}>
               <div>
-                <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                   Section Tag
                 </label>
                 <input
@@ -506,7 +507,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
               </div>
 
               <div>
-                <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                   Headline
                 </label>
                 <input
@@ -519,7 +520,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Section Description
               </label>
               <textarea
@@ -531,7 +532,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div style={{ marginTop: '1rem' }}>
-              <h4 style={{ color: '#D4AF37', fontSize: '1rem', marginBottom: '14px' }}>
+              <h4 style={{ color: '#8C6D23', fontSize: '1rem', marginBottom: '14px' }}>
                 Individual Topic Cards (All 6 Pillars)
               </h4>
 
@@ -540,8 +541,8 @@ export const AdminHomepageContentEditor: React.FC = () => {
                   <div
                     key={t.id}
                     style={{
-                      backgroundColor: 'rgba(255, 255, 255, 0.02)',
-                      border: '1px solid rgba(255, 255, 255, 0.08)',
+                      backgroundColor: 'var(--bg-deep)',
+                      border: '1px solid var(--border-soft)',
                       borderRadius: '12px',
                       padding: '18px'
                     }}
@@ -556,7 +557,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
                     </div>
 
                     <div style={{ marginBottom: '10px' }}>
-                      <label style={{ display: 'block', color: '#94A3B8', fontSize: '0.76rem', marginBottom: '3px' }}>
+                      <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.76rem', marginBottom: '3px' }}>
                         Topic Title
                       </label>
                       <input
@@ -568,7 +569,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
                     </div>
 
                     <div style={{ marginBottom: '10px' }}>
-                      <label style={{ display: 'block', color: '#94A3B8', fontSize: '0.76rem', marginBottom: '3px' }}>
+                      <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.76rem', marginBottom: '3px' }}>
                         Tagline
                       </label>
                       <input
@@ -580,7 +581,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
                     </div>
 
                     <div>
-                      <label style={{ display: 'block', color: '#94A3B8', fontSize: '0.76rem', marginBottom: '3px' }}>
+                      <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.76rem', marginBottom: '3px' }}>
                         Description
                       </label>
                       <textarea
@@ -596,7 +597,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Bottom View All Button Text
               </label>
               <input
@@ -614,13 +615,13 @@ export const AdminHomepageContentEditor: React.FC = () => {
             ========================================================================= */}
         {activeSection === 'mindInMotion' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            <h3 style={{ color: '#F8FAFC', fontSize: '1.25rem', marginBottom: '8px' }}>
+            <h3 style={{ color: 'var(--text-primary)', fontSize: '1.25rem', marginBottom: '8px' }}>
               The Mind in Motion (7-Phase Thought Chain)
             </h3>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '16px' }}>
               <div>
-                <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                   Section Tag
                 </label>
                 <input
@@ -632,7 +633,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
               </div>
 
               <div>
-                <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                   Headline
                 </label>
                 <input
@@ -645,7 +646,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Section Description
               </label>
               <textarea
@@ -657,7 +658,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Bottom Continuous Loop Notice
               </label>
               <input
@@ -669,7 +670,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div style={{ marginTop: '1rem' }}>
-              <h4 style={{ color: '#D4AF37', fontSize: '1rem', marginBottom: '14px' }}>
+              <h4 style={{ color: '#8C6D23', fontSize: '1rem', marginBottom: '14px' }}>
                 The 7 Phases (Step 1 to 7)
               </h4>
 
@@ -678,24 +679,24 @@ export const AdminHomepageContentEditor: React.FC = () => {
                   <div
                     key={st.step}
                     style={{
-                      backgroundColor: 'rgba(255, 255, 255, 0.02)',
-                      border: '1px solid rgba(255, 255, 255, 0.08)',
+                      backgroundColor: 'var(--bg-deep)',
+                      border: '1px solid var(--border-soft)',
                       borderRadius: '12px',
                       padding: '20px'
                     }}
                   >
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                      <span style={{ fontFamily: 'monospace', fontWeight: 700, color: st.accent, backgroundColor: 'rgba(255,255,255,0.06)', padding: '2px 8px', borderRadius: '4px' }}>
+                      <span style={{ fontFamily: 'monospace', fontWeight: 700, color: st.accent, backgroundColor: '#FFFFFF', border: '1px solid var(--border-soft)', padding: '2px 8px', borderRadius: '4px' }}>
                         Phase 0{st.step}
                       </span>
-                      <span style={{ fontWeight: 600, color: '#F8FAFC' }}>
+                      <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>
                         {st.label}
                       </span>
                     </div>
 
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '12px', marginBottom: '10px' }}>
                       <div>
-                        <label style={{ display: 'block', color: '#94A3B8', fontSize: '0.76rem', marginBottom: '3px' }}>
+                        <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.76rem', marginBottom: '3px' }}>
                           Phase Label
                         </label>
                         <input
@@ -707,7 +708,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
                       </div>
 
                       <div>
-                        <label style={{ display: 'block', color: '#94A3B8', fontSize: '0.76rem', marginBottom: '3px' }}>
+                        <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.76rem', marginBottom: '3px' }}>
                           Tagline
                         </label>
                         <input
@@ -720,7 +721,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
                     </div>
 
                     <div style={{ marginBottom: '10px' }}>
-                      <label style={{ display: 'block', color: '#94A3B8', fontSize: '0.76rem', marginBottom: '3px' }}>
+                      <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.76rem', marginBottom: '3px' }}>
                         Simple Explanation
                       </label>
                       <textarea
@@ -733,7 +734,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
 
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                       <div>
-                        <label style={{ display: 'block', color: '#94A3B8', fontSize: '0.76rem', marginBottom: '3px' }}>
+                        <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.76rem', marginBottom: '3px' }}>
                           Key Takeaway / Life Lesson
                         </label>
                         <textarea
@@ -745,7 +746,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
                       </div>
 
                       <div>
-                        <label style={{ display: 'block', color: '#94A3B8', fontSize: '0.76rem', marginBottom: '3px' }}>
+                        <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.76rem', marginBottom: '3px' }}>
                           Daily Practice
                         </label>
                         <textarea
@@ -768,12 +769,12 @@ export const AdminHomepageContentEditor: React.FC = () => {
             ========================================================================= */}
         {activeSection === 'books' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <h3 style={{ color: '#F8FAFC', fontSize: '1.25rem', marginBottom: '8px' }}>
+            <h3 style={{ color: 'var(--text-primary)', fontSize: '1.25rem', marginBottom: '8px' }}>
               Publishing House & Father's Treatises
             </h3>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Section Tag
               </label>
               <input
@@ -785,7 +786,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Main Headline
               </label>
               <input
@@ -797,7 +798,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Italic Serif Quote
               </label>
               <input
@@ -809,7 +810,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Section Description
               </label>
               <textarea
@@ -822,7 +823,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
               <div>
-                <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                   Sample Button Text
                 </label>
                 <input
@@ -834,7 +835,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
               </div>
 
               <div>
-                <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                   Buy Now Button Text
                 </label>
                 <input
@@ -846,7 +847,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
               </div>
 
               <div>
-                <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                   View Complete Store Button
                 </label>
                 <input
@@ -865,13 +866,13 @@ export const AdminHomepageContentEditor: React.FC = () => {
             ========================================================================= */}
         {activeSection === 'why' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <h3 style={{ color: '#F8FAFC', fontSize: '1.25rem', marginBottom: '8px' }}>
+            <h3 style={{ color: 'var(--text-primary)', fontSize: '1.25rem', marginBottom: '8px' }}>
               Why MIND RENDER (The Four Pillars)
             </h3>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '16px' }}>
               <div>
-                <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                   Section Tag
                 </label>
                 <input
@@ -883,7 +884,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
               </div>
 
               <div>
-                <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                   Headline
                 </label>
                 <input
@@ -896,7 +897,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Section Description
               </label>
               <textarea
@@ -908,7 +909,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div style={{ marginTop: '1rem' }}>
-              <h4 style={{ color: '#D4AF37', fontSize: '1rem', marginBottom: '14px' }}>
+              <h4 style={{ color: '#8C6D23', fontSize: '1rem', marginBottom: '14px' }}>
                 The 4 Pillars (Understand, Reflect, Practice, Transform)
               </h4>
 
@@ -917,18 +918,18 @@ export const AdminHomepageContentEditor: React.FC = () => {
                   <div
                     key={idx}
                     style={{
-                      backgroundColor: 'rgba(255, 255, 255, 0.02)',
-                      border: '1px solid rgba(255, 255, 255, 0.08)',
+                      backgroundColor: 'var(--bg-deep)',
+                      border: '1px solid var(--border-soft)',
                       borderRadius: '12px',
                       padding: '18px'
                     }}
                   >
-                    <div style={{ fontWeight: 600, color: '#D4AF37', fontSize: '0.82rem', marginBottom: '10px' }}>
+                    <div style={{ fontWeight: 600, color: '#8C6D23', fontSize: '0.82rem', marginBottom: '10px' }}>
                       Pillar 0{idx + 1}
                     </div>
 
                     <div style={{ marginBottom: '10px' }}>
-                      <label style={{ display: 'block', color: '#94A3B8', fontSize: '0.76rem', marginBottom: '3px' }}>
+                      <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.76rem', marginBottom: '3px' }}>
                         Title
                       </label>
                       <input
@@ -940,7 +941,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
                     </div>
 
                     <div style={{ marginBottom: '10px' }}>
-                      <label style={{ display: 'block', color: '#94A3B8', fontSize: '0.76rem', marginBottom: '3px' }}>
+                      <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.76rem', marginBottom: '3px' }}>
                         Subtitle
                       </label>
                       <input
@@ -952,7 +953,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
                     </div>
 
                     <div>
-                      <label style={{ display: 'block', color: '#94A3B8', fontSize: '0.76rem', marginBottom: '3px' }}>
+                      <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.76rem', marginBottom: '3px' }}>
                         Description
                       </label>
                       <textarea
@@ -974,12 +975,12 @@ export const AdminHomepageContentEditor: React.FC = () => {
             ========================================================================= */}
         {activeSection === 'essays' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <h3 style={{ color: '#F8FAFC', fontSize: '1.25rem', marginBottom: '8px' }}>
+            <h3 style={{ color: 'var(--text-primary)', fontSize: '1.25rem', marginBottom: '8px' }}>
               Editorial Essays Section Copy
             </h3>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Section Tag
               </label>
               <input
@@ -991,7 +992,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Main Headline
               </label>
               <input
@@ -1003,7 +1004,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Section Description
               </label>
               <textarea
@@ -1015,7 +1016,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 View All Button Text
               </label>
               <input
@@ -1033,12 +1034,12 @@ export const AdminHomepageContentEditor: React.FC = () => {
             ========================================================================= */}
         {activeSection === 'finalCta' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <h3 style={{ color: '#F8FAFC', fontSize: '1.25rem', marginBottom: '8px' }}>
+            <h3 style={{ color: 'var(--text-primary)', fontSize: '1.25rem', marginBottom: '8px' }}>
               Final Horizon CTA Section
             </h3>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Section Tag
               </label>
               <input
@@ -1051,7 +1052,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '14px' }}>
               <div>
-                <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                   Headline Line 1
                 </label>
                 <input
@@ -1063,7 +1064,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
               </div>
 
               <div>
-                <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                   Headline Line 2
                 </label>
                 <input
@@ -1075,7 +1076,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
               </div>
 
               <div>
-                <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                   Headline Line 3
                 </label>
                 <input
@@ -1088,7 +1089,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
             </div>
 
             <div>
-              <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+              <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                 Italic Paragraph
               </label>
               <textarea
@@ -1101,7 +1102,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
               <div>
-                <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                   Primary Button Text
                 </label>
                 <input
@@ -1113,7 +1114,7 @@ export const AdminHomepageContentEditor: React.FC = () => {
               </div>
 
               <div>
-                <label style={{ display: 'block', color: '#CBD5E1', fontSize: '0.84rem', marginBottom: '6px' }}>
+                <label style={{ display: 'block', color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '6px' }}>
                   Secondary Button Text
                 </label>
                 <input

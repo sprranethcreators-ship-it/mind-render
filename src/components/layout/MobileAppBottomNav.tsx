@@ -60,11 +60,11 @@ export const MobileAppBottomNav: React.FC = () => {
           left: 0,
           right: 0,
           height: '66px',
-          backgroundColor: 'rgba(8, 10, 15, 0.94)',
-          backdropFilter: 'blur(24px)',
-          WebkitBackdropFilter: 'blur(24px)',
-          borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-          boxShadow: '0 -8px 30px rgba(0, 0, 0, 0.75)',
+          backgroundColor: 'rgba(250, 248, 243, 0.94)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          borderTop: '1px solid rgba(25, 25, 29, 0.08)',
+          boxShadow: '0 -4px 20px rgba(25, 25, 29, 0.05)',
           zIndex: 8900,
           display: 'flex',
           alignItems: 'center',
@@ -84,7 +84,7 @@ export const MobileAppBottomNav: React.FC = () => {
             justifyContent: 'center',
             gap: '3px',
             textDecoration: 'none',
-            color: isActive('/') ? '#D4AF37' : '#94A3B8',
+            color: isActive('/') ? '#5146B8' : '#6B6D7C',
             flex: 1,
             height: '100%',
             position: 'relative'
@@ -94,11 +94,11 @@ export const MobileAppBottomNav: React.FC = () => {
             style={{
               padding: '4px 14px',
               borderRadius: '16px',
-              backgroundColor: isActive('/') ? 'rgba(212, 175, 55, 0.14)' : 'transparent',
+              backgroundColor: isActive('/') ? 'rgba(81, 70, 184, 0.1)' : 'transparent',
               transition: 'all 0.25s ease'
             }}
           >
-            <Home size={20} color={isActive('/') ? '#D4AF37' : '#94A3B8'} />
+            <Home size={20} color={isActive('/') ? '#5146B8' : '#6B6D7C'} />
           </div>
           <span
             style={{
@@ -122,7 +122,7 @@ export const MobileAppBottomNav: React.FC = () => {
             justifyContent: 'center',
             gap: '3px',
             textDecoration: 'none',
-            color: isActive('/books') ? '#D4AF37' : '#94A3B8',
+            color: isActive('/books') ? '#5146B8' : '#6B6D7C',
             flex: 1,
             height: '100%',
             position: 'relative'
@@ -132,11 +132,11 @@ export const MobileAppBottomNav: React.FC = () => {
             style={{
               padding: '4px 14px',
               borderRadius: '16px',
-              backgroundColor: isActive('/books') ? 'rgba(212, 175, 55, 0.14)' : 'transparent',
+              backgroundColor: isActive('/books') ? 'rgba(81, 70, 184, 0.1)' : 'transparent',
               transition: 'all 0.25s ease'
             }}
           >
-            <BookOpen size={20} color={isActive('/books') ? '#D4AF37' : '#94A3B8'} />
+            <BookOpen size={20} color={isActive('/books') ? '#5146B8' : '#6B6D7C'} />
           </div>
           <span
             style={{
@@ -160,7 +160,7 @@ export const MobileAppBottomNav: React.FC = () => {
             justifyContent: 'center',
             gap: '3px',
             textDecoration: 'none',
-            color: isActive('/tools') ? '#D4AF37' : '#94A3B8',
+            color: isActive('/tools') ? '#5146B8' : '#6B6D7C',
             flex: 1,
             height: '100%',
             position: 'relative'
@@ -170,11 +170,11 @@ export const MobileAppBottomNav: React.FC = () => {
             style={{
               padding: '4px 14px',
               borderRadius: '16px',
-              backgroundColor: isActive('/tools') ? 'rgba(212, 175, 55, 0.14)' : 'transparent',
+              backgroundColor: isActive('/tools') ? 'rgba(81, 70, 184, 0.1)' : 'transparent',
               transition: 'all 0.25s ease'
             }}
           >
-            <Sparkles size={20} color={isActive('/tools') ? '#D4AF37' : '#94A3B8'} />
+            <Sparkles size={20} color={isActive('/tools') ? '#5146B8' : '#6B6D7C'} />
           </div>
           <span
             style={{
@@ -198,7 +198,7 @@ export const MobileAppBottomNav: React.FC = () => {
             justifyContent: 'center',
             gap: '3px',
             textDecoration: 'none',
-            color: isActive('/library') ? '#D4AF37' : '#94A3B8',
+            color: isActive('/library') ? '#5146B8' : '#6B6D7C',
             flex: 1,
             height: '100%',
             position: 'relative'
@@ -208,12 +208,12 @@ export const MobileAppBottomNav: React.FC = () => {
             style={{
               padding: '4px 14px',
               borderRadius: '16px',
-              backgroundColor: isActive('/library') ? 'rgba(212, 175, 55, 0.14)' : 'transparent',
+              backgroundColor: isActive('/library') ? 'rgba(81, 70, 184, 0.1)' : 'transparent',
               transition: 'all 0.25s ease',
               position: 'relative'
             }}
           >
-            <Bookmark size={20} color={isActive('/library') ? '#D4AF37' : '#94A3B8'} />
+            <Bookmark size={20} color={isActive('/library') ? '#5146B8' : '#6B6D7C'} />
             {libraryItems.length > 0 && (
               <span
                 style={{
@@ -223,8 +223,8 @@ export const MobileAppBottomNav: React.FC = () => {
                   width: '7px',
                   height: '7px',
                   borderRadius: '50%',
-                  backgroundColor: '#D4AF37',
-                  boxShadow: '0 0 6px #D4AF37'
+                  backgroundColor: '#5146B8',
+                  boxShadow: '0 0 4px rgba(81, 70, 184, 0.4)'
                 }}
               />
             )}
@@ -252,7 +252,7 @@ export const MobileAppBottomNav: React.FC = () => {
             gap: '3px',
             background: 'none',
             border: 'none',
-            color: isPlaying ? '#D4AF37' : '#94A3B8',
+            color: isPlaying ? '#5146B8' : '#6B6D7C',
             flex: 1,
             height: '100%',
             cursor: 'pointer',
@@ -263,15 +263,15 @@ export const MobileAppBottomNav: React.FC = () => {
             style={{
               padding: '4px 14px',
               borderRadius: '16px',
-              backgroundColor: isPlaying ? 'rgba(212, 175, 55, 0.18)' : 'transparent',
+              backgroundColor: isPlaying ? 'rgba(81, 70, 184, 0.12)' : 'transparent',
               transition: 'all 0.25s ease',
               position: 'relative'
             }}
           >
             {isPlaying ? (
-              <Volume2 size={20} color="#D4AF37" className="animate-pulse" />
+              <Volume2 size={20} color="#5146B8" className="animate-pulse" />
             ) : (
-              <Headphones size={20} color="#94A3B8" />
+              <Headphones size={20} color="#6B6D7C" />
             )}
             {isPlaying && (
               <span
@@ -306,9 +306,9 @@ export const MobileAppBottomNav: React.FC = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            backgroundColor: 'rgba(5, 6, 8, 0.85)',
-            backdropFilter: 'blur(16px)',
-            WebkitBackdropFilter: 'blur(16px)',
+            backgroundColor: 'rgba(25, 25, 29, 0.45)',
+            backdropFilter: 'blur(10px)',
+            WebkitBackdropFilter: 'blur(10px)',
             zIndex: 9600,
             display: 'flex',
             alignItems: 'flex-end',
@@ -320,13 +320,13 @@ export const MobileAppBottomNav: React.FC = () => {
             style={{
               width: '100%',
               maxWidth: '500px',
-              backgroundColor: '#0E1119',
-              borderTop: '1px solid rgba(212, 175, 55, 0.3)',
+              backgroundColor: '#FFFFFF',
+              borderTop: '1px solid rgba(81, 70, 184, 0.25)',
               borderTopLeftRadius: '24px',
               borderTopRightRadius: '24px',
               padding: '24px 20px',
               paddingBottom: 'max(28px, env(safe-area-inset-bottom, 24px))',
-              boxShadow: '0 -20px 50px rgba(0, 0, 0, 0.9)',
+              boxShadow: '0 -16px 40px rgba(25, 25, 29, 0.15)',
               animation: 'slideUpSheet 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
             onClick={e => e.stopPropagation()}
@@ -336,7 +336,7 @@ export const MobileAppBottomNav: React.FC = () => {
               style={{
                 width: '40px',
                 height: '4px',
-                backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                backgroundColor: 'rgba(25, 25, 29, 0.15)',
                 borderRadius: '4px',
                 margin: '0 auto 16px'
               }}
@@ -345,8 +345,8 @@ export const MobileAppBottomNav: React.FC = () => {
             {/* Header */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <Headphones size={20} color="#D4AF37" />
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', color: '#F8FAFC' }}>
+                <Headphones size={20} color="#5146B8" />
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', color: '#19191D', fontWeight: 600 }}>
                   Consciousness Sound Chamber
                 </h3>
               </div>
@@ -355,7 +355,7 @@ export const MobileAppBottomNav: React.FC = () => {
                 style={{
                   background: 'none',
                   border: 'none',
-                  color: '#94A3B8',
+                  color: '#6B6D7C',
                   padding: '4px',
                   cursor: 'pointer'
                 }}
@@ -364,7 +364,7 @@ export const MobileAppBottomNav: React.FC = () => {
               </button>
             </div>
 
-            <p style={{ color: '#94A3B8', fontSize: '0.86rem', marginBottom: '1.25rem', lineHeight: 1.5 }}>
+            <p style={{ color: '#575765', fontSize: '0.86rem', marginBottom: '1.25rem', lineHeight: 1.5 }}>
               Synthesized pure harmonic solfeggio tones to accompany reading and contemplation.
             </p>
 
@@ -382,24 +382,24 @@ export const MobileAppBottomNav: React.FC = () => {
                       justifyContent: 'space-between',
                       padding: '14px 16px',
                       borderRadius: '12px',
-                      backgroundColor: isSelected ? 'rgba(212, 175, 55, 0.12)' : 'rgba(255, 255, 255, 0.03)',
-                      border: isSelected ? `1.5px solid ${preset.color}` : '1px solid rgba(255, 255, 255, 0.07)',
+                      backgroundColor: isSelected ? 'rgba(81, 70, 184, 0.08)' : '#FAF8F3',
+                      border: isSelected ? `1.5px solid #5146B8` : '1px solid rgba(25, 25, 29, 0.08)',
                       cursor: 'pointer',
                       textAlign: 'left',
                       transition: 'all 0.2s ease'
                     }}
                   >
                     <div>
-                      <div style={{ fontWeight: 600, color: isSelected ? '#FFFFFF' : '#E2E8F0', fontSize: '0.94rem' }}>
+                      <div style={{ fontWeight: 600, color: '#19191D', fontSize: '0.94rem' }}>
                         {preset.title}
                       </div>
-                      <div style={{ fontSize: '0.76rem', color: '#94A3B8', marginTop: '2px' }}>
+                      <div style={{ fontSize: '0.76rem', color: '#575765', marginTop: '2px' }}>
                         {preset.subtitle}
                       </div>
                     </div>
 
-                    <div style={{ color: preset.color }}>
-                      {isSelected ? <Volume2 size={20} /> : <VolumeX size={18} color="#64748B" />}
+                    <div style={{ color: isSelected ? '#5146B8' : '#8A8C9E' }}>
+                      {isSelected ? <Volume2 size={20} /> : <VolumeX size={18} />}
                     </div>
                   </button>
                 );
@@ -410,7 +410,7 @@ export const MobileAppBottomNav: React.FC = () => {
               <button
                 onClick={() => toggleSound(currentSound as any)}
                 className="btn-secondary"
-                style={{ width: '100%', padding: '0.8rem', fontSize: '0.88rem' }}
+                style={{ width: '100%', padding: '0.8rem', fontSize: '0.88rem', border: '1px solid rgba(25, 25, 29, 0.12)' }}
               >
                 <VolumeX size={16} /> Stop Playing
               </button>

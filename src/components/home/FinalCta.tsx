@@ -15,10 +15,10 @@ export const FinalCta: React.FC<FinalCtaProps> = ({ content }) => {
     <section
       style={{
         padding: '160px 0 170px',
-        backgroundColor: '#050608',
+        background: 'linear-gradient(180deg, #FAF8F3 0%, #F3F0FA 45%, #EBE5F7 100%)',
         position: 'relative',
         overflow: 'hidden',
-        borderTop: '1px solid rgba(255, 255, 255, 0.08)'
+        borderTop: '1px solid var(--border-subtle)'
       }}
     >
       {/* Cinematic Horizon / Atmospheric Consciousness Light Curve */}
@@ -31,8 +31,8 @@ export const FinalCta: React.FC<FinalCtaProps> = ({ content }) => {
           width: 'min(95vw, 1200px)',
           height: 'min(50vh, 420px)',
           borderRadius: '50%',
-          background: 'radial-gradient(ellipse at 50% 100%, rgba(99, 102, 241, 0.22) 0%, rgba(212, 175, 55, 0.08) 35%, transparent 70%)',
-          filter: 'blur(30px)',
+          background: 'radial-gradient(ellipse at 50% 100%, rgba(81, 70, 184, 0.14) 0%, rgba(200, 168, 78, 0.08) 35%, transparent 70%)',
+          filter: 'blur(35px)',
           pointerEvents: 'none'
         }}
       />
@@ -47,8 +47,8 @@ export const FinalCta: React.FC<FinalCtaProps> = ({ content }) => {
           width: 'min(90vw, 900px)',
           height: 'min(35vh, 240px)',
           borderRadius: '50%',
-          borderTop: '1px solid rgba(212, 175, 55, 0.3)',
-          boxShadow: '0 -15px 35px rgba(99, 102, 241, 0.25)',
+          borderTop: '1.5px solid rgba(200, 168, 78, 0.45)',
+          boxShadow: '0 -10px 30px rgba(81, 70, 184, 0.12)',
           pointerEvents: 'none'
         }}
       />
@@ -58,11 +58,11 @@ export const FinalCta: React.FC<FinalCtaProps> = ({ content }) => {
           <span
             style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: '0.76rem',
+              fontSize: '0.78rem',
               letterSpacing: '0.22em',
               textTransform: 'uppercase',
-              color: '#D4AF37',
-              fontWeight: 600,
+              color: '#99751F',
+              fontWeight: 700,
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
@@ -75,9 +75,9 @@ export const FinalCta: React.FC<FinalCtaProps> = ({ content }) => {
           <h2
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(1.75rem, 5vw, 3.5rem)',
-              color: '#F8FAFC',
-              lineHeight: 1.2,
+              fontSize: 'clamp(1.85rem, 5.2vw, 3.6rem)',
+              color: 'var(--text-primary)',
+              lineHeight: 1.18,
               letterSpacing: '0.03em',
               marginBottom: '1.5rem',
               overflowWrap: 'break-word',
@@ -94,14 +94,15 @@ export const FinalCta: React.FC<FinalCtaProps> = ({ content }) => {
           <p
             style={{
               fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(1.1rem, 2vw, 1.45rem)',
+              fontSize: 'clamp(1.15rem, 2.2vw, 1.55rem)',
               fontStyle: 'italic',
-              color: '#CBD5E1',
+              color: '#8C6D23',
               lineHeight: 1.65,
-              maxWidth: '640px',
+              maxWidth: '660px',
               margin: '0 auto 2.5rem',
               overflowWrap: 'break-word',
-              wordBreak: 'break-word'
+              wordBreak: 'break-word',
+              fontWeight: 500
             }}
           >
             {data.italicParagraph}
@@ -110,8 +111,8 @@ export const FinalCta: React.FC<FinalCtaProps> = ({ content }) => {
           <div className="responsive-btn-group">
             <Link
               to="/books"
-              className="btn-gold"
-              style={{ padding: '0.95rem 1.8rem', fontSize: '0.9rem', minHeight: '48px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+              className="btn-primary"
+              style={{ padding: '0.95rem 2rem', fontSize: '0.9rem', minHeight: '48px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
             >
               <span>{data.primaryButtonText}</span>
               <BookOpen size={18} />
@@ -120,7 +121,7 @@ export const FinalCta: React.FC<FinalCtaProps> = ({ content }) => {
             <Link
               to="/tools"
               className="btn-secondary"
-              style={{ padding: '0.95rem 1.8rem', fontSize: '0.9rem', minHeight: '48px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+              style={{ padding: '0.95rem 2rem', fontSize: '0.9rem', minHeight: '48px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
             >
               <span>{data.secondaryButtonText}</span>
               <Compass size={18} />

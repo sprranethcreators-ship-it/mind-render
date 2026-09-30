@@ -24,9 +24,9 @@ export const TopicDetailPage: React.FC = () => {
   );
 
   return (
-    <div style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: '#07080B' }}>
+    <div style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: 'var(--bg-cosmos)' }}>
       {/* Breadcrumb */}
-      <div style={{ padding: '24px 0', borderBottom: '1px solid rgba(255, 255, 255, 0.06)' }}>
+      <div style={{ padding: '24px 0', borderBottom: '1px solid rgba(25, 25, 29, 0.08)' }}>
         <div className="container">
           <Link
             to="/topics"
@@ -34,8 +34,9 @@ export const TopicDetailPage: React.FC = () => {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '6px',
-              color: '#94A3B8',
-              fontSize: '0.85rem'
+              color: 'var(--text-secondary)',
+              fontSize: '0.85rem',
+              textDecoration: 'none'
             }}
           >
             <ArrowLeft size={16} /> Back to All Domains
@@ -44,7 +45,7 @@ export const TopicDetailPage: React.FC = () => {
       </div>
 
       {/* Hero */}
-      <section style={{ padding: '60px 0', backgroundColor: '#090B10', borderBottom: '1px solid rgba(255, 255, 255, 0.06)' }}>
+      <section style={{ padding: '60px 0', backgroundColor: 'var(--bg-deep)', borderBottom: '1px solid rgba(25, 25, 29, 0.08)' }}>
         <div className="container">
           <div style={{ maxWidth: '850px' }}>
             <span className="badge-gold" style={{ marginBottom: '1rem' }}>
@@ -54,9 +55,10 @@ export const TopicDetailPage: React.FC = () => {
               style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(2.4rem, 4.2vw, 3.8rem)',
-                color: '#F8FAFC',
+                color: 'var(--text-primary)',
                 marginBottom: '0.5rem',
-                lineHeight: 1.15
+                lineHeight: 1.15,
+                letterSpacing: '-0.02em'
               }}
             >
               {category.name}
@@ -66,13 +68,13 @@ export const TopicDetailPage: React.FC = () => {
                 fontFamily: 'var(--font-serif)',
                 fontStyle: 'italic',
                 fontSize: '1.4rem',
-                color: category.accentColor,
+                color: '#8C6D23',
                 marginBottom: '1.5rem'
               }}
             >
               {category.tagline}
             </p>
-            <p style={{ color: '#CBD5E1', fontSize: '1.1rem', lineHeight: 1.8 }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.8 }}>
               {category.description}
             </p>
           </div>
@@ -84,10 +86,10 @@ export const TopicDetailPage: React.FC = () => {
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <span className="section-tag" style={{ justifyContent: 'center' }}>INTELLECTUAL DIFFERENTIATION</span>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2.2rem', color: '#F8FAFC' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2.2rem', color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>
               Cognitive Science & Contemplative Philosophy
             </h2>
-            <p style={{ color: '#94A3B8', fontSize: '1rem', maxWidth: '650px', margin: '0.5rem auto 0' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', maxWidth: '650px', margin: '0.5rem auto 0' }}>
               MIND RENDER maintains a clear boundary between biological mechanism and metaphysical contemplation.
             </p>
           </div>
@@ -96,21 +98,21 @@ export const TopicDetailPage: React.FC = () => {
             {/* Scientific Perspective */}
             <div
               style={{
-                backgroundColor: '#0E1119',
-                border: '1px solid rgba(99, 102, 241, 0.3)',
+                backgroundColor: '#FFFFFF',
+                border: '1px solid rgba(81, 70, 184, 0.25)',
                 borderRadius: '16px',
                 padding: 'clamp(20px, 3.5vw, 36px)',
-                boxShadow: '0 15px 35px rgba(0,0,0,0.5)',
+                boxShadow: '0 8px 24px rgba(25, 25, 29, 0.04)',
                 boxSizing: 'border-box'
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#818CF8', marginBottom: '1.25rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--indigo-600)', marginBottom: '1.25rem' }}>
                 <Brain size={24} />
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', color: '#F8FAFC' }}>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', color: 'var(--text-primary)' }}>
                   The Neuro-Cognitive Perspective
                 </h3>
               </div>
-              <p style={{ color: '#CBD5E1', fontSize: '1rem', lineHeight: 1.8 }}>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: 1.8 }}>
                 {category.scientificPerspective}
               </p>
             </div>
@@ -118,20 +120,20 @@ export const TopicDetailPage: React.FC = () => {
             {/* Philosophical Perspective */}
             <div
               style={{
-                backgroundColor: '#0E1119',
-                border: '1px solid rgba(212, 175, 55, 0.3)',
+                backgroundColor: '#FFFFFF',
+                border: '1px solid rgba(140, 109, 35, 0.25)',
                 borderRadius: '16px',
                 padding: '36px',
-                boxShadow: '0 15px 35px rgba(0,0,0,0.5)'
+                boxShadow: '0 8px 24px rgba(25, 25, 29, 0.04)'
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#D4AF37', marginBottom: '1.25rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#8C6D23', marginBottom: '1.25rem' }}>
                 <Sparkles size={24} />
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', color: '#F8FAFC' }}>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', color: 'var(--text-primary)' }}>
                   The Contemplative Perspective
                 </h3>
               </div>
-              <p style={{ color: '#CBD5E1', fontSize: '1rem', lineHeight: 1.8 }}>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: 1.8 }}>
                 {category.philosophicalPerspective}
               </p>
             </div>
@@ -141,16 +143,16 @@ export const TopicDetailPage: React.FC = () => {
 
       {/* Relevant Books */}
       {relatedBooks.length > 0 && (
-        <section style={{ padding: '80px 0', backgroundColor: '#090B10', borderTop: '1px solid rgba(255, 255, 255, 0.06)' }}>
+        <section style={{ padding: '80px 0', backgroundColor: 'var(--bg-deep)', borderTop: '1px solid rgba(25, 25, 29, 0.08)' }}>
           <div className="container">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem' }}>
               <div>
                 <span className="section-tag">PRIMARY TREATISES</span>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: '#F8FAFC' }}>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--text-primary)' }}>
                   Foundational Books for {category.name}
                 </h3>
               </div>
-              <Link to="/books" style={{ color: '#D4AF37', fontSize: '0.86rem', fontWeight: 600 }}>
+              <Link to="/books" style={{ color: 'var(--indigo-600)', fontSize: '0.86rem', fontWeight: 600, textDecoration: 'none' }}>
                 View All Books →
               </Link>
             </div>
@@ -160,26 +162,27 @@ export const TopicDetailPage: React.FC = () => {
                 <div
                   key={rb.id}
                   style={{
-                    backgroundColor: '#0F121C',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    backgroundColor: '#FFFFFF',
+                    border: '1px solid rgba(25, 25, 29, 0.08)',
                     borderRadius: '16px',
                     padding: '32px',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '24px'
+                    gap: '24px',
+                    boxShadow: '0 4px 16px rgba(25, 25, 29, 0.04)'
                   }}
                 >
                   <div style={{ transform: 'scale(0.85)', transformOrigin: 'left center' }}>
                     <Book3DCover book={rb} size="sm" interactive={false} />
                   </div>
                   <div>
-                    <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', color: '#F8FAFC', marginBottom: '6px' }}>
-                      <Link to={`/books/${rb.slug}`} style={{ color: 'inherit' }}>{rb.title}</Link>
+                    <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', color: 'var(--text-primary)', marginBottom: '6px' }}>
+                      <Link to={`/books/${rb.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>{rb.title}</Link>
                     </h4>
-                    <p style={{ color: '#94A3B8', fontSize: '0.84rem', marginBottom: '12px' }}>
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.84rem', marginBottom: '12px' }}>
                       {rb.subtitle}
                     </p>
-                    <div style={{ color: '#D4AF37', fontWeight: 700, fontSize: '1.1rem', marginBottom: '14px' }}>
+                    <div style={{ color: '#8C6D23', fontWeight: 700, fontSize: '1.1rem', marginBottom: '14px' }}>
                       ${rb.price} USD
                     </div>
                     <Link to={`/books/${rb.slug}`} className="btn-secondary" style={{ padding: '6px 14px', fontSize: '0.8rem' }}>
@@ -195,10 +198,10 @@ export const TopicDetailPage: React.FC = () => {
 
       {/* Related Essays */}
       {relatedArticles.length > 0 && (
-        <section style={{ padding: '80px 0 120px', borderTop: '1px solid rgba(255, 255, 255, 0.06)' }}>
+        <section style={{ padding: '80px 0 120px', borderTop: '1px solid rgba(25, 25, 29, 0.08)' }}>
           <div className="container">
             <span className="section-tag">COMPANION ESSAYS</span>
-            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: '#F8FAFC', marginBottom: '2.5rem' }}>
+            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--text-primary)', marginBottom: '2.5rem' }}>
               Inquiries & Articles
             </h3>
 
@@ -208,26 +211,28 @@ export const TopicDetailPage: React.FC = () => {
                   key={art.id}
                   to={`/articles/${art.slug}`}
                   style={{
-                    backgroundColor: '#0E1119',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    backgroundColor: '#FFFFFF',
+                    border: '1px solid rgba(25, 25, 29, 0.08)',
                     borderRadius: '14px',
                     padding: '24px',
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'space-between'
+                    justifyContent: 'space-between',
+                    textDecoration: 'none',
+                    boxShadow: '0 4px 16px rgba(25, 25, 29, 0.03)'
                   }}
                   className="card-panel"
                 >
                   <div>
-                    <span style={{ fontSize: '0.75rem', color: '#818CF8' }}>{art.readTimeMinutes} min read</span>
-                    <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', color: '#F8FAFC', marginTop: '6px', marginBottom: '8px' }}>
+                    <span style={{ fontSize: '0.75rem', color: 'var(--indigo-600)', fontWeight: 600 }}>{art.readTimeMinutes} min read</span>
+                    <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', color: 'var(--text-primary)', marginTop: '6px', marginBottom: '8px' }}>
                       {art.title}
                     </h4>
-                    <p style={{ color: '#94A3B8', fontSize: '0.86rem', lineHeight: 1.6 }}>
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.86rem', lineHeight: 1.6 }}>
                       {art.excerpt}
                     </p>
                   </div>
-                  <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.06)', paddingTop: '12px', marginTop: '16px', color: '#D4AF37', fontSize: '0.82rem', fontWeight: 600 }}>
+                  <div style={{ borderTop: '1px solid rgba(25, 25, 29, 0.08)', paddingTop: '12px', marginTop: '16px', color: 'var(--indigo-600)', fontSize: '0.82rem', fontWeight: 600 }}>
                     Read Article →
                   </div>
                 </Link>

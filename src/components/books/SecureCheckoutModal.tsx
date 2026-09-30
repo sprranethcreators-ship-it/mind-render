@@ -118,10 +118,10 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
           width: '100%',
           maxWidth: '560px',
           maxHeight: 'min(92vh, 720px)',
-          backgroundColor: '#0E1119',
-          border: '1px solid rgba(212, 175, 55, 0.3)',
+          backgroundColor: '#FFFFFF',
+          border: '1px solid rgba(25, 25, 29, 0.12)',
           borderRadius: '16px',
-          boxShadow: '0 25px 60px rgba(0,0,0,0.9), 0 0 45px rgba(212, 175, 55, 0.15)',
+          boxShadow: '0 25px 60px rgba(25, 25, 29, 0.15)',
           overflow: 'hidden',
           display: 'flex',
           flexDirection: 'column',
@@ -133,8 +133,8 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
         <div
           style={{
             padding: '16px 20px',
-            backgroundColor: '#121622',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+            backgroundColor: '#F7F4EE',
+            borderBottom: '1px solid rgba(25, 25, 29, 0.08)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -142,14 +142,14 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <Lock size={17} color="#D4AF37" />
-            <span style={{ fontFamily: 'var(--font-display)', color: '#F8FAFC', fontWeight: 600, fontSize: '0.94rem' }}>
+            <Lock size={17} color="#8C6D23" />
+            <span style={{ fontFamily: 'var(--font-display)', color: 'var(--text-primary)', fontWeight: 600, fontSize: '0.94rem' }}>
               {completedOrder ? 'Purchase Confirmed' : 'Encrypted Digital Checkout'}
             </span>
           </div>
           <button
             onClick={onClose}
-            style={{ color: '#94A3B8', cursor: 'pointer', padding: '6px', minWidth: '32px', minHeight: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            style={{ color: 'var(--text-secondary)', cursor: 'pointer', padding: '6px', minWidth: '32px', minHeight: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'none', border: 'none' }}
             aria-label="Close"
           >
             <X size={18} />
@@ -157,7 +157,7 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
         </div>
 
         {/* Body */}
-        <div style={{ padding: 'clamp(16px, 3.5vw, 26px)', overflowY: 'auto', flex: 1, WebkitOverflowScrolling: 'touch' }}>
+        <div style={{ padding: 'clamp(16px, 3.5vw, 26px)', overflowY: 'auto', flex: 1, WebkitOverflowScrolling: 'touch', backgroundColor: '#FFFFFF' }}>
           {completedOrder ? (
             /* Purchase Success State */
             <div style={{ textAlign: 'center' }}>
@@ -166,26 +166,26 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
                   width: '64px',
                   height: '64px',
                   borderRadius: '50%',
-                  backgroundColor: 'rgba(16, 185, 129, 0.15)',
-                  border: '1px solid rgba(16, 185, 129, 0.4)',
+                  backgroundColor: 'rgba(5, 150, 105, 0.1)',
+                  border: '1px solid rgba(5, 150, 105, 0.3)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   margin: '0 auto 1.25rem'
                 }}
               >
-                <CheckCircle2 size={32} color="#10B981" />
+                <CheckCircle2 size={32} color="#059669" />
               </div>
 
               <span className="badge-gold" style={{ marginBottom: '0.75rem' }}>
                 Order #{completedOrder.orderNumber}
               </span>
 
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', color: '#F8FAFC', marginBottom: '0.5rem' }}>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', color: 'var(--text-primary)', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
                 Access Granted to "{book.title}"
               </h3>
-              <p style={{ color: '#94A3B8', fontSize: '0.92rem', marginBottom: '1.75rem', lineHeight: 1.6 }}>
-                A digital cryptographic license has been generated for <strong>{completedOrder.userEmail}</strong>. You can read it immediately or download the encrypted manuscript.
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginBottom: '1.75rem', lineHeight: 1.6 }}>
+                A digital cryptographic license has been generated for <strong style={{ color: 'var(--text-primary)' }}>{completedOrder.userEmail}</strong>. You can read it immediately or download the encrypted manuscript.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -211,14 +211,18 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
                 <button
                   onClick={handleGoToLibrary}
                   style={{
-                    color: '#818CF8',
+                    color: 'var(--indigo-600)',
                     fontSize: '0.88rem',
                     padding: '8px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     gap: '6px',
-                    marginTop: '0.5rem'
+                    marginTop: '0.5rem',
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontWeight: 600
                   }}
                 >
                   View in My Library <ArrowRight size={14} />
@@ -235,8 +239,8 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
                   alignItems: 'center',
                   gap: '16px',
                   padding: '16px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.03)',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  backgroundColor: '#FAF8F3',
+                  border: '1px solid rgba(25, 25, 29, 0.08)',
                   borderRadius: '10px',
                   marginBottom: '1.5rem'
                 }}
@@ -247,15 +251,15 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
                     height: '68px',
                     borderRadius: '4px',
                     background: `linear-gradient(135deg, ${book.coverGradient.primary}, ${book.coverGradient.secondary})`,
-                    border: '1px solid rgba(212, 175, 55, 0.3)',
+                    border: '1px solid rgba(140, 109, 35, 0.3)',
                     flexShrink: 0
                   }}
                 />
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: 600, color: '#F8FAFC', fontSize: '1rem' }}>{book.title}</div>
-                  <div style={{ color: '#94A3B8', fontSize: '0.8rem' }}>{book.author} • {book.format}</div>
-                  <div style={{ color: '#D4AF37', fontWeight: 700, fontSize: '1.1rem', marginTop: '4px' }}>
-                    ${book.price} <span style={{ fontSize: '0.75rem', color: '#64748B', textDecoration: 'line-through' }}>${book.originalPrice}</span>
+                  <div style={{ fontWeight: 600, color: 'var(--text-primary)', fontSize: '1rem' }}>{book.title}</div>
+                  <div style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>{book.author} • {book.format}</div>
+                  <div style={{ color: '#8C6D23', fontWeight: 700, fontSize: '1.1rem', marginTop: '4px' }}>
+                    ${book.price} <span style={{ fontSize: '0.75rem', color: '#8A8C9E', textDecoration: 'line-through' }}>${book.originalPrice}</span>
                   </div>
                 </div>
               </div>
@@ -263,7 +267,7 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
               {/* Customer Inputs */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '1.5rem' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.82rem', color: '#CBD5E1', marginBottom: '6px' }}>
+                  <label style={{ display: 'block', fontSize: '0.82rem', color: 'var(--text-primary)', marginBottom: '6px', fontWeight: 600 }}>
                     Your Full Name
                   </label>
                   <input
@@ -272,13 +276,13 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
                     value={customerName}
                     onChange={e => setCustomerName(e.target.value)}
                     placeholder="Enter full name for certificate"
-                    style={{ width: '100%' }}
+                    style={{ width: '100%', backgroundColor: '#FFFFFF', border: '1px solid rgba(25, 25, 29, 0.12)', color: 'var(--text-primary)', borderRadius: '8px' }}
                     disabled={isProcessing}
                   />
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.82rem', color: '#CBD5E1', marginBottom: '6px' }}>
+                  <label style={{ display: 'block', fontSize: '0.82rem', color: 'var(--text-primary)', marginBottom: '6px', fontWeight: 600 }}>
                     Delivery Email Address
                   </label>
                   <input
@@ -287,7 +291,7 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
                     value={customerEmail}
                     onChange={e => setCustomerEmail(e.target.value)}
                     placeholder="name@domain.com"
-                    style={{ width: '100%' }}
+                    style={{ width: '100%', backgroundColor: '#FFFFFF', border: '1px solid rgba(25, 25, 29, 0.12)', color: 'var(--text-primary)', borderRadius: '8px' }}
                     disabled={isProcessing}
                   />
                 </div>
@@ -295,7 +299,7 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
 
               {/* Payment Method Selector */}
               <div style={{ marginBottom: '1.5rem' }}>
-                <label style={{ display: 'block', fontSize: '0.82rem', color: '#CBD5E1', marginBottom: '8px' }}>
+                <label style={{ display: 'block', fontSize: '0.82rem', color: 'var(--text-primary)', marginBottom: '8px', fontWeight: 600 }}>
                   Payment Method
                 </label>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '10px' }}>
@@ -305,19 +309,20 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
                     style={{
                       padding: '12px',
                       borderRadius: '8px',
-                      border: paymentMethod === 'Direct Checkout' ? '1px solid #D4AF37' : '1px solid rgba(255,255,255,0.08)',
-                      backgroundColor: paymentMethod === 'Direct Checkout' ? 'rgba(212, 175, 55, 0.1)' : 'rgba(255,255,255,0.02)',
-                      color: paymentMethod === 'Direct Checkout' ? '#F8FAFC' : '#94A3B8',
+                      border: paymentMethod === 'Direct Checkout' ? '1.5px solid #8C6D23' : '1px solid rgba(25, 25, 29, 0.1)',
+                      backgroundColor: paymentMethod === 'Direct Checkout' ? 'rgba(140, 109, 35, 0.08)' : '#FAF8F3',
+                      color: paymentMethod === 'Direct Checkout' ? 'var(--text-primary)' : 'var(--text-secondary)',
                       fontSize: '0.84rem',
                       fontWeight: 500,
                       textAlign: 'left',
-                      cursor: 'pointer'
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease'
                     }}
                   >
-                    <div style={{ fontWeight: 600, color: paymentMethod === 'Direct Checkout' ? '#D4AF37' : '#E2E8F0' }}>
+                    <div style={{ fontWeight: 600, color: paymentMethod === 'Direct Checkout' ? '#8C6D23' : 'var(--text-primary)' }}>
                       Direct Instant Pay
                     </div>
-                    <div style={{ fontSize: '0.72rem', marginTop: '2px', color: '#94A3B8' }}>Instant encrypted manuscript</div>
+                    <div style={{ fontSize: '0.72rem', marginTop: '2px', color: 'var(--text-secondary)' }}>Instant encrypted manuscript</div>
                   </button>
 
                   <button
@@ -326,19 +331,20 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
                     style={{
                       padding: '12px',
                       borderRadius: '8px',
-                      border: paymentMethod === 'Razorpay' ? '1px solid #6366F1' : '1px solid rgba(255,255,255,0.08)',
-                      backgroundColor: paymentMethod === 'Razorpay' ? 'rgba(99, 102, 241, 0.1)' : 'rgba(255,255,255,0.02)',
-                      color: paymentMethod === 'Razorpay' ? '#F8FAFC' : '#94A3B8',
+                      border: paymentMethod === 'Razorpay' ? '1.5px solid var(--indigo-600)' : '1px solid rgba(25, 25, 29, 0.1)',
+                      backgroundColor: paymentMethod === 'Razorpay' ? 'rgba(81, 70, 184, 0.08)' : '#FAF8F3',
+                      color: paymentMethod === 'Razorpay' ? 'var(--text-primary)' : 'var(--text-secondary)',
                       fontSize: '0.84rem',
                       fontWeight: 500,
                       textAlign: 'left',
-                      cursor: 'pointer'
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease'
                     }}
                   >
-                    <div style={{ fontWeight: 600, color: paymentMethod === 'Razorpay' ? '#818CF8' : '#E2E8F0' }}>
+                    <div style={{ fontWeight: 600, color: paymentMethod === 'Razorpay' ? 'var(--indigo-600)' : 'var(--text-primary)' }}>
                       Razorpay Gateway
                     </div>
-                    <div style={{ fontSize: '0.72rem', marginTop: '2px', color: '#94A3B8' }}>
+                    <div style={{ fontSize: '0.72rem', marginTop: '2px', color: 'var(--text-secondary)' }}>
                       {isRazorpayConfigured ? 'Live Gateway Online' : 'Card / NetBanking / UPI'}
                     </div>
                   </button>
@@ -352,15 +358,15 @@ export const SecureCheckoutModal: React.FC<SecureCheckoutModalProps> = ({
                   alignItems: 'center',
                   gap: '8px',
                   fontSize: '0.78rem',
-                  color: '#94A3B8',
+                  color: 'var(--text-secondary)',
                   marginBottom: '1.5rem',
                   padding: '10px 14px',
-                  backgroundColor: 'rgba(16, 185, 129, 0.05)',
+                  backgroundColor: 'rgba(5, 150, 105, 0.06)',
                   borderRadius: '6px',
-                  border: '1px solid rgba(16, 185, 129, 0.2)'
+                  border: '1px solid rgba(5, 150, 105, 0.2)'
                 }}
               >
-                <ShieldCheck size={16} color="#10B981" />
+                <ShieldCheck size={16} color="#059669" />
                 <span>256-bit TLS encrypted. Instant digital delivery & lifetime library access.</span>
               </div>
 

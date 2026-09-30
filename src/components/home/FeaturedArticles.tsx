@@ -12,22 +12,14 @@ export const FeaturedArticles: React.FC<FeaturedArticlesProps> = ({ content }) =
   const data = content || StorageService.getHomepageContent().essaysSection;
   const articles = StorageService.getArticles();
 
-  // Subtle atmospheric gradient backgrounds for each editorial card
-  const cardGradients = [
-    'linear-gradient(145deg, #101422 0%, #0A0C14 100%)',
-    'linear-gradient(145deg, #161224 0%, #0A0C14 100%)',
-    'linear-gradient(145deg, #181510 0%, #0A0C14 100%)',
-    'linear-gradient(145deg, #0F1816 0%, #0A0C14 100%)'
-  ];
-
   return (
     <section
       style={{
         padding: '130px 0 140px',
-        backgroundColor: '#080A10',
+        backgroundColor: '#FAF8F3',
         position: 'relative',
-        borderTop: '1px solid rgba(255, 255, 255, 0.05)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
+        borderTop: '1px solid var(--border-subtle)',
+        borderBottom: '1px solid var(--border-subtle)'
       }}
     >
       <div className="container">
@@ -50,7 +42,7 @@ export const FeaturedArticles: React.FC<FeaturedArticlesProps> = ({ content }) =
               style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(2.2rem, 3.8vw, 3.2rem)',
-                color: '#F8FAFC',
+                color: 'var(--text-primary)',
                 letterSpacing: '0.04em'
               }}
             >
@@ -61,8 +53,8 @@ export const FeaturedArticles: React.FC<FeaturedArticlesProps> = ({ content }) =
           <p
             style={{
               maxWidth: '520px',
-              color: '#94A3B8',
-              fontSize: '1.05rem',
+              color: 'var(--text-secondary)',
+              fontSize: '1.08rem',
               lineHeight: 1.75
             }}
           >
@@ -72,14 +64,14 @@ export const FeaturedArticles: React.FC<FeaturedArticlesProps> = ({ content }) =
 
         {/* 3 Editorial Magazine Cards */}
         <div className="responsive-grid-essays">
-          {articles.slice(0, 3).map((article, idx) => (
+          {articles.slice(0, 3).map((article) => (
             <Link
               key={article.id}
               to={`/articles/${article.slug}`}
               className="editorial-essay-card"
               style={{
-                background: cardGradients[idx % cardGradients.length],
-                border: '1px solid rgba(255, 255, 255, 0.08)',
+                background: '#FFFFFF',
+                border: '1px solid var(--border-subtle)',
                 borderRadius: '18px',
                 padding: 'clamp(24px, 3.5vw, 38px) clamp(18px, 3vw, 30px)',
                 display: 'flex',
@@ -88,7 +80,7 @@ export const FeaturedArticles: React.FC<FeaturedArticlesProps> = ({ content }) =
                 textDecoration: 'none',
                 position: 'relative',
                 overflow: 'hidden',
-                boxShadow: '0 18px 45px rgba(0, 0, 0, 0.6)',
+                boxShadow: '0 8px 24px rgba(25, 25, 29, 0.04)',
                 transition: 'transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease',
                 boxSizing: 'border-box'
               }}
@@ -99,7 +91,7 @@ export const FeaturedArticles: React.FC<FeaturedArticlesProps> = ({ content }) =
                 style={{
                   position: 'absolute',
                   inset: 0,
-                  background: 'linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.06) 45%, rgba(255, 255, 255, 0.12) 50%, rgba(255, 255, 255, 0.06) 55%, transparent 100%)',
+                  background: 'linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.4) 45%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.4) 55%, transparent 100%)',
                   transform: 'translateX(-100%)',
                   transition: 'transform 0.8s ease',
                   pointerEvents: 'none'
@@ -108,10 +100,10 @@ export const FeaturedArticles: React.FC<FeaturedArticlesProps> = ({ content }) =
 
               <div style={{ position: 'relative', zIndex: 2 }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
-                  <span className="badge-indigo" style={{ fontSize: '0.72rem' }}>
+                  <span className="badge-indigo" style={{ fontSize: '0.74rem' }}>
                     {article.category}
                   </span>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#64748B', fontSize: '0.8rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#747484', fontSize: '0.82rem', fontWeight: 500 }}>
                     <Clock size={13} />
                     <span>{article.readTimeMinutes} min read</span>
                   </div>
@@ -121,7 +113,7 @@ export const FeaturedArticles: React.FC<FeaturedArticlesProps> = ({ content }) =
                   style={{
                     fontFamily: 'var(--font-display)',
                     fontSize: '1.45rem',
-                    color: '#F8FAFC',
+                    color: 'var(--text-primary)',
                     lineHeight: 1.35,
                     marginBottom: '1rem'
                   }}
@@ -129,7 +121,7 @@ export const FeaturedArticles: React.FC<FeaturedArticlesProps> = ({ content }) =
                   {article.title}
                 </h3>
 
-                <p style={{ color: '#94A3B8', fontSize: '0.94rem', lineHeight: 1.7, marginBottom: '2rem' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.96rem', lineHeight: 1.7, marginBottom: '2rem' }}>
                   {article.excerpt}
                 </p>
               </div>
@@ -141,18 +133,18 @@ export const FeaturedArticles: React.FC<FeaturedArticlesProps> = ({ content }) =
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  borderTop: '1px solid rgba(255, 255, 255, 0.07)',
+                  borderTop: '1px solid var(--border-subtle)',
                   paddingTop: '18px',
-                  color: '#CBD5E1',
-                  fontSize: '0.84rem'
+                  color: 'var(--text-secondary)',
+                  fontSize: '0.86rem'
                 }}
               >
-                <span style={{ color: '#64748B' }}>{article.author}</span>
+                <span style={{ color: '#747484', fontWeight: 500 }}>{article.author}</span>
                 <span
                   className="read-essay-link"
                   style={{
-                    color: '#D4AF37',
-                    fontWeight: 600,
+                    color: '#5146B8',
+                    fontWeight: 700,
                     display: 'flex',
                     alignItems: 'center',
                     gap: '6px',
@@ -185,8 +177,8 @@ export const FeaturedArticles: React.FC<FeaturedArticlesProps> = ({ content }) =
       <style>{`
         .editorial-essay-card:hover {
           transform: translateY(-5px);
-          border-color: rgba(212, 175, 55, 0.35) !important;
-          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75) !important;
+          border-color: var(--border-medium) !important;
+          box-shadow: 0 16px 40px rgba(25, 25, 29, 0.08) !important;
         }
         .editorial-essay-card:hover .card-shimmer {
           transform: translateX(100%);

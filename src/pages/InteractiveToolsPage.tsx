@@ -18,15 +18,15 @@ export const InteractiveToolsPage: React.FC = () => {
   ];
 
   return (
-    <div style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: '#07080B' }}>
+    <div style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: 'var(--bg-cosmos)' }}>
       {/* Header */}
-      <section style={{ padding: '60px 0 30px', backgroundColor: '#090B10', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+      <section style={{ padding: '60px 0 30px', backgroundColor: 'var(--bg-deep)', borderBottom: '1px solid rgba(25, 25, 29, 0.08)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <span className="section-tag" style={{ justifyContent: 'center' }}>NEURAL CONDITIONING SUITE</span>
-          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.4rem, 4vw, 3.5rem)', color: '#F8FAFC', marginBottom: '1rem' }}>
+          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.4rem, 4vw, 3.5rem)', color: 'var(--text-primary)', marginBottom: '1rem', letterSpacing: '-0.02em' }}>
             Interactive Mind Tools
           </h1>
-          <p style={{ maxWidth: '680px', margin: '0 auto', color: '#94A3B8', fontSize: '1.1rem', lineHeight: 1.7 }}>
+          <p style={{ maxWidth: '680px', margin: '0 auto', color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7 }}>
             Deliberate practices to train voluntary attention, rewrite subconscious cognitive distortions, and embody constructive states of consciousness.
           </p>
         </div>
@@ -37,9 +37,9 @@ export const InteractiveToolsPage: React.FC = () => {
         style={{
           position: 'sticky',
           top: '76px',
-          backgroundColor: 'rgba(9, 11, 16, 0.92)',
+          backgroundColor: 'rgba(250, 248, 243, 0.94)',
           backdropFilter: 'blur(16px)',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+          borderBottom: '1px solid rgba(25, 25, 29, 0.08)',
           zIndex: 7000,
           padding: '14px 0'
         }}
@@ -59,9 +59,10 @@ export const InteractiveToolsPage: React.FC = () => {
                   borderRadius: '20px',
                   fontSize: '0.84rem',
                   fontWeight: isActive ? 600 : 500,
-                  backgroundColor: isActive ? '#D4AF37' : 'rgba(255, 255, 255, 0.04)',
-                  color: isActive ? '#090B10' : '#CBD5E1',
-                  border: isActive ? '1px solid #D4AF37' : '1px solid rgba(255, 255, 255, 0.08)',
+                  backgroundColor: isActive ? 'var(--indigo-600)' : '#FFFFFF',
+                  color: isActive ? '#FFFFFF' : 'var(--text-secondary)',
+                  border: isActive ? '1px solid var(--indigo-600)' : '1px solid rgba(25, 25, 29, 0.1)',
+                  boxShadow: isActive ? '0 2px 8px rgba(81, 70, 184, 0.25)' : 'none',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease'
                 }}

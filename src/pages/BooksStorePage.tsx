@@ -30,13 +30,13 @@ export const BooksStorePage: React.FC = () => {
   });
 
   return (
-    <div style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: '#07080B' }}>
+    <div style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: 'var(--bg-cosmos)' }}>
       {/* Page Header */}
       <section
         style={{
           padding: '60px 0 40px',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-          backgroundColor: '#090B10'
+          borderBottom: '1px solid rgba(25, 25, 29, 0.08)',
+          backgroundColor: 'var(--bg-deep)'
         }}
       >
         <div className="container" style={{ textAlign: 'center' }}>
@@ -47,8 +47,9 @@ export const BooksStorePage: React.FC = () => {
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(2.4rem, 4vw, 3.5rem)',
-              color: '#F8FAFC',
-              marginBottom: '1rem'
+              color: 'var(--text-primary)',
+              marginBottom: '1rem',
+              letterSpacing: '-0.02em'
             }}
           >
             Original Digital Treatise Collection
@@ -57,7 +58,7 @@ export const BooksStorePage: React.FC = () => {
             style={{
               maxWidth: '680px',
               margin: '0 auto',
-              color: '#94A3B8',
+              color: 'var(--text-secondary)',
               fontSize: '1.1rem',
               lineHeight: 1.7
             }}
@@ -72,9 +73,9 @@ export const BooksStorePage: React.FC = () => {
         style={{
           position: 'sticky',
           top: '76px',
-          backgroundColor: 'rgba(9, 11, 16, 0.9)',
+          backgroundColor: 'rgba(250, 248, 243, 0.94)',
           backdropFilter: 'blur(16px)',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+          borderBottom: '1px solid rgba(25, 25, 29, 0.08)',
           zIndex: 7000,
           padding: '16px 0'
         }}
@@ -90,10 +91,13 @@ export const BooksStorePage: React.FC = () => {
                   padding: '7px 16px',
                   borderRadius: '20px',
                   fontSize: '0.82rem',
-                  fontWeight: selectedCategory === cat ? 600 : 400,
-                  backgroundColor: selectedCategory === cat ? '#D4AF37' : 'rgba(255, 255, 255, 0.04)',
-                  color: selectedCategory === cat ? '#090B10' : '#CBD5E1',
-                  border: selectedCategory === cat ? '1px solid #D4AF37' : '1px solid rgba(255, 255, 255, 0.08)'
+                  fontWeight: selectedCategory === cat ? 600 : 500,
+                  backgroundColor: selectedCategory === cat ? 'var(--indigo-600)' : '#FFFFFF',
+                  color: selectedCategory === cat ? '#FFFFFF' : '#575765',
+                  border: selectedCategory === cat ? '1px solid var(--indigo-600)' : '1px solid rgba(25, 25, 29, 0.1)',
+                  boxShadow: selectedCategory === cat ? '0 2px 8px rgba(81, 70, 184, 0.25)' : 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
                 }}
               >
                 {cat}
@@ -103,7 +107,7 @@ export const BooksStorePage: React.FC = () => {
 
           {/* Search Box */}
           <div style={{ position: 'relative', width: '100%', maxWidth: '280px' }}>
-            <Search size={16} color="#64748B" style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)' }} />
+            <Search size={16} color="#6B6D7C" style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)' }} />
             <input
               type="text"
               value={searchTerm}
@@ -114,7 +118,11 @@ export const BooksStorePage: React.FC = () => {
                 paddingLeft: '36px',
                 paddingTop: '8px',
                 paddingBottom: '8px',
-                fontSize: '0.86rem'
+                fontSize: '0.86rem',
+                backgroundColor: '#FFFFFF',
+                border: '1px solid rgba(25, 25, 29, 0.12)',
+                color: 'var(--text-primary)',
+                borderRadius: '8px'
               }}
             />
           </div>
@@ -125,8 +133,8 @@ export const BooksStorePage: React.FC = () => {
       <section style={{ padding: '40px 0 100px' }}>
         <div className="container">
           {filteredBooks.length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '60px 20px', backgroundColor: '#0E1119', borderRadius: '16px' }}>
-              <p style={{ color: '#94A3B8', fontSize: '1.1rem' }}>No digital treatises match your criteria.</p>
+            <div style={{ textAlign: 'center', padding: '60px 20px', backgroundColor: '#FFFFFF', border: '1px solid rgba(25, 25, 29, 0.08)', borderRadius: '16px' }}>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>No digital treatises match your criteria.</p>
             </div>
           ) : (
             <div className="responsive-grid-books">
@@ -154,12 +162,12 @@ export const BooksStorePage: React.FC = () => {
                       style={{
                         fontFamily: 'var(--font-display)',
                         fontSize: '1.4rem',
-                        color: '#F8FAFC',
+                        color: 'var(--text-primary)',
                         marginBottom: '0.4rem',
                         lineHeight: 1.3
                       }}
                     >
-                      <Link to={`/books/${book.slug}`} style={{ color: 'inherit' }}>
+                      <Link to={`/books/${book.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>
                         {book.title}
                       </Link>
                     </h3>
@@ -168,7 +176,7 @@ export const BooksStorePage: React.FC = () => {
                       style={{
                         fontFamily: 'var(--font-serif)',
                         fontStyle: 'italic',
-                        color: '#D4AF37',
+                        color: '#8C6D23',
                         fontSize: '0.98rem',
                         marginBottom: '0.85rem'
                       }}
@@ -176,7 +184,7 @@ export const BooksStorePage: React.FC = () => {
                       {book.subtitle}
                     </p>
 
-                    <p style={{ color: '#94A3B8', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                       {book.description}
                     </p>
                   </div>
@@ -188,20 +196,20 @@ export const BooksStorePage: React.FC = () => {
                         display: 'flex',
                         alignItems: 'baseline',
                         justifyContent: 'space-between',
-                        borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+                        borderTop: '1px solid rgba(25, 25, 29, 0.08)',
                         paddingTop: '16px',
                         marginBottom: '1rem'
                       }}
                     >
                       <div>
-                        <span style={{ fontSize: '1.6rem', fontWeight: 700, color: '#D4AF37' }}>
+                        <span style={{ fontSize: '1.6rem', fontWeight: 700, color: '#8C6D23' }}>
                           ${book.price}
                         </span>
-                        <span style={{ fontSize: '0.85rem', color: '#64748B', textDecoration: 'line-through', marginLeft: '6px' }}>
+                        <span style={{ fontSize: '0.85rem', color: '#8A8C9E', textDecoration: 'line-through', marginLeft: '6px' }}>
                           ${book.originalPrice}
                         </span>
                       </div>
-                      <span style={{ fontSize: '0.75rem', color: '#64748B' }}>
+                      <span style={{ fontSize: '0.75rem', color: '#8A8C9E' }}>
                         {book.format}
                       </span>
                     </div>
@@ -227,7 +235,7 @@ export const BooksStorePage: React.FC = () => {
                     <div style={{ textAlign: 'center', marginTop: '10px' }}>
                       <Link
                         to={`/books/${book.slug}`}
-                        style={{ fontSize: '0.78rem', color: '#818CF8' }}
+                        style={{ fontSize: '0.78rem', color: 'var(--indigo-600)', textDecoration: 'none', fontWeight: 500 }}
                       >
                         Read Full Details & Syllabus →
                       </Link>
