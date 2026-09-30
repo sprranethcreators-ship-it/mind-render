@@ -33,7 +33,7 @@ export const App: React.FC = () => {
               <Navbar />
               <main style={{ flex: 1 }}>
                 <Routes>
-                  <Route path="/" element={<div style={{ position: 'fixed', inset: 0, zIndex: 9999, background: '#FFC0CB' }} />} />
+                  <Route path="/" element={<HomePage />} />
                   <Route path="/books" element={<BooksStorePage />} />
                   <Route path="/books/:slug" element={<BookDetailPage />} />
                   <Route path="/topics" element={<TopicsIndexPage />} />
